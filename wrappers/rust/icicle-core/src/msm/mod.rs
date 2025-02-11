@@ -12,53 +12,48 @@ pub mod tests;
 #[repr(C)]
 #[derive(Debug, Clone)]
 pub struct MSMConfig<'a> {
-    /// Details related to the device such as its id and stream.
+    /// 设备相关的详细信息，例如其ID和流。
     pub ctx: DeviceContext<'a>,
 
     points_size: i32,
 
-    /// The number of extra points to pre-compute for each point. See the `precompute_bases` function, `precompute_factor` passed
-    /// there needs to be equal to the one used here. Larger values decrease the number of computations
-    /// to make, on-line memory footprint, but increase the static memory footprint. Default value: 1 (i.e. don't pre-compute).
+    /// 为每个点预计算的额外点数。参见 `precompute_bases` 函数，传递的 `precompute_factor` 需要与此处使用的相同。
+    /// 较大的值减少了计算次数和在线内存占用，但增加了静态内存占用。默认值：1（即不预计算）。
     pub precompute_factor: i32,
 
-    /// `c` value, or "window bitsize" which is the main parameter of the "bucket method"
-    /// that we use to solve the MSM problem. As a rule of thumb, larger value means more on-line memory
-    /// footprint but also more parallelism and less computational complexity (up to a certain point).
-    /// Currently pre-computation is independent of `c`, however in the future value of `c` here and the one passed into the
-    /// `precompute_bases` function will need to be identical. Default value: 0 (the optimal value of `c` is chosen automatically).
+    /// `c` 值，或“窗口位大小”，这是我们用来解决MSM问题的“桶方法”的主要参数。
+    /// 通常，较大的值意味着更多的在线内存占用，但也意味着更多的并行性和更少的计算复杂度（到一定程度）。
+    /// 目前预计算与 `c` 无关，但将来此处的 `c` 值和传递给 `precompute_bases` 函数的值需要相同。默认值：0（自动选择 `c` 的最佳���）。
     pub c: i32,
 
-    /// Number of bits of the largest scalar. Typically equals the bitsize of scalar field, but if a different
-    /// (better) upper bound is known, it should be reflected in this variable. Default value: 0 (set to the bitsize of scalar field).
+    /// 最大标量的位数。通常等于标量字段的位大小，但如果已知不同的（更好的）上限，应在此变量中反映。默认值：0（设置为标量字段的位大小）。
     pub bitsize: i32,
 
-    /// Variable that controls how sensitive the algorithm is to the buckets that occur very frequently.
-    /// Useful for efficient treatment of non-uniform distributions of scalars and "top windows" with few bits.
-    /// Can be set to 0 to disable separate treatment of large buckets altogether. Default value: 10.
+    /// 控制算法对非常频繁出现的桶的敏感度的变量。
+    /// 对于有效处理非均匀分布的标量和具有少量位的“顶窗口”非常有用。
+    /// 可以设置为0以完全禁用对大桶的单独处理。默认值：10。
     pub large_bucket_factor: i32,
 
     batch_size: i32,
 
     are_scalars_on_device: bool,
 
-    /// True if scalars are in Montgomery form and false otherwise. Default value: true.
+    /// 如果标量是蒙哥马利形式，则为真，否则为假。默认值：true。
     pub are_scalars_montgomery_form: bool,
 
     are_points_on_device: bool,
 
-    /// True if coordinates of points are in Montgomery form and false otherwise. Default value: true.
+    /// 如果点的坐标是蒙哥马利形式，则为真，否则为假。默认值：true。
     pub are_points_montgomery_form: bool,
 
     are_results_on_device: bool,
 
-    /// Whether to do "bucket accumulation" serially. Decreases computational complexity, but also greatly
-    /// decreases parallelism, so only suitable for large batches of MSMs. Default value: false.
+    /// 是否串行地进行“桶累积”。减少计算复杂度，但也大大减少并行性，因此仅适用于大批量的MSM。默认值：false。
     pub is_big_triangle: bool,
 
-    /// Whether to run the MSM asynchronously. If set to `true`, the MSM function will be non-blocking
-    /// and you'd need to synchronize it explicitly by running `cudaStreamSynchronize` or `cudaDeviceSynchronize`.
-    /// If set to `false`, the MSM function will block the current CPU thread.
+    /// 是否异步运行MSM。如果设置为 `true`，MSM函数将是非阻塞的，
+    /// 需要通过运行 `cudaStreamSynchronize` 或 `cudaDeviceSynchronize` 显式同步。
+    /// 如果设置为 `false`，MSM函数将阻塞当前的CPU线程。
     pub is_async: bool,
 }
 

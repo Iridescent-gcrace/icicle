@@ -4,7 +4,7 @@
 #include "curves/curve_config.cuh"
 // #include "fields/field_config.cuh"
 
-#include "msm.cu"
+#include "../msm.cu"
 
 #include <chrono>
 #include <iostream>
