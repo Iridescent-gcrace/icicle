@@ -399,364 +399,499 @@ namespace msm {
       final_results[tid] = final_result + final_sums[tid * nof_results];
     }
 
-    // 桶方法实现多标量乘法的核心函数
+    // this function computes msm using the bucket method
     template <typename S, typename P, typename A>
     cudaError_t bucket_method_msm(
-      unsigned bitsize,        // 标量的位宽
-      unsigned c,             // 每个窗口的位数
-      const S* scalars,       // 输入标量数组
-      const A* points,        // 输入点数组
-      unsigned batch_size,    // 要计算的MSM批次数量
-      unsigned single_msm_size, // 单个MSM的元素数量（即N）
-      unsigned nof_points,    // 点数组中的总点数（共享或独立）
-      P* final_result,         // 最终结果存储
-      bool are_scalars_on_device,      // 标量是否已在设备
-      bool are_scalars_montgomery_form, // 标量是否为蒙哥马利形式
-      bool are_points_on_device,       // 点是否已在设备
-      bool are_points_montgomery_form, // 点是否为蒙哥马利形式
-      bool are_results_on_device,      // 结果是否存储在设备
-      bool is_big_triangle,    // 是否使用大三角求和优化
-      int large_bucket_factor, // 大桶判定因子（相对于平均桶大小）
-      int precompute_factor,   // 预计算因子
-      bool is_async,           // 是否异步执行
-      cudaStream_t stream)     // CUDA流
+      unsigned bitsize,
+      unsigned c,
+      const S* scalars,
+      const A* points,
+      unsigned batch_size,      // number of MSMs to compute
+      unsigned single_msm_size, // number of elements per MSM (a.k.a N)
+      unsigned nof_points,      // number of EC points in 'points' array. Must be either (1) single_msm_size if MSMs are
+                                // sharing points or (2) single_msm_size*batch_size otherwise
+      P* final_result,
+      bool are_scalars_on_device,
+      bool are_scalars_montgomery_form,
+      bool are_points_on_device,
+      bool are_points_montgomery_form,
+      bool are_results_on_device,
+      bool is_big_triangle,
+      int large_bucket_factor,
+      int precompute_factor,
+      bool is_async,
+      cudaStream_t stream)
     {
-      CHK_INIT_IF_RETURN(); // 初始化错误检查
+      CHK_INIT_IF_RETURN();
 
-      // 计算总标量数并验证点数有效性
-      const unsigned nof_scalars = batch_size * single_msm_size;
+      const unsigned nof_scalars = batch_size * single_msm_size; // assuming scalars not shared between batch elements
       const bool is_nof_points_valid = ((single_msm_size * batch_size) % nof_points == 0);
       if (!is_nof_points_valid) {
-        THROW_ICICLE_ERR(IcicleError_t::InvalidArgument, 
-          "bucket_method_msm: #points必须能被single_msm_size*batch_size整除");
+        THROW_ICICLE_ERR(
+          IcicleError_t::InvalidArgument, "bucket_method_msm: #points must be divisible by single_msm_size*batch_size");
       }
 
-      // 处理标量数据（主机到设备拷贝及格式转换）
       const S* d_scalars;
       S* d_allocated_scalars = nullptr;
       if (!are_scalars_on_device) {
-        // 分配设备内存并拷贝标量数据
+        // copy scalars to gpu
         CHK_IF_RETURN(cudaMallocAsync(&d_allocated_scalars, sizeof(S) * nof_scalars, stream));
-        CHK_IF_RETURN(cudaMemcpyAsync(d_allocated_scalars, scalars, sizeof(S) * nof_scalars, 
-                                     cudaMemcpyHostToDevice, stream));
+        CHK_IF_RETURN(
+          cudaMemcpyAsync(d_allocated_scalars, scalars, sizeof(S) * nof_scalars, cudaMemcpyHostToDevice, stream));
 
-        // 如果需要，从蒙哥马利格式转换
         if (are_scalars_montgomery_form) {
           CHK_IF_RETURN(mont::from_montgomery(d_allocated_scalars, nof_scalars, stream, d_allocated_scalars));
         }
         d_scalars = d_allocated_scalars;
-      } else { // 标量已在设备
-        if (are_scalars_montgomery_form) { // 需要转换蒙哥马利格式
+      } else { // already on device
+        if (are_scalars_montgomery_form) {
           CHK_IF_RETURN(cudaMallocAsync(&d_allocated_scalars, sizeof(S) * nof_scalars, stream));
           CHK_IF_RETURN(mont::from_montgomery(scalars, nof_scalars, stream, d_allocated_scalars));
           d_scalars = d_allocated_scalars;
         } else {
-          d_scalars = scalars; // 直接使用设备指针
+          d_scalars = scalars;
         }
       }
 
-      // 计算桶模块相关参数
-      unsigned total_bms_per_msm = (bitsize + c - 1) / c; // 每个MSM的总桶模块数
-      unsigned nof_bms_per_msm = (total_bms_per_msm - 1) / precompute_factor + 1; // 考虑预计算后的桶模块数
-      unsigned input_indexes_count = nof_scalars * total_bms_per_msm; // 总索引数
-      unsigned bm_bitsize = (unsigned)ceil(std::log2(nof_bms_per_msm)); // 桶模块索引的位宽
+      unsigned total_bms_per_msm = (bitsize + c - 1) / c;
+      unsigned nof_bms_per_msm = (total_bms_per_msm - 1) / precompute_factor + 1;
+      unsigned input_indexes_count = nof_scalars * total_bms_per_msm;
 
-      // 分配索引数组内存
-      unsigned* bucket_indices;     // 桶索引数组
-      unsigned* point_indices;      // 点索引数组
-      unsigned* sorted_bucket_indices; // 排序后的桶索引
-      unsigned* sorted_point_indices;  // 排序后的点索引
+      unsigned bm_bitsize = (unsigned)ceil(std::log2(nof_bms_per_msm));
+
+      unsigned* bucket_indices;
+      unsigned* point_indices;
+      unsigned* sorted_bucket_indices;
+      unsigned* sorted_point_indices;
       CHK_IF_RETURN(cudaMallocAsync(&bucket_indices, sizeof(unsigned) * input_indexes_count, stream));
       CHK_IF_RETURN(cudaMallocAsync(&point_indices, sizeof(unsigned) * input_indexes_count, stream));
       CHK_IF_RETURN(cudaMallocAsync(&sorted_bucket_indices, sizeof(unsigned) * input_indexes_count, stream));
       CHK_IF_RETURN(cudaMallocAsync(&sorted_point_indices, sizeof(unsigned) * input_indexes_count, stream));
 
-      // 将标量分割为数字窗口（启动内核）
-      unsigned NUM_THREADS = 1 << 10; // 1024线程/块
+      // split scalars into digits
+      unsigned NUM_THREADS = 1 << 10;
       unsigned NUM_BLOCKS = (nof_scalars + NUM_THREADS - 1) / NUM_THREADS;
-      split_scalars_kernel<<<NUM_BLOCKS, NUM_THREADS, 0, stream>>>(
-        bucket_indices, point_indices, d_scalars, nof_scalars, nof_points, 
-        single_msm_size, total_bms_per_msm, bm_bitsize, c, nof_bms_per_msm);
-      nof_points *= precompute_factor; // 更新点数（考虑预计算）
 
-      // ------------------------------ 标量排序阶段开始 ------------------------------
-      // 使用CUB库对桶索引进行基数排序，将相同桶的标量分组
+      split_scalars_kernel<<<NUM_BLOCKS, NUM_THREADS, 0, stream>>>(
+        bucket_indices, point_indices, d_scalars, nof_scalars, nof_points, single_msm_size, total_bms_per_msm,
+        bm_bitsize, c, nof_bms_per_msm);
+      nof_points *= precompute_factor;
+
+      // ------------------------------ Sorting routines for scalars start here ----------------------------------
+      // sort indices - the indices are sorted from smallest to largest in order to group together the points that
+      // belong to each bucket
       unsigned* sort_indices_temp_storage{};
       size_t sort_indices_temp_storage_bytes;
-      // 第一次调用获取临时存储大小
+      // The second to last parameter is the default value supplied explicitly to allow passing the stream
+      // See https://nvlabs.github.io/cub/structcub_1_1_device_radix_sort.html#a65e82152de448c6373ed9563aaf8af7e for
+      // more info
       CHK_IF_RETURN(cub::DeviceRadixSort::SortPairs(
-        sort_indices_temp_storage, sort_indices_temp_storage_bytes, 
-        bucket_indices, sorted_bucket_indices,
-        point_indices, sorted_point_indices, 
-        input_indexes_count, 0, sizeof(unsigned) * 8, stream));
-      // 分配临时存储空间
+        sort_indices_temp_storage, sort_indices_temp_storage_bytes, bucket_indices, sorted_bucket_indices,
+        point_indices, sorted_point_indices, input_indexes_count, 0, sizeof(unsigned) * 8, stream));
       CHK_IF_RETURN(cudaMallocAsync(&sort_indices_temp_storage, sort_indices_temp_storage_bytes, stream));
-      // 执行实际排序操作
+      // The second to last parameter is the default value supplied explicitly to allow passing the stream
+      // See https://nvlabs.github.io/cub/structcub_1_1_device_radix_sort.html#a65e82152de448c6373ed9563aaf8af7e for
+      // more info
       CHK_IF_RETURN(cub::DeviceRadixSort::SortPairs(
-        sort_indices_temp_storage, sort_indices_temp_storage_bytes, 
-        bucket_indices, sorted_bucket_indices,
-        point_indices, sorted_point_indices, 
-        input_indexes_count, 0, sizeof(unsigned) * 8, stream));
-      // 释放临时存储和不再需要的数组
+        sort_indices_temp_storage, sort_indices_temp_storage_bytes, bucket_indices, sorted_bucket_indices,
+        point_indices, sorted_point_indices, input_indexes_count, 0, sizeof(unsigned) * 8, stream));
       CHK_IF_RETURN(cudaFreeAsync(sort_indices_temp_storage, stream));
       CHK_IF_RETURN(cudaFreeAsync(bucket_indices, stream));
       CHK_IF_RETURN(cudaFreeAsync(point_indices, stream));
 
-      // 计算桶模块和桶数量
-      unsigned nof_bms_in_batch = nof_bms_per_msm * batch_size; // 批次总桶模块数
-      const unsigned nof_buckets = (nof_bms_per_msm << c) - nof_bms_per_msm; // 每个MSM的桶数（排除零桶）
-      const unsigned total_nof_buckets = nof_buckets * batch_size; // 总桶数
+      // compute number of bucket modules and number of buckets in each module
+      unsigned nof_bms_in_batch = nof_bms_per_msm * batch_size;
+      // minus nof_bms_per_msm because zero bucket is not included in each bucket module
+      const unsigned nof_buckets = (nof_bms_per_msm << c) - nof_bms_per_msm;
+      const unsigned total_nof_buckets = nof_buckets * batch_size;
 
-      // 计算桶大小和分布
-      unsigned* single_bucket_indices; // 唯一桶索引数组
-      unsigned* bucket_sizes;          // 每个桶的大小
-      unsigned* nof_buckets_to_compute; // 需要计算的桶数
+      // find bucket_sizes
+      unsigned* single_bucket_indices;
+      unsigned* bucket_sizes;
+      unsigned* nof_buckets_to_compute;
+      // +1 here and in other places because there still is zero index corresponding to zero bucket at this point
       CHK_IF_RETURN(cudaMallocAsync(&single_bucket_indices, sizeof(unsigned) * (total_nof_buckets + 1), stream));
       CHK_IF_RETURN(cudaMallocAsync(&bucket_sizes, sizeof(unsigned) * (total_nof_buckets + 1), stream));
       CHK_IF_RETURN(cudaMallocAsync(&nof_buckets_to_compute, sizeof(unsigned), stream));
-      
-      // 使用CUB的运行长度编码统计桶信息
       unsigned* encode_temp_storage{};
       size_t encode_temp_storage_bytes = 0;
       CHK_IF_RETURN(cub::DeviceRunLengthEncode::Encode(
-        encode_temp_storage, encode_temp_storage_bytes, 
-        sorted_bucket_indices, single_bucket_indices, 
-        bucket_sizes, nof_buckets_to_compute, 
-        input_indexes_count, stream));
+        encode_temp_storage, encode_temp_storage_bytes, sorted_bucket_indices, single_bucket_indices, bucket_sizes,
+        nof_buckets_to_compute, input_indexes_count, stream));
       CHK_IF_RETURN(cudaMallocAsync(&encode_temp_storage, encode_temp_storage_bytes, stream));
       CHK_IF_RETURN(cub::DeviceRunLengthEncode::Encode(
-        encode_temp_storage, encode_temp_storage_bytes, 
-        sorted_bucket_indices, single_bucket_indices, 
-        bucket_sizes, nof_buckets_to_compute, 
-        input_indexes_count, stream));
+        encode_temp_storage, encode_temp_storage_bytes, sorted_bucket_indices, single_bucket_indices, bucket_sizes,
+        nof_buckets_to_compute, input_indexes_count, stream));
       CHK_IF_RETURN(cudaFreeAsync(encode_temp_storage, stream));
       CHK_IF_RETURN(cudaFreeAsync(sorted_bucket_indices, stream));
 
-      // 计算桶的偏移量（每个桶在数组中的起始位置）
-      unsigned* bucket_offsets; // 桶偏移数组
+      // get offsets - where does each new bucket begin
+      unsigned* bucket_offsets;
       CHK_IF_RETURN(cudaMallocAsync(&bucket_offsets, sizeof(unsigned) * (total_nof_buckets + 1), stream));
       unsigned* offsets_temp_storage{};
       size_t offsets_temp_storage_bytes = 0;
-      // 使用CUB的独占扫描计算偏移
       CHK_IF_RETURN(cub::DeviceScan::ExclusiveSum(
-        offsets_temp_storage, offsets_temp_storage_bytes, 
-        bucket_sizes, bucket_offsets, 
-        total_nof_buckets + 1, stream));
+        offsets_temp_storage, offsets_temp_storage_bytes, bucket_sizes, bucket_offsets, total_nof_buckets + 1, stream));
       CHK_IF_RETURN(cudaMallocAsync(&offsets_temp_storage, offsets_temp_storage_bytes, stream));
       CHK_IF_RETURN(cub::DeviceScan::ExclusiveSum(
-        offsets_temp_storage, offsets_temp_storage_bytes, 
-        bucket_sizes, bucket_offsets, 
-        total_nof_buckets + 1, stream));
+        offsets_temp_storage, offsets_temp_storage_bytes, bucket_sizes, bucket_offsets, total_nof_buckets + 1, stream));
       CHK_IF_RETURN(cudaFreeAsync(offsets_temp_storage, stream));
 
-      // ----------- 并行上传点数据（如果点在主机）------------
-      const A* d_points; // 设备点指针
-      A* d_allocated_points = nullptr; // 分配的设备内存
-      cudaStream_t stream_points = nullptr; // 点处理专用流
-      if (!are_points_on_device || are_points_montgomery_form) 
-        CHK_IF_RETURN(cudaStreamCreate(&stream_points));
-      
+      // ----------- Starting to upload points (if they were on host) in parallel to scalar sorting ----------------
+      const A* d_points;
+      A* d_allocated_points = nullptr;
+      cudaStream_t stream_points = nullptr;
+      if (!are_points_on_device || are_points_montgomery_form) CHK_IF_RETURN(cudaStreamCreate(&stream_points));
       if (!are_points_on_device) {
-        // 主机到设备拷贝
+        // copy points to gpu
         CHK_IF_RETURN(cudaMallocAsync(&d_allocated_points, sizeof(A) * nof_points, stream_points));
-        CHK_IF_RETURN(cudaMemcpyAsync(d_allocated_points, points, sizeof(A) * nof_points, 
-                                     cudaMemcpyHostToDevice, stream_points));
+        CHK_IF_RETURN(
+          cudaMemcpyAsync(d_allocated_points, points, sizeof(A) * nof_points, cudaMemcpyHostToDevice, stream_points));
 
-        // 蒙哥马利格式转换
         if (are_points_montgomery_form) {
           CHK_IF_RETURN(mont::from_montgomery(d_allocated_points, nof_points, stream_points, d_allocated_points));
         }
         d_points = d_allocated_points;
-      } else { // 点已在设备
+      } else { // already on device
         if (are_points_montgomery_form) {
           CHK_IF_RETURN(cudaMallocAsync(&d_allocated_points, sizeof(A) * nof_points, stream_points));
           CHK_IF_RETURN(mont::from_montgomery(points, nof_points, stream_points, d_allocated_points));
           d_points = d_allocated_points;
         } else {
-          d_points = points; // 直接使用设备指针
+          d_points = points;
         }
       }
 
-      // 创建事件用于同步点数据上传完成
       cudaEvent_t event_points_uploaded;
       if (stream_points) {
         CHK_IF_RETURN(cudaEventCreateWithFlags(&event_points_uploaded, cudaEventDisableTiming));
         CHK_IF_RETURN(cudaEventRecord(event_points_uploaded, stream_points));
       }
 
-      // 初始化桶存储
-      P* buckets; // 桶数据存储
+      P* buckets;
       CHK_IF_RETURN(cudaMallocAsync(&buckets, sizeof(P) * (total_nof_buckets + nof_bms_in_batch), stream));
-      
-      // 启动桶初始化内核
-      NUM_THREADS = 1 << 10; // 1024线程/块
+
+      // launch the bucket initialization kernel with maximum threads
+      NUM_THREADS = 1 << 10;
       NUM_BLOCKS = (total_nof_buckets + nof_bms_in_batch + NUM_THREADS - 1) / NUM_THREADS;
-      initialize_buckets_kernel<<<NUM_BLOCKS, NUM_THREADS, 0, stream>>>(
-        buckets, total_nof_buckets + nof_bms_in_batch);
+      initialize_buckets_kernel<<<NUM_BLOCKS, NUM_THREADS, 0, stream>>>(buckets, total_nof_buckets + nof_bms_in_batch);
 
-      // 处理零桶（可能为空的情况）
+      // removing zero bucket, if it exists
       unsigned smallest_bucket_index;
-      CHK_IF_RETURN(cudaMemcpyAsync(&smallest_bucket_index, single_bucket_indices, 
-                                   sizeof(unsigned), cudaMemcpyDeviceToHost, stream));
-      unsigned zero_bucket_offset = (smallest_bucket_index == 0) ? 1 : 0; // 零桶偏移量
+      CHK_IF_RETURN(cudaMemcpyAsync(
+        &smallest_bucket_index, single_bucket_indices, sizeof(unsigned), cudaMemcpyDeviceToHost, stream));
+      // maybe zero bucket is empty after all? in this case zero_bucket_offset is set to 0
+      unsigned zero_bucket_offset = (smallest_bucket_index == 0) ? 1 : 0;
 
-      // 按桶大小排序（降序）
-      unsigned h_nof_buckets_to_compute; // 主机端需要计算的桶数
-      CHK_IF_RETURN(cudaMemcpyAsync(&h_nof_buckets_to_compute, nof_buckets_to_compute, 
-                                   sizeof(unsigned), cudaMemcpyDeviceToHost, stream));
+      // sort by bucket sizes
+      unsigned h_nof_buckets_to_compute;
+      CHK_IF_RETURN(cudaMemcpyAsync(
+        &h_nof_buckets_to_compute, nof_buckets_to_compute, sizeof(unsigned), cudaMemcpyDeviceToHost, stream));
       CHK_IF_RETURN(cudaFreeAsync(nof_buckets_to_compute, stream));
-      h_nof_buckets_to_compute -= zero_bucket_offset; // 调整有效桶数
+      h_nof_buckets_to_compute -= zero_bucket_offset;
 
-      // 分配排序后的桶大小和偏移数组
       unsigned* sorted_bucket_sizes;
-      unsigned* sorted_bucket_offsets;
       CHK_IF_RETURN(cudaMallocAsync(&sorted_bucket_sizes, sizeof(unsigned) * h_nof_buckets_to_compute, stream));
+      unsigned* sorted_bucket_offsets;
       CHK_IF_RETURN(cudaMallocAsync(&sorted_bucket_offsets, sizeof(unsigned) * h_nof_buckets_to_compute, stream));
-      
-      // 使用CUB进行降序排序
       unsigned* sort_offsets_temp_storage{};
       size_t sort_offsets_temp_storage_bytes = 0;
       CHK_IF_RETURN(cub::DeviceRadixSort::SortPairsDescending(
-        sort_offsets_temp_storage, sort_offsets_temp_storage_bytes, 
-        bucket_sizes + zero_bucket_offset, sorted_bucket_sizes,
-        bucket_offsets + zero_bucket_offset, sorted_bucket_offsets, 
-        h_nof_buckets_to_compute, 0, sizeof(unsigned) * 8, stream));
+        sort_offsets_temp_storage, sort_offsets_temp_storage_bytes, bucket_sizes + zero_bucket_offset,
+        sorted_bucket_sizes, bucket_offsets + zero_bucket_offset, sorted_bucket_offsets, h_nof_buckets_to_compute, 0,
+        sizeof(unsigned) * 8, stream));
       CHK_IF_RETURN(cudaMallocAsync(&sort_offsets_temp_storage, sort_offsets_temp_storage_bytes, stream));
       CHK_IF_RETURN(cub::DeviceRadixSort::SortPairsDescending(
-        sort_offsets_temp_storage, sort_offsets_temp_storage_bytes, 
-        bucket_sizes + zero_bucket_offset, sorted_bucket_sizes,
-        bucket_offsets + zero_bucket_offset, sorted_bucket_offsets, 
-        h_nof_buckets_to_compute, 0, sizeof(unsigned) * 8, stream));
+        sort_offsets_temp_storage, sort_offsets_temp_storage_bytes, bucket_sizes + zero_bucket_offset,
+        sorted_bucket_sizes, bucket_offsets + zero_bucket_offset, sorted_bucket_offsets, h_nof_buckets_to_compute, 0,
+        sizeof(unsigned) * 8, stream));
       CHK_IF_RETURN(cudaFreeAsync(sort_offsets_temp_storage, stream));
       CHK_IF_RETURN(cudaFreeAsync(bucket_offsets, stream));
 
-      // ----------------- 大桶检测和初始化 -----------------
-      // 计算平均桶大小：总元素数除以桶数，再乘以预计算因子
+      unsigned* sorted_single_bucket_indices;
+      CHK_IF_RETURN(
+        cudaMallocAsync(&sorted_single_bucket_indices, sizeof(unsigned) * h_nof_buckets_to_compute, stream));
+      unsigned* sort_single_temp_storage{};
+      size_t sort_single_temp_storage_bytes = 0;
+      CHK_IF_RETURN(cub::DeviceRadixSort::SortPairsDescending(
+        sort_single_temp_storage, sort_single_temp_storage_bytes, bucket_sizes + zero_bucket_offset,
+        sorted_bucket_sizes, single_bucket_indices + zero_bucket_offset, sorted_single_bucket_indices,
+        h_nof_buckets_to_compute, 0, sizeof(unsigned) * 8, stream));
+      CHK_IF_RETURN(cudaMallocAsync(&sort_single_temp_storage, sort_single_temp_storage_bytes, stream));
+      CHK_IF_RETURN(cub::DeviceRadixSort::SortPairsDescending(
+        sort_single_temp_storage, sort_single_temp_storage_bytes, bucket_sizes + zero_bucket_offset,
+        sorted_bucket_sizes, single_bucket_indices + zero_bucket_offset, sorted_single_bucket_indices,
+        h_nof_buckets_to_compute, 0, sizeof(unsigned) * 8, stream));
+      CHK_IF_RETURN(cudaFreeAsync(sort_single_temp_storage, stream));
+      CHK_IF_RETURN(cudaFreeAsync(bucket_sizes, stream));
+      CHK_IF_RETURN(cudaFreeAsync(single_bucket_indices, stream));
+
+      // find large buckets
       unsigned average_bucket_size = (single_msm_size / (1 << c)) * precompute_factor;
-      // 设置大桶阈值：平均大小乘以大桶因子
+      // how large a bucket must be to qualify as a "large bucket"
       unsigned bucket_th = large_bucket_factor * average_bucket_size;
-      // 分配设备内存存储大桶数量
       unsigned* nof_large_buckets;
       CHK_IF_RETURN(cudaMallocAsync(&nof_large_buckets, sizeof(unsigned), stream));
       CHK_IF_RETURN(cudaMemset(nof_large_buckets, 0, sizeof(unsigned)));
 
-      // ----------------- 大桶检测内核配置 -----------------
-      unsigned TOTAL_THREADS = 129000; // 设备相关的总线程数（TODO：需要根据设备动态调整）
-      // 计算每个线程处理的桶数（至少2个）
+      unsigned TOTAL_THREADS = 129000; // TODO: device dependent
       unsigned cutoff_run_length = max(2, h_nof_buckets_to_compute / TOTAL_THREADS);
-      // 计算运行批次数（向上取整）
       unsigned cutoff_nof_runs = (h_nof_buckets_to_compute + cutoff_run_length - 1) / cutoff_run_length;
-      NUM_THREADS = 1 << 5; // 每块32个线程
+      NUM_THREADS = 1 << 5;
       NUM_BLOCKS = (cutoff_nof_runs + NUM_THREADS - 1) / NUM_THREADS;
-
-      // 启动大桶检测内核
       if (h_nof_buckets_to_compute > 0 && bucket_th > 0)
         find_cutoff_kernel<S><<<NUM_BLOCKS, NUM_THREADS, 0, stream>>>(
           sorted_bucket_sizes, h_nof_buckets_to_compute, bucket_th, cutoff_run_length, nof_large_buckets);
-
-      // 将大桶数量从设备复制到主机
       unsigned h_nof_large_buckets;
-      CHK_IF_RETURN(cudaMemcpyAsync(&h_nof_large_buckets, nof_large_buckets, sizeof(unsigned), 
-                    cudaMemcpyDeviceToHost, stream));
+      CHK_IF_RETURN(
+        cudaMemcpyAsync(&h_nof_large_buckets, nof_large_buckets, sizeof(unsigned), cudaMemcpyDeviceToHost, stream));
       CHK_IF_RETURN(cudaFreeAsync(nof_large_buckets, stream));
 
-      // ----------------- 点数据同步处理 -----------------
       if (stream_points) {
-        // 确保点数据已上传并完成蒙哥马利形式转换
+        // by this point, points need to be already uploaded and un-Montgomeried
         CHK_IF_RETURN(cudaStreamWaitEvent(stream, event_points_uploaded));
         CHK_IF_RETURN(cudaEventDestroy(event_points_uploaded));
         CHK_IF_RETURN(cudaStreamDestroy(stream_points));
       }
 
-      // ----------------- 大桶处理流程 -----------------
       cudaStream_t stream_large_buckets;
       cudaEvent_t event_large_buckets_accumulated;
+      // ---------------- This is where handling of large buckets happens (if there are any) -------------
       if (h_nof_large_buckets > 0 && bucket_th > 0) {
-        // 创建专用流和事件用于大桶处理
         CHK_IF_RETURN(cudaStreamCreate(&stream_large_buckets));
         CHK_IF_RETURN(cudaEventCreateWithFlags(&event_large_buckets_accumulated, cudaEventDisableTiming));
 
-        // 计算大桶的累积和
         unsigned* sorted_bucket_sizes_sum;
-        CHK_IF_RETURN(cudaMallocAsync(&sorted_bucket_sizes_sum, 
-          sizeof(unsigned) * (h_nof_large_buckets + 1), stream_large_buckets));
+        CHK_IF_RETURN(cudaMallocAsync(
+          &sorted_bucket_sizes_sum, sizeof(unsigned) * (h_nof_large_buckets + 1), stream_large_buckets));
         CHK_IF_RETURN(cudaMemsetAsync(sorted_bucket_sizes_sum, 0, sizeof(unsigned), stream_large_buckets));
-
-        // 使用CUB库计算包含扫描（前缀和）
         unsigned* large_bucket_temp_storage{};
         size_t large_bucket_temp_storage_bytes = 0;
-        // 第一次调用获取所需临时存储大小
-        CHK_IF_RETURN(cub::DeviceScan::InclusiveSum(/*...*/));
-        // 分配临时存储空间并执行实际的扫描操作
-        CHK_IF_RETURN(cudaMallocAsync(&large_bucket_temp_storage, large_bucket_temp_storage_bytes, 
-                      stream_large_buckets));
-        CHK_IF_RETURN(cub::DeviceScan::InclusiveSum(/*...*/));
+        CHK_IF_RETURN(cub::DeviceScan::InclusiveSum(
+          large_bucket_temp_storage, large_bucket_temp_storage_bytes, sorted_bucket_sizes, sorted_bucket_sizes_sum + 1,
+          h_nof_large_buckets, stream_large_buckets));
+        CHK_IF_RETURN(
+          cudaMallocAsync(&large_bucket_temp_storage, large_bucket_temp_storage_bytes, stream_large_buckets));
+        CHK_IF_RETURN(cub::DeviceScan::InclusiveSum(
+          large_bucket_temp_storage, large_bucket_temp_storage_bytes, sorted_bucket_sizes, sorted_bucket_sizes_sum + 1,
+          h_nof_large_buckets, stream_large_buckets));
+        CHK_IF_RETURN(cudaFreeAsync(large_bucket_temp_storage, stream_large_buckets));
+        unsigned h_nof_pts_in_large_buckets;
+        CHK_IF_RETURN(cudaMemcpyAsync(
+          &h_nof_pts_in_large_buckets, sorted_bucket_sizes_sum + h_nof_large_buckets, sizeof(unsigned),
+          cudaMemcpyDeviceToHost, stream_large_buckets));
+        unsigned h_largest_bucket;
+        CHK_IF_RETURN(cudaMemcpyAsync(
+          &h_largest_bucket, sorted_bucket_sizes, sizeof(unsigned), cudaMemcpyDeviceToHost, stream_large_buckets));
 
-        // ----------------- 大桶归约和分发 -----------------
-        // 计算大桶处理所需的线程数
+        // the number of threads for large buckets has an extra h_nof_large_buckets term to account for bucket sizes
+        // unevenly divisible by average_bucket_size. there are similar corrections elsewhere when accessing large
+        // buckets
         unsigned large_buckets_nof_threads =
           (h_nof_pts_in_large_buckets + average_bucket_size - 1) / average_bucket_size + h_nof_large_buckets;
         unsigned log_nof_large_buckets = (unsigned)ceil(std::log2(h_nof_large_buckets));
-        
-        // 初始化大桶索引
         unsigned* large_bucket_indices;
-        CHK_IF_RETURN(cudaMallocAsync(&large_bucket_indices, sizeof(unsigned) * large_buckets_nof_threads, 
-                      stream));
+        CHK_IF_RETURN(cudaMallocAsync(&large_bucket_indices, sizeof(unsigned) * large_buckets_nof_threads, stream));
+        NUM_THREADS = max(1, min(1 << 8, h_nof_large_buckets));
+        NUM_BLOCKS = (h_nof_large_buckets + NUM_THREADS - 1) / NUM_THREADS;
+        initialize_large_bucket_indices<P><<<NUM_BLOCKS, NUM_THREADS, 0, stream_large_buckets>>>(
+          sorted_bucket_sizes_sum, average_bucket_size, h_nof_large_buckets, log_nof_large_buckets,
+          large_bucket_indices);
 
-        // 多阶段归约循环
+        P* large_buckets;
+        CHK_IF_RETURN(cudaMallocAsync(&large_buckets, sizeof(P) * large_buckets_nof_threads, stream_large_buckets));
+
+        NUM_THREADS = max(1, min(1 << 8, large_buckets_nof_threads));
+        NUM_BLOCKS = (large_buckets_nof_threads + NUM_THREADS - 1) / NUM_THREADS;
+        accumulate_large_buckets_kernel<<<NUM_BLOCKS, NUM_THREADS, 0, stream_large_buckets>>>(
+          large_buckets, sorted_bucket_offsets, sorted_bucket_sizes, large_bucket_indices, sorted_point_indices,
+          d_points, h_nof_large_buckets, c, average_bucket_size, log_nof_large_buckets, large_buckets_nof_threads);
+
+        NUM_THREADS = max(1, min(MAX_TH, h_nof_large_buckets));
+        NUM_BLOCKS = (h_nof_large_buckets + NUM_THREADS - 1) / NUM_THREADS;
+        // normalization is needed to update buckets sizes and offsets due to reduction that already took place
+        normalize_kernel<<<NUM_BLOCKS, NUM_THREADS, 0, stream_large_buckets>>>(
+          sorted_bucket_sizes_sum, average_bucket_size, h_nof_large_buckets);
+        // reduce
         for (int s = h_largest_bucket; s > 1; s = ((s + 1) >> 1)) {
-          // 归约前标准化桶大小
-          normalize_kernel<<<NUM_BLOCKS, NUM_THREADS, 0, stream_large_buckets>>>(/*...*/);
-          // 执行可变大小的和归约
-          sum_reduction_variable_size_kernel<<<NUM_BLOCKS, NUM_THREADS, 0, stream_large_buckets>>>(/*...*/);
+          NUM_THREADS = max(1, min(MAX_TH, h_nof_large_buckets));
+          NUM_BLOCKS = (h_nof_large_buckets + NUM_THREADS - 1) / NUM_THREADS;
+          normalize_kernel<<<NUM_BLOCKS, NUM_THREADS, 0, stream_large_buckets>>>(
+            sorted_bucket_sizes, s == h_largest_bucket ? average_bucket_size : 2, h_nof_large_buckets);
+          NUM_THREADS = max(1, min(MAX_TH, large_buckets_nof_threads));
+          NUM_BLOCKS = (large_buckets_nof_threads + NUM_THREADS - 1) / NUM_THREADS;
+          sum_reduction_variable_size_kernel<<<NUM_BLOCKS, NUM_THREADS, 0, stream_large_buckets>>>(
+            large_buckets, sorted_bucket_sizes_sum, sorted_bucket_sizes, large_bucket_indices,
+            large_buckets_nof_threads);
         }
+        CHK_IF_RETURN(cudaFreeAsync(large_bucket_indices, stream_large_buckets));
 
-        // 分发大桶结果回主桶数组
-        distribute_large_buckets_kernel<<<NUM_BLOCKS, NUM_THREADS, 0, stream_large_buckets>>>(/*...*/);
+        // distribute
+        NUM_THREADS = max(1, min(MAX_TH, h_nof_large_buckets));
+        NUM_BLOCKS = (h_nof_large_buckets + NUM_THREADS - 1) / NUM_THREADS;
+        distribute_large_buckets_kernel<<<NUM_BLOCKS, NUM_THREADS, 0, stream_large_buckets>>>(
+          large_buckets, buckets, sorted_bucket_sizes_sum, sorted_single_bucket_indices, h_nof_large_buckets,
+          nof_buckets + nof_bms_per_msm, c + bm_bitsize);
+        CHK_IF_RETURN(cudaFreeAsync(large_buckets, stream_large_buckets));
+        CHK_IF_RETURN(cudaFreeAsync(sorted_bucket_sizes_sum, stream_large_buckets));
+
+        CHK_IF_RETURN(cudaEventRecord(event_large_buckets_accumulated, stream_large_buckets));
       }
 
-      // ----------------- 非大桶累加处理 -----------------
+      // ------------------------- Accumulation of (non-large) buckets ---------------------------------
       if (h_nof_buckets_to_compute > h_nof_large_buckets) {
-        // 处理剩余的常规桶
-        accumulate_buckets_kernel<<<NUM_BLOCKS, NUM_THREADS, 0, stream>>>(/*...*/);
+        NUM_THREADS = 1 << 8;
+        NUM_BLOCKS = (h_nof_buckets_to_compute - h_nof_large_buckets + NUM_THREADS - 1) / NUM_THREADS;
+        // launch the accumulation kernel with maximum threads
+        accumulate_buckets_kernel<<<NUM_BLOCKS, NUM_THREADS, 0, stream>>>(
+          buckets, sorted_bucket_offsets + h_nof_large_buckets, sorted_bucket_sizes + h_nof_large_buckets,
+          sorted_single_bucket_indices + h_nof_large_buckets, sorted_point_indices, d_points,
+          nof_buckets + nof_bms_per_msm, h_nof_buckets_to_compute - h_nof_large_buckets, c + bm_bitsize, c);
+      }
+      CHK_IF_RETURN(cudaFreeAsync(sorted_point_indices, stream));
+      CHK_IF_RETURN(cudaFreeAsync(sorted_bucket_sizes, stream));
+      CHK_IF_RETURN(cudaFreeAsync(sorted_bucket_offsets, stream));
+      CHK_IF_RETURN(cudaFreeAsync(sorted_single_bucket_indices, stream));
+      if (h_nof_large_buckets > 0 && bucket_th > 0) {
+        // all the large buckets need to be accumulated before the final summation
+        CHK_IF_RETURN(cudaStreamWaitEvent(stream, event_large_buckets_accumulated));
+        CHK_IF_RETURN(cudaStreamDestroy(stream_large_buckets));
       }
 
-      // ----------------- 最终归约和结果计算 -----------------
-      // 选择归约策略：大三角求和或迭代归约
+      P* d_allocated_final_result = nullptr;
+      if (!are_results_on_device)
+        CHK_IF_RETURN(cudaMallocAsync(&d_allocated_final_result, sizeof(P) * batch_size, stream));
+
+      // --- Reduction of buckets happens here, after this we'll get a single sum for each bucket module/window ---
+      unsigned nof_final_results_per_msm =
+        nof_bms_per_msm; // for big-triangle accumluation this is the number of bucket modules
+      P* final_results;
       if (is_big_triangle || c == 1) {
-        // 使用大三角求和方法
-        big_triangle_sum_kernel<<<NUM_BLOCKS, NUM_THREADS, 0, stream>>>(/*...*/);
+        CHK_IF_RETURN(cudaMallocAsync(&final_results, sizeof(P) * nof_bms_in_batch, stream));
+        // launch the bucket module sum kernel - a thread for each bucket module
+        NUM_THREADS = 32;
+        NUM_BLOCKS = (nof_bms_in_batch + NUM_THREADS - 1) / NUM_THREADS;
+        big_triangle_sum_kernel<<<NUM_BLOCKS, NUM_THREADS, 0, stream>>>(buckets, final_results, nof_bms_in_batch, c);
       } else {
-        // 使用迭代归约算法
-        // 初始化源和目标缓冲区
+        // the iterative reduction algorithm works with 2 types of reduction that can run on parallel streams
+        cudaStream_t stream_reduction;
+        cudaEvent_t event_finished_reduction;
+        CHK_IF_RETURN(cudaStreamCreate(&stream_reduction));
+        CHK_IF_RETURN(cudaEventCreateWithFlags(&event_finished_reduction, cudaEventDisableTiming));
+
         unsigned source_bits_count = c;
         unsigned source_windows_count = nof_bms_per_msm;
-        
-        // 迭代归约循环
+        unsigned source_buckets_count = nof_buckets + nof_bms_per_msm; // nof buckets per msm including zero buckets
+        unsigned target_windows_count;
+        P* source_buckets = buckets;
+        buckets = nullptr;
+        P* target_buckets;
+        P* temp_buckets1;
+        P* temp_buckets2;
         for (unsigned i = 0;; i++) {
-          // 计算目标位数和窗口数
-          const unsigned target_bits_count = (source_bits_count + 1) >> 1;
-          target_windows_count = source_windows_count << 1;
-          
-          // 内部归约循环
+          const unsigned target_bits_count = (source_bits_count + 1) >> 1;                 // half the bits rounded up
+          target_windows_count = source_windows_count << 1;                                // twice the number of bms
+          const unsigned target_buckets_count = target_windows_count << target_bits_count; // new_bms*2^new_c
+          CHK_IF_RETURN(cudaMallocAsync(&target_buckets, sizeof(P) * target_buckets_count * batch_size, stream));
+          CHK_IF_RETURN(cudaMallocAsync(
+            &temp_buckets1, sizeof(P) * source_buckets_count * batch_size,
+            stream)); // for type1 reduction (strided, bottom window - evens)
+          CHK_IF_RETURN(cudaMallocAsync(
+            &temp_buckets2, sizeof(P) * source_buckets_count * batch_size,
+            stream)); // for type2 reduction (serial, top window - odds)
+          initialize_buckets_kernel<<<(target_buckets_count * batch_size + 255) / 256, 256>>>(
+            target_buckets, target_buckets_count * batch_size); // initialization is needed for the odd c case
+
           for (unsigned j = 0; j < target_bits_count; j++) {
-            // 执行单阶段多重归约
-            single_stage_multi_reduction_kernel<<<NUM_BLOCKS, NUM_THREADS, 0, stream>>>(/*...*/);
+            const bool is_first_iter = (j == 0);
+            const bool is_second_iter = (j == 1);
+            const bool is_last_iter = (j == target_bits_count - 1);
+            const bool is_odd_c = source_bits_count & 1;
+            unsigned nof_threads =
+              (((source_windows_count << target_bits_count) - source_windows_count) << (target_bits_count - 1 - j)) *
+              batch_size; // nof sections to reduce (minus the section that goes to zero buckets) shifted by nof threads
+                          // per section
+            NUM_THREADS = max(1, min(MAX_TH, nof_threads));
+            NUM_BLOCKS = (nof_threads + NUM_THREADS - 1) / NUM_THREADS;
+            if (!is_odd_c || !is_first_iter) { // skip if c is odd and it's the first iteration
+              single_stage_multi_reduction_kernel<<<NUM_BLOCKS, NUM_THREADS, 0, stream>>>(
+                is_first_iter || (is_second_iter && is_odd_c) ? source_buckets : temp_buckets1,
+                is_last_iter ? target_buckets : temp_buckets1, 1 << source_bits_count,
+                1 << (source_bits_count - j + (is_odd_c ? 1 : 0)), is_last_iter ? 1 << target_bits_count : 0,
+                1 << target_bits_count, 0 /*=write_phase*/, (1 << target_bits_count) - 1, nof_threads);
+            }
+
+            nof_threads = (((source_windows_count << (source_bits_count - target_bits_count)) - source_windows_count)
+                           << (target_bits_count - 1 - j)) *
+                          batch_size; // nof sections to reduce (minus the section that goes to zero buckets) shifted by
+                                      // nof threads per section
+            NUM_THREADS = max(1, min(MAX_TH, nof_threads));
+            NUM_BLOCKS = (nof_threads + NUM_THREADS - 1) / NUM_THREADS;
+            single_stage_multi_reduction_kernel<<<NUM_BLOCKS, NUM_THREADS, 0, stream_reduction>>>(
+              is_first_iter ? source_buckets : temp_buckets2, is_last_iter ? target_buckets : temp_buckets2,
+              1 << target_bits_count, 1 << (target_bits_count - j), is_last_iter ? 1 << target_bits_count : 0,
+              1 << (target_bits_count - (is_odd_c ? 1 : 0)), 1 /*=write_phase*/,
+              (1 << (target_bits_count - (is_odd_c ? 1 : 0))) - 1, nof_threads);
           }
+          CHK_IF_RETURN(cudaEventRecord(event_finished_reduction, stream_reduction));
+          CHK_IF_RETURN(
+            cudaStreamWaitEvent(stream, event_finished_reduction)); // sync streams after every write to target_buckets
+          if (target_bits_count == 1) {
+            // Note: the reduction ends up with 'target_windows_count' windows per batch element. Some are guaranteed
+            // to be empty when target_windows_count>bitsize. for example consider bitsize=253 and c=2. The reduction
+            // ends with 254 bms but the most significant one is guaranteed to be zero since the scalars are 253b.
+            // precomputation and odd c can cause additional empty windows.
+            nof_final_results_per_msm = min(c * nof_bms_per_msm, bitsize);
+            nof_bms_per_msm = target_windows_count;
+            unsigned total_nof_final_results = nof_final_results_per_msm * batch_size;
+
+            CHK_IF_RETURN(cudaMallocAsync(&final_results, sizeof(P) * total_nof_final_results, stream));
+
+            NUM_THREADS = 32;
+            NUM_BLOCKS = (total_nof_final_results + NUM_THREADS - 1) / NUM_THREADS;
+            last_pass_kernel<<<NUM_BLOCKS, NUM_THREADS, 0, stream>>>(
+              target_buckets, final_results, nof_final_results_per_msm, batch_size, nof_bms_per_msm, c);
+            c = 1;
+            CHK_IF_RETURN(cudaFreeAsync(source_buckets, stream));
+            CHK_IF_RETURN(cudaFreeAsync(target_buckets, stream));
+            CHK_IF_RETURN(cudaFreeAsync(temp_buckets1, stream));
+            CHK_IF_RETURN(cudaFreeAsync(temp_buckets2, stream));
+            CHK_IF_RETURN(cudaStreamDestroy(stream_reduction));
+            break;
+          }
+          CHK_IF_RETURN(cudaFreeAsync(source_buckets, stream));
+          CHK_IF_RETURN(cudaFreeAsync(temp_buckets1, stream));
+          CHK_IF_RETURN(cudaFreeAsync(temp_buckets2, stream));
+          source_buckets = target_buckets;
+          target_buckets = nullptr;
+          temp_buckets1 = nullptr;
+          temp_buckets2 = nullptr;
+          source_bits_count = target_bits_count;
+          source_windows_count = target_windows_count;
+          source_buckets_count = target_buckets_count;
         }
       }
 
-      // ----------------- 最终累加和清理 -----------------
-      // 使用双倍加法算法计算最终结果
-      final_accumulation_kernel<P, S><<<NUM_BLOCKS, NUM_THREADS, 0, stream>>>(/*...*/);
+      // ------- This is the final stage where bucket modules/window sums get added up with appropriate weights
+      // -------
+      NUM_THREADS = 32;
+      NUM_BLOCKS = (batch_size + NUM_THREADS - 1) / NUM_THREADS;
+      // launch the double and add kernel, a single thread per batch element
+      final_accumulation_kernel<P, S><<<NUM_BLOCKS, NUM_THREADS, 0, stream>>>(
+        final_results, are_results_on_device ? final_result : d_allocated_final_result, batch_size,
+        nof_final_results_per_msm, c);
+      CHK_IF_RETURN(cudaFreeAsync(final_results, stream));
 
-      // 释放所有临时分配的内存
+      if (!are_results_on_device)
+        CHK_IF_RETURN(cudaMemcpyAsync(
+          final_result, d_allocated_final_result, sizeof(P) * batch_size, cudaMemcpyDeviceToHost, stream));
+
+      // free memory
       if (d_allocated_scalars) CHK_IF_RETURN(cudaFreeAsync(d_allocated_scalars, stream));
       if (d_allocated_points) CHK_IF_RETURN(cudaFreeAsync(d_allocated_points, stream));
       if (d_allocated_final_result) CHK_IF_RETURN(cudaFreeAsync(d_allocated_final_result, stream));
       CHK_IF_RETURN(cudaFreeAsync(buckets, stream));
 
-      // 如果不是异步模式，等待所有操作完成
       if (!is_async) CHK_IF_RETURN(cudaStreamSynchronize(stream));
 
       return CHK_LAST();
