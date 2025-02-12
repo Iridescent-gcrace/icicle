@@ -684,29 +684,40 @@ namespace msm {
         CHK_IF_RETURN(cudaMemcpyAsync(
           &h_largest_bucket, sorted_bucket_sizes, sizeof(unsigned), cudaMemcpyDeviceToHost, stream_large_buckets));
 
-        // the number of threads for large buckets has an extra h_nof_large_buckets term to account for bucket sizes
-        // unevenly divisible by average_bucket_size. there are similar corrections elsewhere when accessing large
-        // buckets
+        // 计算大桶所需的线程数
+        // 公式解释:
+        // 1. h_nof_pts_in_large_buckets/average_bucket_size 计算基本需要的线程数
+        // 2. +h_nof_large_buckets 添加额外线程以处理不能被平均大小整除的桶
         unsigned large_buckets_nof_threads =
           (h_nof_pts_in_large_buckets + average_bucket_size - 1) / average_bucket_size + h_nof_large_buckets;
+        // 计算大桶数量的对数值，用于位操作
         unsigned log_nof_large_buckets = (unsigned)ceil(std::log2(h_nof_large_buckets));
+
+        // 分配大桶索引数组内存
         unsigned* large_bucket_indices;
         CHK_IF_RETURN(cudaMallocAsync(&large_bucket_indices, sizeof(unsigned) * large_buckets_nof_threads, stream));
+
+        // 配置并启动大桶索引初始化内核
         NUM_THREADS = max(1, min(1 << 8, h_nof_large_buckets));
         NUM_BLOCKS = (h_nof_large_buckets + NUM_THREADS - 1) / NUM_THREADS;
         initialize_large_bucket_indices<P><<<NUM_BLOCKS, NUM_THREADS, 0, stream_large_buckets>>>(
           sorted_bucket_sizes_sum, average_bucket_size, h_nof_large_buckets, log_nof_large_buckets,
           large_bucket_indices);
 
+        // 分配大桶数组内存
         P* large_buckets;
         CHK_IF_RETURN(cudaMallocAsync(&large_buckets, sizeof(P) * large_buckets_nof_threads, stream_large_buckets));
 
+        // 配置并启动大桶累加内核
+        // 这个内核将点累加到相应的大桶中
         NUM_THREADS = max(1, min(1 << 8, large_buckets_nof_threads));
         NUM_BLOCKS = (large_buckets_nof_threads + NUM_THREADS - 1) / NUM_THREADS;
         accumulate_large_buckets_kernel<<<NUM_BLOCKS, NUM_THREADS, 0, stream_large_buckets>>>(
           large_buckets, sorted_bucket_offsets, sorted_bucket_sizes, large_bucket_indices, sorted_point_indices,
           d_points, h_nof_large_buckets, c, average_bucket_size, log_nof_large_buckets, large_buckets_nof_threads);
 
+        // 配置并启动桶大小归一化内核
+        // 这步是必要的，因为前面的归约操作改变了桶的大小和偏移
         NUM_THREADS = max(1, min(MAX_TH, h_nof_large_buckets));
         NUM_BLOCKS = (h_nof_large_buckets + NUM_THREADS - 1) / NUM_THREADS;
         // normalization is needed to update buckets sizes and offsets due to reduction that already took place
@@ -714,133 +725,187 @@ namespace msm {
           sorted_bucket_sizes_sum, average_bucket_size, h_nof_large_buckets);
         // reduce
         for (int s = h_largest_bucket; s > 1; s = ((s + 1) >> 1)) {
+          // 首先归一化桶大小
           NUM_THREADS = max(1, min(MAX_TH, h_nof_large_buckets));
           NUM_BLOCKS = (h_nof_large_buckets + NUM_THREADS - 1) / NUM_THREADS;
           normalize_kernel<<<NUM_BLOCKS, NUM_THREADS, 0, stream_large_buckets>>>(
             sorted_bucket_sizes, s == h_largest_bucket ? average_bucket_size : 2, h_nof_large_buckets);
+          
+          // 然后执行可变大小的和归约
           NUM_THREADS = max(1, min(MAX_TH, large_buckets_nof_threads));
           NUM_BLOCKS = (large_buckets_nof_threads + NUM_THREADS - 1) / NUM_THREADS;
           sum_reduction_variable_size_kernel<<<NUM_BLOCKS, NUM_THREADS, 0, stream_large_buckets>>>(
             large_buckets, sorted_bucket_sizes_sum, sorted_bucket_sizes, large_bucket_indices,
             large_buckets_nof_threads);
         }
+
+        // 释放大桶索引内存
         CHK_IF_RETURN(cudaFreeAsync(large_bucket_indices, stream_large_buckets));
 
-        // distribute
+        // 配置并启动分发内核，将归约后的大桶结果分发到最终的桶数组中
         NUM_THREADS = max(1, min(MAX_TH, h_nof_large_buckets));
         NUM_BLOCKS = (h_nof_large_buckets + NUM_THREADS - 1) / NUM_THREADS;
         distribute_large_buckets_kernel<<<NUM_BLOCKS, NUM_THREADS, 0, stream_large_buckets>>>(
           large_buckets, buckets, sorted_bucket_sizes_sum, sorted_single_bucket_indices, h_nof_large_buckets,
           nof_buckets + nof_bms_per_msm, c + bm_bitsize);
+
+        // 清理大桶相关内存
         CHK_IF_RETURN(cudaFreeAsync(large_buckets, stream_large_buckets));
         CHK_IF_RETURN(cudaFreeAsync(sorted_bucket_sizes_sum, stream_large_buckets));
 
+        // 记录大桶处理完成事件
         CHK_IF_RETURN(cudaEventRecord(event_large_buckets_accumulated, stream_large_buckets));
       }
 
       // ------------------------- Accumulation of (non-large) buckets ---------------------------------
       if (h_nof_buckets_to_compute > h_nof_large_buckets) {
-        NUM_THREADS = 1 << 8;
-        NUM_BLOCKS = (h_nof_buckets_to_compute - h_nof_large_buckets + NUM_THREADS - 1) / NUM_THREADS;
-        // launch the accumulation kernel with maximum threads
+        NUM_THREADS = 1 << 8; // 设置线程数为256
+        NUM_BLOCKS = (h_nof_buckets_to_compute - h_nof_large_buckets + NUM_THREADS - 1) / NUM_THREADS; // 计算块数，确保所有桶都被处理
+        // 启动累加非大型桶的内核，使用配置好的线程和块数
         accumulate_buckets_kernel<<<NUM_BLOCKS, NUM_THREADS, 0, stream>>>(
-          buckets, sorted_bucket_offsets + h_nof_large_buckets, sorted_bucket_sizes + h_nof_large_buckets,
-          sorted_single_bucket_indices + h_nof_large_buckets, sorted_point_indices, d_points,
-          nof_buckets + nof_bms_per_msm, h_nof_buckets_to_compute - h_nof_large_buckets, c + bm_bitsize, c);
+          buckets, 
+          sorted_bucket_offsets + h_nof_large_buckets, // 非大型桶的偏移量
+          sorted_bucket_sizes + h_nof_large_buckets,   // 非大型桶的大小
+          sorted_single_bucket_indices + h_nof_large_buckets, // 非大型桶的索引
+          sorted_point_indices, // 点的索引
+          d_points, // EC 点
+          nof_buckets + nof_bms_per_msm, // 总桶数加上每个 MSM 的桶模块数
+          h_nof_buckets_to_compute - h_nof_large_buckets, // 需要计算的非大型桶数量
+          c + bm_bitsize, // 位移量
+          c // 原始位数
+        );
       }
+
+      // 释放排序后的点索引、桶大小、桶偏移和单个桶索引的设备内存
       CHK_IF_RETURN(cudaFreeAsync(sorted_point_indices, stream));
       CHK_IF_RETURN(cudaFreeAsync(sorted_bucket_sizes, stream));
       CHK_IF_RETURN(cudaFreeAsync(sorted_bucket_offsets, stream));
       CHK_IF_RETURN(cudaFreeAsync(sorted_single_bucket_indices, stream));
+
+      // 如果存在大型桶且桶阈值大于0，则等待大型桶处理完成
       if (h_nof_large_buckets > 0 && bucket_th > 0) {
-        // all the large buckets need to be accumulated before the final summation
+        // 等待大型桶处理完成的事件
         CHK_IF_RETURN(cudaStreamWaitEvent(stream, event_large_buckets_accumulated));
+        // 销毁用于大型桶处理的CUDA流
         CHK_IF_RETURN(cudaStreamDestroy(stream_large_buckets));
       }
 
-      P* d_allocated_final_result = nullptr;
+      P* d_allocated_final_result = nullptr; // 指向最终结果的设备指针
+      // 如果结果不在设备上，分配用于存储最终结果的设备内存
       if (!are_results_on_device)
         CHK_IF_RETURN(cudaMallocAsync(&d_allocated_final_result, sizeof(P) * batch_size, stream));
 
-      // --- Reduction of buckets happens here, after this we'll get a single sum for each bucket module/window ---
-      unsigned nof_final_results_per_msm =
-        nof_bms_per_msm; // for big-triangle accumluation this is the number of bucket modules
+      // --- 桶的归约操作在这里进行，之后每个桶模块/窗口将得到一个单一的和 ---
+      unsigned nof_final_results_per_msm = nof_bms_per_msm; // 对于大三角累加，这是每个 MSM 的桶模块数量
       P* final_results;
       if (is_big_triangle || c == 1) {
+        // 如果使用大三角累加或位数为1，分配最终结果的内存
         CHK_IF_RETURN(cudaMallocAsync(&final_results, sizeof(P) * nof_bms_in_batch, stream));
-        // launch the bucket module sum kernel - a thread for each bucket module
-        NUM_THREADS = 32;
-        NUM_BLOCKS = (nof_bms_in_batch + NUM_THREADS - 1) / NUM_THREADS;
-        big_triangle_sum_kernel<<<NUM_BLOCKS, NUM_THREADS, 0, stream>>>(buckets, final_results, nof_bms_in_batch, c);
+        // 启动桶模块求和内核，每个桶模块由一个线程处理
+        NUM_THREADS = 32; // 设置线程数为32
+        NUM_BLOCKS = (nof_bms_in_batch + NUM_THREADS - 1) / NUM_THREADS; // 计算块数
+        big_triangle_sum_kernel<<<NUM_BLOCKS, NUM_THREADS, 0, stream>>>(
+          buckets, // 输入的桶数组
+          final_results, // 输出的最终结果数组
+          nof_bms_in_batch, // 桶模块的数量
+          c // 位数
+        );
       } else {
-        // the iterative reduction algorithm works with 2 types of reduction that can run on parallel streams
+        // 如果不使用大三角累加，采用迭代归约算法，该算法可以在并行流上运行两种类型的归约
         cudaStream_t stream_reduction;
         cudaEvent_t event_finished_reduction;
+        // 创建用于归约的CUDA流
         CHK_IF_RETURN(cudaStreamCreate(&stream_reduction));
+        // 创建用于标记归约完成的事件
         CHK_IF_RETURN(cudaEventCreateWithFlags(&event_finished_reduction, cudaEventDisableTiming));
 
-        unsigned source_bits_count = c;
-        unsigned source_windows_count = nof_bms_per_msm;
-        unsigned source_buckets_count = nof_buckets + nof_bms_per_msm; // nof buckets per msm including zero buckets
+        unsigned source_bits_count = c; // 源位数
+        unsigned source_windows_count = nof_bms_per_msm; // 源窗口数量
+        unsigned source_buckets_count = nof_buckets + nof_bms_per_msm; // 每个 MSM 包含的桶数，包括零桶
         unsigned target_windows_count;
-        P* source_buckets = buckets;
-        buckets = nullptr;
-        P* target_buckets;
-        P* temp_buckets1;
-        P* temp_buckets2;
+        P* source_buckets = buckets; // 源桶数组
+        buckets = nullptr; // 清空源桶指针
+        P* target_buckets; // 目标桶数组
+        P* temp_buckets1; // 临时桶数组1，用于类型1归约（交错，底层窗口 - 偶数）
+        P* temp_buckets2; // 临时桶数组2，用于类型2归约（串行，上层窗口 - 奇数）
         for (unsigned i = 0;; i++) {
-          const unsigned target_bits_count = (source_bits_count + 1) >> 1;                 // half the bits rounded up
-          target_windows_count = source_windows_count << 1;                                // twice the number of bms
-          const unsigned target_buckets_count = target_windows_count << target_bits_count; // new_bms*2^new_c
+          // 计算目标位数为源位数的一半，向上取整
+          const unsigned target_bits_count = (source_bits_count + 1) >> 1; 
+          // 目标窗口数量为源窗口数量的两倍
+          target_windows_count = source_windows_count << 1; 
+          // 计算目标桶的总数
+          const unsigned target_buckets_count = target_windows_count << target_bits_count; 
+          // 为目标桶分配内存
           CHK_IF_RETURN(cudaMallocAsync(&target_buckets, sizeof(P) * target_buckets_count * batch_size, stream));
+          // 为类型1归约（交错，底层窗口 - 偶数）分配临时桶数组1的内存
           CHK_IF_RETURN(cudaMallocAsync(
             &temp_buckets1, sizeof(P) * source_buckets_count * batch_size,
-            stream)); // for type1 reduction (strided, bottom window - evens)
+            stream));
+          // 为类型2归约（串行，上层窗口 - 奇数）分配临时桶数组2的内存
           CHK_IF_RETURN(cudaMallocAsync(
             &temp_buckets2, sizeof(P) * source_buckets_count * batch_size,
-            stream)); // for type2 reduction (serial, top window - odds)
+            stream));
+          // 初始化目标桶数组，确保在奇数c的情况下需要初始化
           initialize_buckets_kernel<<<(target_buckets_count * batch_size + 255) / 256, 256>>>(
             target_buckets, target_buckets_count * batch_size); // initialization is needed for the odd c case
 
           for (unsigned j = 0; j < target_bits_count; j++) {
-            const bool is_first_iter = (j == 0);
-            const bool is_second_iter = (j == 1);
-            const bool is_last_iter = (j == target_bits_count - 1);
-            const bool is_odd_c = source_bits_count & 1;
+            const bool is_first_iter = (j == 0); // 判断是否为第一次迭代
+            const bool is_second_iter = (j == 1); // 判断是否为第二次迭代
+            const bool is_last_iter = (j == target_bits_count - 1); // 判断是否为最后一次迭代
+            const bool is_odd_c = source_bits_count & 1; // 判断源位数是否为奇数
+
+            // 计算本次归约需要的线程数
             unsigned nof_threads =
               (((source_windows_count << target_bits_count) - source_windows_count) << (target_bits_count - 1 - j)) *
-              batch_size; // nof sections to reduce (minus the section that goes to zero buckets) shifted by nof threads
-                          // per section
-            NUM_THREADS = max(1, min(MAX_TH, nof_threads));
-            NUM_BLOCKS = (nof_threads + NUM_THREADS - 1) / NUM_THREADS;
-            if (!is_odd_c || !is_first_iter) { // skip if c is odd and it's the first iteration
+              batch_size; // 计算需要归约的部分数量（减去要排除的部分）并乘以每部分需要的线程数
+            NUM_THREADS = max(1, min(MAX_TH, nof_threads)); // 限制线程数在1到MAX_TH之间
+            NUM_BLOCKS = (nof_threads + NUM_THREADS - 1) / NUM_THREADS; // 计算块数
+            if (!is_odd_c || !is_first_iter) { // 如果c不是奇数或不是第一次迭代，则执行以下归约操作
               single_stage_multi_reduction_kernel<<<NUM_BLOCKS, NUM_THREADS, 0, stream>>>(
-                is_first_iter || (is_second_iter && is_odd_c) ? source_buckets : temp_buckets1,
-                is_last_iter ? target_buckets : temp_buckets1, 1 << source_bits_count,
-                1 << (source_bits_count - j + (is_odd_c ? 1 : 0)), is_last_iter ? 1 << target_bits_count : 0,
-                1 << target_bits_count, 0 /*=write_phase*/, (1 << target_bits_count) - 1, nof_threads);
+                is_first_iter || (is_second_iter && is_odd_c) ? source_buckets : temp_buckets1, // 根据条件选择源桶
+                is_last_iter ? target_buckets : temp_buckets1, // 如果是最后一次迭代，目标桶为target_buckets，否则为temp_buckets1
+                1 << source_bits_count, // 源位数的2次幂
+                1 << (source_bits_count - j + (is_odd_c ? 1 : 0)), // 根据当前迭代调整的位数
+                is_last_iter ? 1 << target_bits_count : 0, // 如果是最后一次迭代，设置写入索引
+                1 << target_bits_count, // 写入步幅
+                0 /*=write_phase*/, // 写入阶段标志
+                (1 << target_bits_count) - 1, // 写入掩码
+                nof_threads // 线程数量
+              );
             }
 
-            nof_threads = (((source_windows_count << (source_bits_count - target_bits_count)) - source_windows_count)
-                           << (target_bits_count - 1 - j)) *
-                          batch_size; // nof sections to reduce (minus the section that goes to zero buckets) shifted by
-                                      // nof threads per section
-            NUM_THREADS = max(1, min(MAX_TH, nof_threads));
-            NUM_BLOCKS = (nof_threads + NUM_THREADS - 1) / NUM_THREADS;
+            // 重新计算线程数，用于第二个归约阶段
+            nof_threads =
+              (((source_windows_count << (source_bits_count - target_bits_count)) - source_windows_count)
+               << (target_bits_count - 1 - j)) *
+              batch_size; // 计算需要归约的部分数量并乘以每部分需要的线程数
+            NUM_THREADS = max(1, min(MAX_TH, nof_threads)); // 限制线程数在1到MAX_TH之间
+            NUM_BLOCKS = (nof_threads + NUM_THREADS - 1) / NUM_THREADS; // 计算块数
+            // 启动第二种类型的归约内核，处理不同的归约逻辑
             single_stage_multi_reduction_kernel<<<NUM_BLOCKS, NUM_THREADS, 0, stream_reduction>>>(
-              is_first_iter ? source_buckets : temp_buckets2, is_last_iter ? target_buckets : temp_buckets2,
-              1 << target_bits_count, 1 << (target_bits_count - j), is_last_iter ? 1 << target_bits_count : 0,
-              1 << (target_bits_count - (is_odd_c ? 1 : 0)), 1 /*=write_phase*/,
-              (1 << (target_bits_count - (is_odd_c ? 1 : 0))) - 1, nof_threads);
+              is_first_iter ? source_buckets : temp_buckets2, // 如果是第一次迭代，使用source_buckets作为源，否则使用temp_buckets2
+              is_last_iter ? target_buckets : temp_buckets2, // 如果是最后一次迭代，目标桶为target_buckets，否则为temp_buckets2
+              1 << target_bits_count, // 目标位数的2次幂
+              1 << (target_bits_count - j), // 根据当前迭代调整的位数
+              is_last_iter ? 1 << target_bits_count : 0, // 如果是最后一次迭代，设置写入索引
+              1 << (target_bits_count - (is_odd_c ? 1 : 0)), // 写入步幅，根据c的奇偶性调整
+              1 /*=write_phase*/, // 写入阶段标志
+              (1 << (target_bits_count - (is_odd_c ? 1 : 0))) - 1, // 写入掩码
+              nof_threads // 线程数量
+            );
           }
           CHK_IF_RETURN(cudaEventRecord(event_finished_reduction, stream_reduction));
           CHK_IF_RETURN(
             cudaStreamWaitEvent(stream, event_finished_reduction)); // sync streams after every write to target_buckets
           if (target_bits_count == 1) {
-            // Note: the reduction ends up with 'target_windows_count' windows per batch element. Some are guaranteed
-            // to be empty when target_windows_count>bitsize. for example consider bitsize=253 and c=2. The reduction
-            // ends with 254 bms but the most significant one is guaranteed to be zero since the scalars are 253b.
-            // precomputation and odd c can cause additional empty windows.
+            // 注释：
+                // 归约过程最终会为每个批处理元素生成 'target_windows_count' 个窗口。
+                // 当 target_windows_count > bitsize 时，有些窗口会被保证为空。
+                // 例如，考虑 bitsize=253 和 c=2。归约过程会生成 254 个桶模块（bms），
+                // 但最显著的一个保证为零，因为标量的位数为 253。
+                // 预计算和奇数 c 可能导致额外的空窗口。
+
             nof_final_results_per_msm = min(c * nof_bms_per_msm, bitsize);
             nof_bms_per_msm = target_windows_count;
             unsigned total_nof_final_results = nof_final_results_per_msm * batch_size;
@@ -849,6 +914,9 @@ namespace msm {
 
             NUM_THREADS = 32;
             NUM_BLOCKS = (total_nof_final_results + NUM_THREADS - 1) / NUM_THREADS;
+            // 为最终结果分配设备内存
+            // 启动最后一次归约内核，将目标桶中的值汇总到 final_results 中
+
             last_pass_kernel<<<NUM_BLOCKS, NUM_THREADS, 0, stream>>>(
               target_buckets, final_results, nof_final_results_per_msm, batch_size, nof_bms_per_msm, c);
             c = 1;
@@ -862,6 +930,7 @@ namespace msm {
           CHK_IF_RETURN(cudaFreeAsync(source_buckets, stream));
           CHK_IF_RETURN(cudaFreeAsync(temp_buckets1, stream));
           CHK_IF_RETURN(cudaFreeAsync(temp_buckets2, stream));
+          // 将目标桶设置为新的源桶，为下一次归约迭代做准备
           source_buckets = target_buckets;
           target_buckets = nullptr;
           temp_buckets1 = nullptr;
@@ -872,29 +941,35 @@ namespace msm {
         }
       }
 
-      // ------- This is the final stage where bucket modules/window sums get added up with appropriate weights
-      // -------
-      NUM_THREADS = 32;
-      NUM_BLOCKS = (batch_size + NUM_THREADS - 1) / NUM_THREADS;
-      // launch the double and add kernel, a single thread per batch element
+      // ------- 这是最终阶段，桶模块/窗口的和将根据适当的权重进行加总 -------
+      NUM_THREADS = 32; // 设置线程数为32
+      NUM_BLOCKS = (batch_size + NUM_THREADS - 1) / NUM_THREADS; // 计算块数
+      // 启动双倍加法内核，每个批次元素由一个线程处理
       final_accumulation_kernel<P, S><<<NUM_BLOCKS, NUM_THREADS, 0, stream>>>(
-        final_results, are_results_on_device ? final_result : d_allocated_final_result, batch_size,
-        nof_final_results_per_msm, c);
+        final_results, 
+        are_results_on_device ? final_result : d_allocated_final_result, // 如果结果在设备上，则直接使用，否则使用分配的设备内存
+        batch_size, // 批次大小
+        nof_final_results_per_msm, // 每个 MSM 的最终结果数量
+        c // 位数
+      );
+      // 释放最终结果的设备内存
       CHK_IF_RETURN(cudaFreeAsync(final_results, stream));
 
+      // 如果结果不在设备上，将结果从设备复制回主机
       if (!are_results_on_device)
         CHK_IF_RETURN(cudaMemcpyAsync(
           final_result, d_allocated_final_result, sizeof(P) * batch_size, cudaMemcpyDeviceToHost, stream));
 
-      // free memory
+      // 释放所有分配的设备内存
       if (d_allocated_scalars) CHK_IF_RETURN(cudaFreeAsync(d_allocated_scalars, stream));
       if (d_allocated_points) CHK_IF_RETURN(cudaFreeAsync(d_allocated_points, stream));
       if (d_allocated_final_result) CHK_IF_RETURN(cudaFreeAsync(d_allocated_final_result, stream));
       CHK_IF_RETURN(cudaFreeAsync(buckets, stream));
 
+      // 如果不异步，等待所有CUDA操作完成
       if (!is_async) CHK_IF_RETURN(cudaStreamSynchronize(stream));
 
-      return CHK_LAST();
+      return CHK_LAST(); // 返回最后的CUDA错误码
     }
   } // namespace
 
@@ -941,7 +1016,7 @@ namespace msm {
       left_shift_kernel<A, P><<<NUM_BLOCKS, NUM_THREADS, 0, stream>>>(
         &output_points[(i - 1) * config.points_size], shift, config.points_size,
         &output_points[i * config.points_size]);
-    }
+      }
 
     return CHK_LAST(); // 返回最后的 CUDA 错误代码
   }
