@@ -29,11 +29,11 @@ use clap::Parser;
 #[derive(Parser, Debug)]
 struct Args {
     /// Lower bound (inclusive) of MSM sizes to run for
-    #[arg(short, long, default_value_t = 22)]
+    #[arg(short, long, default_value_t = 11)]
     lower_bound_log_size: u8,
 
     /// Upper bound of MSM sizes to run for
-    #[arg(short, long, default_value_t = 26)]
+    #[arg(short, long, default_value_t = 12)]
     upper_bound_log_size: u8,
 }
 
