@@ -136,7 +136,7 @@ int main(int argc, char** argv)
 
   int msm_log_size = (argc > 1) ? atoi(argv[1]) : 17;
   int msm_size = 1 << msm_log_size;
-  int batch_size = (argc > 2) ? atoi(argv[2]) : 4;
+  int batch_size = 1;
   //   unsigned msm_size = 1<<21;
   int N = batch_size * msm_size;
   int precomp_factor = (argc > 3) ? atoi(argv[3]) : 1;
