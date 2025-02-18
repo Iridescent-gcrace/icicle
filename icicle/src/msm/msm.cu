@@ -633,6 +633,8 @@ namespace msm {
         cudaMallocAsync(&sorted_single_bucket_indices, sizeof(unsigned) * h_nof_buckets_to_compute, stream)); // 在设备上分配内存
       unsigned* sort_single_temp_storage{}; // 临时存储空间用于排序单个桶索引
       size_t sort_single_temp_storage_bytes = 0; // 临时存储空间的字节大小
+      /**  源代码
+       // TODO: 可能有更优化的排序方式
       // 使用CUB的基数排序按降序排序单个桶索引
       CHK_IF_RETURN(cub::DeviceRadixSort::SortPairsDescending(
         sort_single_temp_storage, sort_single_temp_storage_bytes, bucket_sizes + zero_bucket_offset,
@@ -647,7 +649,80 @@ namespace msm {
       CHK_IF_RETURN(cudaFreeAsync(sort_single_temp_storage, stream)); // 释放临时存储空间
       CHK_IF_RETURN(cudaFreeAsync(bucket_sizes, stream)); // 释放桶大小
       CHK_IF_RETURN(cudaFreeAsync(single_bucket_indices, stream)); // 释放单个桶索引
+      ***/
+      // 使用混合排序策略优化桶排序
+      // ————————————————————————————更新后————————————————————————————
+      // 1. 对于小规模数据(<=1024)使用并行的bitonic排序
+      // 2. 对于中等规模数据(<=65536)使用thrust::sort
+      // 3. 对于大规模数据使用CUB的基数排序
+      if (h_nof_buckets_to_compute <= 1024) {
+        // 使用共享内存的bitonic排序,适合小规模数据
+        const int BLOCK_SIZE = 256;
+        NUM_BLOCKS = (h_nof_buckets_to_compute + BLOCK_SIZE - 1) / BLOCK_SIZE;
+        bitonic_sort_kernel<<<NUM_BLOCKS, BLOCK_SIZE, 0, stream>>>(
+          bucket_sizes + zero_bucket_offset,
+          sorted_bucket_sizes,
+          single_bucket_indices + zero_bucket_offset, 
+          sorted_single_bucket_indices,
+          h_nof_buckets_to_compute);
+      }
+      else if (h_nof_buckets_to_compute <= 65536) {
+        // 使用thrust::sort,适合中等规模数据
+        thrust::sort_by_key(
+          thrust::cuda::par.on(stream),
+          bucket_sizes + zero_bucket_offset,
+          bucket_sizes + zero_bucket_offset + h_nof_buckets_to_compute,
+          single_bucket_indices + zero_bucket_offset,
+          thrust::greater<unsigned>());
+        
+        // 复制排序结果
+        CHK_IF_RETURN(cudaMemcpyAsync(
+          sorted_bucket_sizes,
+          bucket_sizes + zero_bucket_offset,
+          sizeof(unsigned) * h_nof_buckets_to_compute,
+          cudaMemcpyDeviceToDevice,
+          stream));
+        CHK_IF_RETURN(cudaMemcpyAsync(
+          sorted_single_bucket_indices,
+          single_bucket_indices + zero_bucket_offset,
+          sizeof(unsigned) * h_nof_buckets_to_compute,
+          cudaMemcpyDeviceToDevice,
+          stream));
+      }
+      else {
+        // 大规模数据使用CUB的基数排序
+        CHK_IF_RETURN(cub::DeviceRadixSort::SortPairsDescending(
+          sort_single_temp_storage,
+          sort_single_temp_storage_bytes,
+          bucket_sizes + zero_bucket_offset,
+          sorted_bucket_sizes,
+          single_bucket_indices + zero_bucket_offset,
+          sorted_single_bucket_indices,
+          h_nof_buckets_to_compute,
+          0,
+          sizeof(unsigned) * 8,
+          stream));
+        CHK_IF_RETURN(cudaMallocAsync(&sort_single_temp_storage, sort_single_temp_storage_bytes, stream));
+        CHK_IF_RETURN(cub::DeviceRadixSort::SortPairsDescending(
+          sort_single_temp_storage,
+          sort_single_temp_storage_bytes,
+          bucket_sizes + zero_bucket_offset,
+          sorted_bucket_sizes,
+          single_bucket_indices + zero_bucket_offset,
+          sorted_single_bucket_indices,
+          h_nof_buckets_to_compute,
+          0,
+          sizeof(unsigned) * 8,
+          stream));
+      }
 
+      // 清理内存
+      if (sort_single_temp_storage) {
+        CHK_IF_RETURN(cudaFreeAsync(sort_single_temp_storage, stream));
+      }
+      CHK_IF_RETURN(cudaFreeAsync(bucket_sizes, stream));
+      CHK_IF_RETURN(cudaFreeAsync(single_bucket_indices, stream));
+      /// ————————————————————————————更新后————————————————————————————
       // find large buckets
       // 计算平均桶大小
       unsigned average_bucket_size = (single_msm_size / (1 << c)) * precompute_factor;
@@ -696,7 +771,7 @@ namespace msm {
           large_bucket_temp_storage, large_bucket_temp_storage_bytes, sorted_bucket_sizes, sorted_bucket_sizes_sum + 1,
           h_nof_large_buckets, stream_large_buckets));
         CHK_IF_RETURN(
-          cudaMallocAsync(&large_bucket_temp_storage, large_bucket_temp_storage_bytes, stream_large_buckets));
+          cudaMallocAsync(&large_bucket_temp_storage, large_bucket_tem  p_storage_bytes, stream_large_buckets));
         CHK_IF_RETURN(cub::DeviceScan::InclusiveSum(
           large_bucket_temp_storage, large_bucket_temp_storage_bytes, sorted_bucket_sizes, sorted_bucket_sizes_sum + 1,
           h_nof_large_buckets, stream_large_buckets));
