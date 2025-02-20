@@ -1,6 +1,6 @@
 #include "fields/id.h"
 // #define FIELD_ID 2
-#define CURVE_ID 3
+#define CURVE_ID 1
 #include "curves/curve_config.cuh"
 // #include "fields/field_config.cuh"
 
@@ -134,13 +134,13 @@ int main(int argc, char** argv)
   cudaEvent_t start, stop;
   float msm_time;
 
-  int msm_log_size = (argc > 1) ? atoi(argv[1]) : 17;
+  int msm_log_size = (argc > 1) ? atoi(argv[1]) : 22;
   int msm_size = 1 << msm_log_size;
-  int batch_size = 1;
+  int batch_size = (argc > 2) ? atoi(argv[2]) : 1;
   //   unsigned msm_size = 1<<21;
   int N = batch_size * msm_size;
-  int precomp_factor = (argc > 3) ? atoi(argv[3]) : 1;
-  int user_c = (argc > 4) ? atoi(argv[4]) : 15;
+  int precomp_factor = (argc > 3) ? atoi(argv[3]) : 15;
+  int user_c = (argc > 4) ? atoi(argv[4]) : 17;
 
   printf(
     "running msm curve=%d, 2^%d, batch_size=%d, precomp_factor=%d, c=%d\n", CURVE_ID, msm_log_size, batch_size,

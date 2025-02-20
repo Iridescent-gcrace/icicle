@@ -10,6 +10,8 @@
 #include <stdexcept>
 #include <vector>
 
+#include <thrust/sort.h>  // 添加thrust头文件
+#include <thrust/execution_policy.h>  // 添加执行策略头文件
 #include "curves/affine.cuh"
 #include "curves/projective.cuh"
 #include "fields/field.cuh"
@@ -655,18 +657,7 @@ namespace msm {
       // 1. 对于小规模数据(<=1024)使用并行的bitonic排序
       // 2. 对于中等规模数据(<=65536)使用thrust::sort
       // 3. 对于大规模数据使用CUB的基数排序
-      if (h_nof_buckets_to_compute <= 1024) {
-        // 使用共享内存的bitonic排序,适合小规模数据
-        const int BLOCK_SIZE = 256;
-        NUM_BLOCKS = (h_nof_buckets_to_compute + BLOCK_SIZE - 1) / BLOCK_SIZE;
-        bitonic_sort_kernel<<<NUM_BLOCKS, BLOCK_SIZE, 0, stream>>>(
-          bucket_sizes + zero_bucket_offset,
-          sorted_bucket_sizes,
-          single_bucket_indices + zero_bucket_offset, 
-          sorted_single_bucket_indices,
-          h_nof_buckets_to_compute);
-      }
-      else if (h_nof_buckets_to_compute <= 65536) {
+      if (h_nof_buckets_to_compute <= 65536) {
         // 使用thrust::sort,适合中等规模数据
         thrust::sort_by_key(
           thrust::cuda::par.on(stream),
@@ -771,7 +762,7 @@ namespace msm {
           large_bucket_temp_storage, large_bucket_temp_storage_bytes, sorted_bucket_sizes, sorted_bucket_sizes_sum + 1,
           h_nof_large_buckets, stream_large_buckets));
         CHK_IF_RETURN(
-          cudaMallocAsync(&large_bucket_temp_storage, large_bucket_tem  p_storage_bytes, stream_large_buckets));
+          cudaMallocAsync(&large_bucket_temp_storage, large_bucket_temp_storage_bytes, stream_large_buckets));
         CHK_IF_RETURN(cub::DeviceScan::InclusiveSum(
           large_bucket_temp_storage, large_bucket_temp_storage_bytes, sorted_bucket_sizes, sorted_bucket_sizes_sum + 1,
           h_nof_large_buckets, stream_large_buckets));
