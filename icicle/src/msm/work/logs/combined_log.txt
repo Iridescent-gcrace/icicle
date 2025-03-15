@@ -1,0 +1,2856 @@
+
+
+[1/168] Testing: log_size=16 precomp=10 c=15 @ Fri Feb 14 23:10:20 CST 2025
+====================== TEST START ======================
+running msm curve=1, 2^16, batch_size=1, precomp_factor=10, c=15
+finished generating
+finished copying
+msm time : 7.080 ms.
+x: 0x2e9614cc7c2011a7d742a5de7229bec1e1a1fa673865c1b7fe15ab799b68aa83; y: 0x245ca9394ab2ec640659a0da93aa5fceaa030e6e0ccedce78e9aec280ec53756
+good
+success!
+Generating '/tmp/nsys-report-f3d3.qdstrm'
+[1/1] [0%                          ] nsys-report-beb0.nsys-rep[1/1] [0%                          ] nsys-report-beb0.nsys-rep[1/1] [5%                          ] nsys-report-beb0.nsys-rep[1/1] [10%                         ] nsys-report-beb0.nsys-rep[1/1] [11%                         ] nsys-report-beb0.nsys-rep[1/1] [======================91%   ] nsys-report-beb0.nsys-rep[1/1] [========================100%] nsys-report-beb0.nsys-rep[1/1] [========================100%] nsys-report-beb0.nsys-rep
+Generated:
+    /tmp/nsys-report-beb0.nsys-rep
+====================== TEST END ======================
+
+
+
+[2/168] Testing: log_size=16 precomp=10 c=17 @ Fri Feb 14 23:10:26 CST 2025
+====================== TEST START ======================
+running msm curve=1, 2^16, batch_size=1, precomp_factor=10, c=17
+finished generating
+finished copying
+msm time : 8.533 ms.
+x: 0x1268ebfbfbe0a7622efaac5d48aaec0ed51d3f1c77a395301aa2b4f23703755b; y: 0x188ec96c7e6ac98344cc13e636187a404002ae31553001536dbca6dc489be4f8
+good
+success!
+Generating '/tmp/nsys-report-357f.qdstrm'
+[1/1] [0%                          ] nsys-report-019f.nsys-rep[1/1] [0%                          ] nsys-report-019f.nsys-rep[1/1] [9%                          ] nsys-report-019f.nsys-rep[1/1] [10%                         ] nsys-report-019f.nsys-rep[1/1] [11%                         ] nsys-report-019f.nsys-rep[1/1] [======================91%   ] nsys-report-019f.nsys-rep[1/1] [========================100%] nsys-report-019f.nsys-rep[1/1] [========================100%] nsys-report-019f.nsys-rep
+Generated:
+    /tmp/nsys-report-019f.nsys-rep
+====================== TEST END ======================
+
+
+
+[3/168] Testing: log_size=16 precomp=10 c=19 @ Fri Feb 14 23:10:32 CST 2025
+====================== TEST START ======================
+running msm curve=1, 2^16, batch_size=1, precomp_factor=10, c=19
+finished generating
+finished copying
+msm time : 17.329 ms.
+x: 0x021e8c56df7242fe0390be5a1b651ad88a319dbabeddf8a253876fd5227d46b7; y: 0x305290619981c73beb0d8dba93b3b1a3ad92551f2457d331d3647152cde34f03
+good
+success!
+Generating '/tmp/nsys-report-59f1.qdstrm'
+[1/1] [0%                          ] nsys-report-a4ac.nsys-rep[1/1] [0%                          ] nsys-report-a4ac.nsys-rep[1/1] [5%                          ] nsys-report-a4ac.nsys-rep[1/1] [10%                         ] nsys-report-a4ac.nsys-rep[1/1] [======================91%   ] nsys-report-a4ac.nsys-rep[1/1] [========================100%] nsys-report-a4ac.nsys-rep[1/1] [========================100%] nsys-report-a4ac.nsys-rep
+Generated:
+    /tmp/nsys-report-a4ac.nsys-rep
+====================== TEST END ======================
+
+
+
+[4/168] Testing: log_size=16 precomp=10 c=21 @ Fri Feb 14 23:10:38 CST 2025
+====================== TEST START ======================
+running msm curve=1, 2^16, batch_size=1, precomp_factor=10, c=21
+finished generating
+finished copying
+msm time : 175.839 ms.
+x: 0x24b9d510726b1133b205a78ee133d81308f9a5074054d4a72700f72b034710b4; y: 0x29bbad1730f5aefc45cacae7cb9ada207d633bde18ba8fef96e659a25d5cd43b
+good
+success!
+Generating '/tmp/nsys-report-9b5e.qdstrm'
+[1/1] [0%                          ] msm_16_10_21.nsys-rep[1/1] [0%                          ] msm_16_10_21.nsys-rep[1/1] [9%                          ] msm_16_10_21.nsys-rep[1/1] [======================92%   ] msm_16_10_21.nsys-rep[1/1] [========================100%] msm_16_10_21.nsys-rep[1/1] [========================100%] msm_16_10_21.nsys-rep
+Generated:
+    /root/autodl-tmp/yr/icicle/icicle/src/msm/./work/reports/msm_16_10_21.nsys-rep
+====================== TEST END ======================
+
+
+
+[5/168] Testing: log_size=16 precomp=10 c=23 @ Fri Feb 14 23:10:44 CST 2025
+====================== TEST START ======================
+running msm curve=1, 2^16, batch_size=1, precomp_factor=10, c=23
+finished generating
+finished copying
+msm time : 203.525 ms.
+x: 0x1d95bf6166f8aace91e5014494275f43b9e3053137a97299b70924cf291eab30; y: 0x019f64a9c793ea59a46ef2b4ab9ff07fbccee29cf729a402bbc61c4afec0fc84
+good
+success!
+Generating '/tmp/nsys-report-f762.qdstrm'
+[1/1] [0%                          ] msm_16_10_23.nsys-rep[1/1] [0%                          ] msm_16_10_23.nsys-rep[1/1] [7%                          ] msm_16_10_23.nsys-rep[1/1] [=======================93%  ] msm_16_10_23.nsys-rep[1/1] [========================100%] msm_16_10_23.nsys-rep[1/1] [========================100%] msm_16_10_23.nsys-rep
+Generated:
+    /root/autodl-tmp/yr/icicle/icicle/src/msm/./work/reports/msm_16_10_23.nsys-rep
+====================== TEST END ======================
+
+
+
+[6/168] Testing: log_size=16 precomp=10 c=25 @ Fri Feb 14 23:10:51 CST 2025
+====================== TEST START ======================
+running msm curve=1, 2^16, batch_size=1, precomp_factor=10, c=25
+finished generating
+finished copying
+msm time : 232.725 ms.
+x: 0x1074d241f927fa1f71392919535937602b2003571e9d0227989e8c8da6815c68; y: 0x1c3b757f7e9a6eba583d7ad81a9e707c8777a121e8cf7e1449daa37dffb39bd2
+good
+success!
+Generating '/tmp/nsys-report-3ec7.qdstrm'
+[1/1] [0%                          ] msm_16_10_25.nsys-rep[1/1] [0%                          ] msm_16_10_25.nsys-rep[1/1] [=======================96%  ] msm_16_10_25.nsys-rep[1/1] [========================100%] msm_16_10_25.nsys-rep[1/1] [========================100%] msm_16_10_25.nsys-rep
+Generated:
+    /root/autodl-tmp/yr/icicle/icicle/src/msm/./work/reports/msm_16_10_25.nsys-rep
+====================== TEST END ======================
+
+
+
+[7/168] Testing: log_size=16 precomp=12 c=15 @ Fri Feb 14 23:10:58 CST 2025
+====================== TEST START ======================
+running msm curve=1, 2^16, batch_size=1, precomp_factor=12, c=15
+finished generating
+finished copying
+msm time : 6.259 ms.
+x: 0x14ea0615d83206e3b37bd9d32fdf132c640e39a466bbab16361c27c5337098db; y: 0x21ba90cbbbe8e70324795a4aea506e7b7a27b6cf80af6506ac7160b9bb6d7ca2
+good
+success!
+Generating '/tmp/nsys-report-4e22.qdstrm'
+[1/1] [0%                          ] msm_16_12_15.nsys-rep[1/1] [0%                          ] msm_16_12_15.nsys-rep[1/1] [5%                          ] msm_16_12_15.nsys-rep[1/1] [10%                         ] msm_16_12_15.nsys-rep[1/1] [11%                         ] msm_16_12_15.nsys-rep[1/1] [======================91%   ] msm_16_12_15.nsys-rep[1/1] [========================100%] msm_16_12_15.nsys-rep[1/1] [========================100%] msm_16_12_15.nsys-rep
+Generated:
+    /root/autodl-tmp/yr/icicle/icicle/src/msm/./work/reports/msm_16_12_15.nsys-rep
+====================== TEST END ======================
+
+
+
+[8/168] Testing: log_size=16 precomp=12 c=17 @ Fri Feb 14 23:11:04 CST 2025
+====================== TEST START ======================
+running msm curve=1, 2^16, batch_size=1, precomp_factor=12, c=17
+finished generating
+finished copying
+msm time : 12.371 ms.
+x: 0x1db85474c9f49c8de5ce2f212ee19c1982919d35005b96ca515f6294abbb154b; y: 0x077b3d5171e0dcc6f8c07185501b78d458320ed00d31ed9d170121f2cd326915
+good
+success!
+Generating '/tmp/nsys-report-2b5a.qdstrm'
+[1/1] [0%                          ] msm_16_12_17.nsys-rep[1/1] [0%                          ] msm_16_12_17.nsys-rep[1/1] [5%                          ] msm_16_12_17.nsys-rep[1/1] [10%                         ] msm_16_12_17.nsys-rep[1/1] [11%                         ] msm_16_12_17.nsys-rep[1/1] [======================91%   ] msm_16_12_17.nsys-rep[1/1] [========================100%] msm_16_12_17.nsys-rep[1/1] [========================100%] msm_16_12_17.nsys-rep
+Generated:
+    /root/autodl-tmp/yr/icicle/icicle/src/msm/./work/reports/msm_16_12_17.nsys-rep
+====================== TEST END ======================
+
+
+
+[9/168] Testing: log_size=16 precomp=12 c=19 @ Fri Feb 14 23:11:10 CST 2025
+====================== TEST START ======================
+running msm curve=1, 2^16, batch_size=1, precomp_factor=12, c=19
+finished generating
+finished copying
+msm time : 14.308 ms.
+x: 0x1cedb13a85f205bf5e9e2039f5f79bf726693badf28a041a1f27aefa85663616; y: 0x00fb3b8e94db4b75b492d268c3ff075c9072a297c28f14686dd9a004750a1aa6
+good
+success!
+Generating '/tmp/nsys-report-82a4.qdstrm'
+[1/1] [0%                          ] msm_16_12_19.nsys-rep[1/1] [0%                          ] msm_16_12_19.nsys-rep[1/1] [9%                          ] msm_16_12_19.nsys-rep[1/1] [10%                         ] msm_16_12_19.nsys-rep[1/1] [======================91%   ] msm_16_12_19.nsys-rep[1/1] [========================100%] msm_16_12_19.nsys-rep[1/1] [========================100%] msm_16_12_19.nsys-rep
+Generated:
+    /root/autodl-tmp/yr/icicle/icicle/src/msm/./work/reports/msm_16_12_19.nsys-rep
+====================== TEST END ======================
+
+
+
+[10/168] Testing: log_size=16 precomp=12 c=21 @ Fri Feb 14 23:11:16 CST 2025
+====================== TEST START ======================
+running msm curve=1, 2^16, batch_size=1, precomp_factor=12, c=21
+finished generating
+finished copying
+msm time : 177.789 ms.
+x: 0x02f300891e089cf8bdb2c4c4b46eefd6be0df40021032b8335aafbd765810874; y: 0x27c5a3b290a0c75a190fac21cd891371632b1b38d69c62334dc869c7d1eb0f88
+good
+success!
+Generating '/tmp/nsys-report-1834.qdstrm'
+[1/1] [0%                          ] msm_16_12_21.nsys-rep[1/1] [0%                          ] msm_16_12_21.nsys-rep[1/1] [9%                          ] msm_16_12_21.nsys-rep[1/1] [======================92%   ] msm_16_12_21.nsys-rep[1/1] [========================100%] msm_16_12_21.nsys-rep[1/1] [========================100%] msm_16_12_21.nsys-rep
+Generated:
+    /root/autodl-tmp/yr/icicle/icicle/src/msm/./work/reports/msm_16_12_21.nsys-rep
+====================== TEST END ======================
+
+
+
+[11/168] Testing: log_size=16 precomp=12 c=23 @ Fri Feb 14 23:11:23 CST 2025
+====================== TEST START ======================
+running msm curve=1, 2^16, batch_size=1, precomp_factor=12, c=23
+finished generating
+finished copying
+msm time : 189.132 ms.
+x: 0x2435e5c57b67faa5cad4d51d2d58230f600a43daada10d6ebe72765e87244ef9; y: 0x010bc301f7e4c2b861a3af80a4cedfda53ca05d2017afb01406ad164ce0c7ee6
+good
+success!
+Generating '/tmp/nsys-report-3467.qdstrm'
+[1/1] [0%                          ] msm_16_12_23.nsys-rep[1/1] [0%                          ] msm_16_12_23.nsys-rep[1/1] [8%                          ] msm_16_12_23.nsys-rep[1/1] [9%                          ] msm_16_12_23.nsys-rep[1/1] [======================92%   ] msm_16_12_23.nsys-rep[1/1] [========================100%] msm_16_12_23.nsys-rep[1/1] [========================100%] msm_16_12_23.nsys-rep
+Generated:
+    /root/autodl-tmp/yr/icicle/icicle/src/msm/./work/reports/msm_16_12_23.nsys-rep
+====================== TEST END ======================
+
+
+
+[12/168] Testing: log_size=16 precomp=12 c=25 @ Fri Feb 14 23:11:29 CST 2025
+====================== TEST START ======================
+running msm curve=1, 2^16, batch_size=1, precomp_factor=12, c=25
+finished generating
+finished copying
+msm time : 138.119 ms.
+x: 0x133d97747c28b5fc8c01c83018789f8cbb2c2e80405962fa78acf2f57b100a93; y: 0x136b3a9c4b40f85bcc3d0848c343510ddeee068f1e0bce771616023bc4381950
+good
+success!
+Generating '/tmp/nsys-report-20ab.qdstrm'
+[1/1] [0%                          ] msm_16_12_25.nsys-rep[1/1] [0%                          ] msm_16_12_25.nsys-rep[1/1] [5%                          ] msm_16_12_25.nsys-rep[1/1] [=======================95%  ] msm_16_12_25.nsys-rep[1/1] [========================100%] msm_16_12_25.nsys-rep[1/1] [========================100%] msm_16_12_25.nsys-rep
+Generated:
+    /root/autodl-tmp/yr/icicle/icicle/src/msm/./work/reports/msm_16_12_25.nsys-rep
+====================== TEST END ======================
+
+
+
+[13/168] Testing: log_size=16 precomp=14 c=15 @ Fri Feb 14 23:11:36 CST 2025
+====================== TEST START ======================
+running msm curve=1, 2^16, batch_size=1, precomp_factor=14, c=15
+finished generating
+finished copying
+msm time : 7.668 ms.
+x: 0x05e99f5855c2cf027f420811b629fbacb89c3636b41462d98fd29b079167d782; y: 0x27c4bb9926047c578195e39a9ea921f7223204d3add3df9a243d38fd3ecacafa
+good
+success!
+Generating '/tmp/nsys-report-734f.qdstrm'
+[1/1] [0%                          ] msm_16_14_15.nsys-rep[1/1] [0%                          ] msm_16_14_15.nsys-rep[1/1] [9%                          ] msm_16_14_15.nsys-rep[1/1] [10%                         ] msm_16_14_15.nsys-rep[1/1] [11%                         ] msm_16_14_15.nsys-rep[1/1] [======================91%   ] msm_16_14_15.nsys-rep[1/1] [========================100%] msm_16_14_15.nsys-rep[1/1] [========================100%] msm_16_14_15.nsys-rep
+Generated:
+    /root/autodl-tmp/yr/icicle/icicle/src/msm/./work/reports/msm_16_14_15.nsys-rep
+====================== TEST END ======================
+
+
+
+[14/168] Testing: log_size=16 precomp=14 c=17 @ Fri Feb 14 23:11:42 CST 2025
+====================== TEST START ======================
+running msm curve=1, 2^16, batch_size=1, precomp_factor=14, c=17
+finished generating
+finished copying
+msm time : 8.550 ms.
+x: 0x251f82dd105d37acde3f24b0f9a410d824105a72caa67bf40f81edbf28d9f58c; y: 0x1eb590e517d90d1cab05a76793d3ec4e5f500377742eb2804d6b9f39fa016d49
+good
+success!
+Generating '/tmp/nsys-report-3298.qdstrm'
+[1/1] [0%                          ] msm_16_14_17.nsys-rep[1/1] [0%                          ] msm_16_14_17.nsys-rep[1/1] [5%                          ] msm_16_14_17.nsys-rep[1/1] [10%                         ] msm_16_14_17.nsys-rep[1/1] [11%                         ] msm_16_14_17.nsys-rep[1/1] [======================91%   ] msm_16_14_17.nsys-rep[1/1] [========================100%] msm_16_14_17.nsys-rep[1/1] [========================100%] msm_16_14_17.nsys-rep
+Generated:
+    /root/autodl-tmp/yr/icicle/icicle/src/msm/./work/reports/msm_16_14_17.nsys-rep
+====================== TEST END ======================
+
+
+
+[15/168] Testing: log_size=16 precomp=14 c=19 @ Fri Feb 14 23:11:48 CST 2025
+====================== TEST START ======================
+running msm curve=1, 2^16, batch_size=1, precomp_factor=14, c=19
+finished generating
+finished copying
+msm time : 13.399 ms.
+x: 0x2d0b16a123467b5c132c88046982cf475e7ff54104d0b974831f5eb671ec684e; y: 0x057d22deccec95b4940da1d2501314fe8ef80fe772df1e7b34f59810e911e744
+good
+success!
+Generating '/tmp/nsys-report-2308.qdstrm'
+[1/1] [0%                          ] msm_16_14_19.nsys-rep[1/1] [0%                          ] msm_16_14_19.nsys-rep[1/1] [5%                          ] msm_16_14_19.nsys-rep[1/1] [10%                         ] msm_16_14_19.nsys-rep[1/1] [======================91%   ] msm_16_14_19.nsys-rep[1/1] [========================100%] msm_16_14_19.nsys-rep[1/1] [========================100%] msm_16_14_19.nsys-rep
+Generated:
+    /root/autodl-tmp/yr/icicle/icicle/src/msm/./work/reports/msm_16_14_19.nsys-rep
+====================== TEST END ======================
+
+
+
+[16/168] Testing: log_size=16 precomp=14 c=21 @ Fri Feb 14 23:11:54 CST 2025
+====================== TEST START ======================
+running msm curve=1, 2^16, batch_size=1, precomp_factor=14, c=21
+finished generating
+finished copying
+msm time : 169.669 ms.
+x: 0x195cfa7112102948cb84e5f1fedb2e940f4d934fe8e34a6ee5c3425defdda077; y: 0x22fdd06a9a1f5e30a1aebd477572b683840d18e5325420df04e7c5491b6c0e70
+good
+success!
+Generating '/tmp/nsys-report-3d5e.qdstrm'
+[1/1] [0%                          ] msm_16_14_21.nsys-rep[1/1] [0%                          ] msm_16_14_21.nsys-rep[1/1] [5%                          ] msm_16_14_21.nsys-rep[1/1] [10%                         ] msm_16_14_21.nsys-rep[1/1] [======================91%   ] msm_16_14_21.nsys-rep[1/1] [========================100%] msm_16_14_21.nsys-rep[1/1] [========================100%] msm_16_14_21.nsys-rep
+Generated:
+    /root/autodl-tmp/yr/icicle/icicle/src/msm/./work/reports/msm_16_14_21.nsys-rep
+====================== TEST END ======================
+
+
+
+[17/168] Testing: log_size=16 precomp=14 c=23 @ Fri Feb 14 23:12:00 CST 2025
+====================== TEST START ======================
+running msm curve=1, 2^16, batch_size=1, precomp_factor=14, c=23
+finished generating
+finished copying
+msm time : 192.896 ms.
+x: 0x011d31ca831cb70871bd34f45e2b8e790513601c981c4aad9a8f4969fa0ae93b; y: 0x1b5f7887ab5a04abb699551ac28dc8fa496eee664f4fabbcf95916e951bd7ea8
+good
+success!
+Generating '/tmp/nsys-report-fa49.qdstrm'
+[1/1] [0%                          ] msm_16_14_23.nsys-rep[1/1] [0%                          ] msm_16_14_23.nsys-rep[1/1] [8%                          ] msm_16_14_23.nsys-rep[1/1] [9%                          ] msm_16_14_23.nsys-rep[1/1] [======================92%   ] msm_16_14_23.nsys-rep[1/1] [========================100%] msm_16_14_23.nsys-rep[1/1] [========================100%] msm_16_14_23.nsys-rep
+Generated:
+    /root/autodl-tmp/yr/icicle/icicle/src/msm/./work/reports/msm_16_14_23.nsys-rep
+====================== TEST END ======================
+
+
+
+[18/168] Testing: log_size=16 precomp=14 c=25 @ Fri Feb 14 23:12:07 CST 2025
+====================== TEST START ======================
+running msm curve=1, 2^16, batch_size=1, precomp_factor=14, c=25
+finished generating
+finished copying
+msm time : 134.967 ms.
+x: 0x1dd45e0be9e379661424adfc9e9c66ead2b2842ed644cdbf55f36541405e2f86; y: 0x18b08b9392edf6b23f1cbb6b5a7aca0348569706e049bf57c2bf91cd06889a9e
+good
+success!
+Generating '/tmp/nsys-report-3093.qdstrm'
+[1/1] [0%                          ] msm_16_14_25.nsys-rep[1/1] [0%                          ] msm_16_14_25.nsys-rep[1/1] [5%                          ] msm_16_14_25.nsys-rep[1/1] [=======================95%  ] msm_16_14_25.nsys-rep[1/1] [========================100%] msm_16_14_25.nsys-rep[1/1] [========================100%] msm_16_14_25.nsys-rep
+Generated:
+    /root/autodl-tmp/yr/icicle/icicle/src/msm/./work/reports/msm_16_14_25.nsys-rep
+====================== TEST END ======================
+
+
+
+[19/168] Testing: log_size=16 precomp=16 c=15 @ Fri Feb 14 23:12:13 CST 2025
+====================== TEST START ======================
+running msm curve=1, 2^16, batch_size=1, precomp_factor=16, c=15
+finished generating
+finished copying
+msm time : 6.461 ms.
+x: 0x291b43e67e2e7f23a92db9896bbff22cc46f9e4389c8722acf6e60ba4a17e1be; y: 0x0fd6d5bd5fa5feb14680a19d3965e588d287efa0e969199a31f2d98fa41e155a
+good
+success!
+Generating '/tmp/nsys-report-797f.qdstrm'
+[1/1] [0%                          ] msm_16_16_15.nsys-rep[1/1] [0%                          ] msm_16_16_15.nsys-rep[1/1] [5%                          ] msm_16_16_15.nsys-rep[1/1] [10%                         ] msm_16_16_15.nsys-rep[1/1] [======================91%   ] msm_16_16_15.nsys-rep[1/1] [========================100%] msm_16_16_15.nsys-rep[1/1] [========================100%] msm_16_16_15.nsys-rep
+Generated:
+    /root/autodl-tmp/yr/icicle/icicle/src/msm/./work/reports/msm_16_16_15.nsys-rep
+====================== TEST END ======================
+
+
+
+[20/168] Testing: log_size=16 precomp=16 c=17 @ Fri Feb 14 23:12:19 CST 2025
+====================== TEST START ======================
+running msm curve=1, 2^16, batch_size=1, precomp_factor=16, c=17
+finished generating
+finished copying
+msm time : 7.641 ms.
+x: 0x0fa93af4b6bf565b2dd69187bc3f75e82b7112f6a9dde95452d064c943f60e03; y: 0x1ddf5cfa10e2633f8405fec7e10a5180a11f0249336b6f958436beaac94f8dea
+good
+success!
+Generating '/tmp/nsys-report-ad2c.qdstrm'
+[1/1] [0%                          ] msm_16_16_17.nsys-rep[1/1] [0%                          ] msm_16_16_17.nsys-rep[1/1] [9%                          ] msm_16_16_17.nsys-rep[1/1] [10%                         ] msm_16_16_17.nsys-rep[1/1] [======================91%   ] msm_16_16_17.nsys-rep[1/1] [========================100%] msm_16_16_17.nsys-rep[1/1] [========================100%] msm_16_16_17.nsys-rep
+Generated:
+    /root/autodl-tmp/yr/icicle/icicle/src/msm/./work/reports/msm_16_16_17.nsys-rep
+====================== TEST END ======================
+
+
+
+[21/168] Testing: log_size=16 precomp=16 c=19 @ Fri Feb 14 23:12:25 CST 2025
+====================== TEST START ======================
+running msm curve=1, 2^16, batch_size=1, precomp_factor=16, c=19
+finished generating
+finished copying
+msm time : 13.354 ms.
+x: 0x2764596eff94dc6b1670b516fc9d2235618964987f53e6c6255b958bac2fadc7; y: 0x17bd9d20e3fabe2345d76ca3bdf9139328dda7c4289eeb74a2938588ae05e59f
+good
+success!
+Generating '/tmp/nsys-report-46ec.qdstrm'
+[1/1] [0%                          ] msm_16_16_19.nsys-rep[1/1] [0%                          ] msm_16_16_19.nsys-rep[1/1] [9%                          ] msm_16_16_19.nsys-rep[1/1] [10%                         ] msm_16_16_19.nsys-rep[1/1] [======================91%   ] msm_16_16_19.nsys-rep[1/1] [========================100%] msm_16_16_19.nsys-rep[1/1] [========================100%] msm_16_16_19.nsys-rep
+Generated:
+    /root/autodl-tmp/yr/icicle/icicle/src/msm/./work/reports/msm_16_16_19.nsys-rep
+====================== TEST END ======================
+
+
+
+[22/168] Testing: log_size=16 precomp=16 c=21 @ Fri Feb 14 23:12:31 CST 2025
+====================== TEST START ======================
+running msm curve=1, 2^16, batch_size=1, precomp_factor=16, c=21
+finished generating
+finished copying
+msm time : 169.657 ms.
+x: 0x2eeab200cf8c28c6558a03975abc49748aec718ebb50d2706bd7c9365232539d; y: 0x008e7bd326757321f5eca62095dcfdfcc231c1ca01b6f525c2d4b377a9aeff77
+good
+success!
+Generating '/tmp/nsys-report-ef40.qdstrm'
+[1/1] [0%                          ] msm_16_16_21.nsys-rep[1/1] [0%                          ] msm_16_16_21.nsys-rep[1/1] [9%                          ] msm_16_16_21.nsys-rep[1/1] [10%                         ] msm_16_16_21.nsys-rep[1/1] [======================91%   ] msm_16_16_21.nsys-rep[1/1] [========================100%] msm_16_16_21.nsys-rep[1/1] [========================100%] msm_16_16_21.nsys-rep
+Generated:
+    /root/autodl-tmp/yr/icicle/icicle/src/msm/./work/reports/msm_16_16_21.nsys-rep
+====================== TEST END ======================
+
+
+
+[23/168] Testing: log_size=16 precomp=16 c=23 @ Fri Feb 14 23:12:38 CST 2025
+====================== TEST START ======================
+running msm curve=1, 2^16, batch_size=1, precomp_factor=16, c=23
+finished generating
+finished copying
+msm time : 190.552 ms.
+x: 0x2934841b6dc8b0a83c77acaa4119dc9fd4f7e77214952dc10f10d0c7c5734f53; y: 0x257c1960eb2a132048794f373d63c10b075edd64362efd5d71fddd029560bf8d
+good
+success!
+Generating '/tmp/nsys-report-7ded.qdstrm'
+[1/1] [0%                          ] msm_16_16_23.nsys-rep[1/1] [0%                          ] msm_16_16_23.nsys-rep[1/1] [7%                          ] msm_16_16_23.nsys-rep[1/1] [8%                          ] msm_16_16_23.nsys-rep[1/1] [======================92%   ] msm_16_16_23.nsys-rep[1/1] [========================100%] msm_16_16_23.nsys-rep[1/1] [========================100%] msm_16_16_23.nsys-rep
+Generated:
+    /root/autodl-tmp/yr/icicle/icicle/src/msm/./work/reports/msm_16_16_23.nsys-rep
+====================== TEST END ======================
+
+
+
+[24/168] Testing: log_size=16 precomp=16 c=25 @ Fri Feb 14 23:12:44 CST 2025
+====================== TEST START ======================
+running msm curve=1, 2^16, batch_size=1, precomp_factor=16, c=25
+finished generating
+finished copying
+msm time : 132.505 ms.
+x: 0x0c31a83f02be9a479e88ec06d1fc545286af8ec09cdc23cae98b7e16bb99e910; y: 0x0add604d79e575699f76c7fc3d2e0d0e8bf0a5fd8f7b9f19adc82f0e6e34c05b
+good
+success!
+Generating '/tmp/nsys-report-f57d.qdstrm'
+[1/1] [0%                          ] msm_16_16_25.nsys-rep[1/1] [0%                          ] msm_16_16_25.nsys-rep[1/1] [5%                          ] msm_16_16_25.nsys-rep[1/1] [=======================95%  ] msm_16_16_25.nsys-rep[1/1] [========================100%] msm_16_16_25.nsys-rep[1/1] [========================100%] msm_16_16_25.nsys-rep
+Generated:
+    /root/autodl-tmp/yr/icicle/icicle/src/msm/./work/reports/msm_16_16_25.nsys-rep
+====================== TEST END ======================
+
+
+
+[25/168] Testing: log_size=16 precomp=18 c=15 @ Fri Feb 14 23:12:51 CST 2025
+====================== TEST START ======================
+running msm curve=1, 2^16, batch_size=1, precomp_factor=18, c=15
+finished generating
+finished copying
+msm time : 7.702 ms.
+x: 0x078579d8959be2d6a9600efcd809960128dbd3261c4307f4d4551564603a9ec9; y: 0x0867cfe9f337e584abe845ae392aa3c7c548cb9ec30f709d8b6b72eb6eddbf7f
+good
+success!
+Generating '/tmp/nsys-report-c6b9.qdstrm'
+[1/1] [0%                          ] msm_16_18_15.nsys-rep[1/1] [0%                          ] msm_16_18_15.nsys-rep[1/1] [5%                          ] msm_16_18_15.nsys-rep[1/1] [10%                         ] msm_16_18_15.nsys-rep[1/1] [======================91%   ] msm_16_18_15.nsys-rep[1/1] [========================100%] msm_16_18_15.nsys-rep[1/1] [========================100%] msm_16_18_15.nsys-rep
+Generated:
+    /root/autodl-tmp/yr/icicle/icicle/src/msm/./work/reports/msm_16_18_15.nsys-rep
+====================== TEST END ======================
+
+
+
+[26/168] Testing: log_size=16 precomp=18 c=17 @ Fri Feb 14 23:12:57 CST 2025
+====================== TEST START ======================
+running msm curve=1, 2^16, batch_size=1, precomp_factor=18, c=17
+finished generating
+finished copying
+msm time : 8.591 ms.
+x: 0x2213d3a0be61fd8d12ea4d7a6849f341671513cc7805339d4f2c644688eb2607; y: 0x126ae055af5c28acef6461a08d922e8d35c3e53c38a3f01897995b75ab7cfb3b
+good
+success!
+Generating '/tmp/nsys-report-c1b1.qdstrm'
+[1/1] [0%                          ] msm_16_18_17.nsys-rep[1/1] [0%                          ] msm_16_18_17.nsys-rep[1/1] [9%                          ] msm_16_18_17.nsys-rep[1/1] [10%                         ] msm_16_18_17.nsys-rep[1/1] [======================91%   ] msm_16_18_17.nsys-rep[1/1] [========================100%] msm_16_18_17.nsys-rep[1/1] [========================100%] msm_16_18_17.nsys-rep
+Generated:
+    /root/autodl-tmp/yr/icicle/icicle/src/msm/./work/reports/msm_16_18_17.nsys-rep
+====================== TEST END ======================
+
+
+
+[27/168] Testing: log_size=16 precomp=18 c=19 @ Fri Feb 14 23:13:04 CST 2025
+====================== TEST START ======================
+running msm curve=1, 2^16, batch_size=1, precomp_factor=18, c=19
+finished generating
+finished copying
+msm time : 18.706 ms.
+x: 0x2697296d1c1997f46d99e9c63fec6b2962c1eed87536d84b56f295ca99b18219; y: 0x1adfe3b6c42f22cf8b7dff6089ca0c0877243dcf0c5724bde5c801f3ca2ec29d
+good
+success!
+Generating '/tmp/nsys-report-2339.qdstrm'
+[1/1] [0%                          ] msm_16_18_19.nsys-rep[1/1] [0%                          ] msm_16_18_19.nsys-rep[1/1] [9%                          ] msm_16_18_19.nsys-rep[1/1] [10%                         ] msm_16_18_19.nsys-rep[1/1] [======================91%   ] msm_16_18_19.nsys-rep[1/1] [========================100%] msm_16_18_19.nsys-rep[1/1] [========================100%] msm_16_18_19.nsys-rep
+Generated:
+    /root/autodl-tmp/yr/icicle/icicle/src/msm/./work/reports/msm_16_18_19.nsys-rep
+====================== TEST END ======================
+
+
+
+[28/168] Testing: log_size=16 precomp=18 c=21 @ Fri Feb 14 23:13:10 CST 2025
+====================== TEST START ======================
+running msm curve=1, 2^16, batch_size=1, precomp_factor=18, c=21
+finished generating
+finished copying
+msm time : 173.367 ms.
+x: 0x2a2b902a9ca1e8c3ae52474264a1a38f7aa3088a31636fbc597f1c06bccdefb1; y: 0x13ece83c0c0e50ddd97dcf1dd2c3b34fed8ef23716fa270e1f1a9dfa02709c97
+good
+success!
+Generating '/tmp/nsys-report-035b.qdstrm'
+[1/1] [0%                          ] msm_16_18_21.nsys-rep[1/1] [0%                          ] msm_16_18_21.nsys-rep[1/1] [9%                          ] msm_16_18_21.nsys-rep[1/1] [======================91%   ] msm_16_18_21.nsys-rep[1/1] [========================100%] msm_16_18_21.nsys-rep[1/1] [========================100%] msm_16_18_21.nsys-rep
+Generated:
+    /root/autodl-tmp/yr/icicle/icicle/src/msm/./work/reports/msm_16_18_21.nsys-rep
+====================== TEST END ======================
+
+
+
+[29/168] Testing: log_size=16 precomp=18 c=23 @ Fri Feb 14 23:13:16 CST 2025
+====================== TEST START ======================
+running msm curve=1, 2^16, batch_size=1, precomp_factor=18, c=23
+finished generating
+finished copying
+msm time : 189.597 ms.
+x: 0x01487f6bdbbde51d8c37fa9391f3d31aec66e8660fab65d0f9facab1f9e77cbc; y: 0x0d31e8685a965c46fdaecab2612ed567de633f86cecb9b0ff792ac071a076806
+good
+success!
+Generating '/tmp/nsys-report-314c.qdstrm'
+[1/1] [0%                          ] msm_16_18_23.nsys-rep[1/1] [0%                          ] msm_16_18_23.nsys-rep[1/1] [7%                          ] msm_16_18_23.nsys-rep[1/1] [8%                          ] msm_16_18_23.nsys-rep[1/1] [======================92%   ] msm_16_18_23.nsys-rep[1/1] [========================100%] msm_16_18_23.nsys-rep[1/1] [========================100%] msm_16_18_23.nsys-rep
+Generated:
+    /root/autodl-tmp/yr/icicle/icicle/src/msm/./work/reports/msm_16_18_23.nsys-rep
+====================== TEST END ======================
+
+
+
+[30/168] Testing: log_size=16 precomp=18 c=25 @ Fri Feb 14 23:13:23 CST 2025
+====================== TEST START ======================
+running msm curve=1, 2^16, batch_size=1, precomp_factor=18, c=25
+finished generating
+finished copying
+msm time : 128.987 ms.
+x: 0x1a72bfcab016fea5cafbb0374650d22315cc0caff24a7dd2f6b96d15c16d9a2c; y: 0x02e70357b22f3cc05cbba8c50a94fa8045efc5bcabfa672e766af2092966c0bc
+good
+success!
+Generating '/tmp/nsys-report-0e09.qdstrm'
+[1/1] [0%                          ] msm_16_18_25.nsys-rep[1/1] [0%                          ] msm_16_18_25.nsys-rep[1/1] [5%                          ] msm_16_18_25.nsys-rep[1/1] [=======================95%  ] msm_16_18_25.nsys-rep[1/1] [========================100%] msm_16_18_25.nsys-rep[1/1] [========================100%] msm_16_18_25.nsys-rep
+Generated:
+    /root/autodl-tmp/yr/icicle/icicle/src/msm/./work/reports/msm_16_18_25.nsys-rep
+====================== TEST END ======================
+
+
+
+[31/168] Testing: log_size=16 precomp=20 c=15 @ Fri Feb 14 23:13:30 CST 2025
+====================== TEST START ======================
+running msm curve=1, 2^16, batch_size=1, precomp_factor=20, c=15
+finished generating
+finished copying
+msm time : 7.622 ms.
+x: 0x2ef4e614a850bf4ae52ddb78a31d0da1c00d75515f98c4b4c23bc1ee64026249; y: 0x2a30696abb08c08bdab38498e6e041714f2db2233bec79a8da0667a926c7f272
+good
+success!
+Generating '/tmp/nsys-report-3d20.qdstrm'
+[1/1] [0%                          ] msm_16_20_15.nsys-rep[1/1] [0%                          ] msm_16_20_15.nsys-rep[1/1] [5%                          ] msm_16_20_15.nsys-rep[1/1] [10%                         ] msm_16_20_15.nsys-rep[1/1] [======================91%   ] msm_16_20_15.nsys-rep[1/1] [========================100%] msm_16_20_15.nsys-rep[1/1] [========================100%] msm_16_20_15.nsys-rep
+Generated:
+    /root/autodl-tmp/yr/icicle/icicle/src/msm/./work/reports/msm_16_20_15.nsys-rep
+====================== TEST END ======================
+
+
+
+[32/168] Testing: log_size=16 precomp=20 c=17 @ Fri Feb 14 23:13:36 CST 2025
+====================== TEST START ======================
+running msm curve=1, 2^16, batch_size=1, precomp_factor=20, c=17
+finished generating
+finished copying
+msm time : 7.222 ms.
+x: 0x1d9ce8ec9e7101b661fdd8b203206968f25d1af62464dd09acaad918432f424f; y: 0x29742fb9ebc81b4f95ae90d1c25cc85f934ae820fa11977e0d3ce203f824ff68
+good
+success!
+Generating '/tmp/nsys-report-8ede.qdstrm'
+[1/1] [0%                          ] msm_16_20_17.nsys-rep[1/1] [0%                          ] msm_16_20_17.nsys-rep[1/1] [9%                          ] msm_16_20_17.nsys-rep[1/1] [10%                         ] msm_16_20_17.nsys-rep[1/1] [======================91%   ] msm_16_20_17.nsys-rep[1/1] [========================100%] msm_16_20_17.nsys-rep[1/1] [========================100%] msm_16_20_17.nsys-rep
+Generated:
+    /root/autodl-tmp/yr/icicle/icicle/src/msm/./work/reports/msm_16_20_17.nsys-rep
+====================== TEST END ======================
+
+
+
+[33/168] Testing: log_size=16 precomp=20 c=19 @ Fri Feb 14 23:13:42 CST 2025
+====================== TEST START ======================
+running msm curve=1, 2^16, batch_size=1, precomp_factor=20, c=19
+finished generating
+finished copying
+msm time : 22.975 ms.
+x: 0x22a63dd3a53e6dd44b96299570c6f0e42b5a378b161f7b9e52d65dd0eea55142; y: 0x0eaaaa10490f126e635871070731b544465c0e2b4bcc3ed46e88a61d34db4c1c
+good
+success!
+Generating '/tmp/nsys-report-44bc.qdstrm'
+[1/1] [0%                          ] msm_16_20_19.nsys-rep[1/1] [0%                          ] msm_16_20_19.nsys-rep[1/1] [9%                          ] msm_16_20_19.nsys-rep[1/1] [10%                         ] msm_16_20_19.nsys-rep[1/1] [======================91%   ] msm_16_20_19.nsys-rep[1/1] [========================100%] msm_16_20_19.nsys-rep[1/1] [========================100%] msm_16_20_19.nsys-rep
+Generated:
+    /root/autodl-tmp/yr/icicle/icicle/src/msm/./work/reports/msm_16_20_19.nsys-rep
+====================== TEST END ======================
+
+
+
+[34/168] Testing: log_size=16 precomp=20 c=21 @ Fri Feb 14 23:13:49 CST 2025
+====================== TEST START ======================
+running msm curve=1, 2^16, batch_size=1, precomp_factor=20, c=21
+finished generating
+finished copying
+msm time : 170.437 ms.
+x: 0x183ddc6fb6e0be59945b5cdfa92b2e6ab3c8846fea980a2b172e8b7b53d96301; y: 0x19e6ed77549d8b7cb1483e36855c08764c376234236c75bdfdcb3cd2d34326d9
+good
+success!
+Generating '/tmp/nsys-report-d7d7.qdstrm'
+[1/1] [0%                          ] msm_16_20_21.nsys-rep[1/1] [0%                          ] msm_16_20_21.nsys-rep[1/1] [5%                          ] msm_16_20_21.nsys-rep[1/1] [9%                          ] msm_16_20_21.nsys-rep[1/1] [10%                         ] msm_16_20_21.nsys-rep[1/1] [======================91%   ] msm_16_20_21.nsys-rep[1/1] [========================100%] msm_16_20_21.nsys-rep[1/1] [========================100%] msm_16_20_21.nsys-rep
+Generated:
+    /root/autodl-tmp/yr/icicle/icicle/src/msm/./work/reports/msm_16_20_21.nsys-rep
+====================== TEST END ======================
+
+
+
+[35/168] Testing: log_size=16 precomp=20 c=23 @ Fri Feb 14 23:13:56 CST 2025
+====================== TEST START ======================
+running msm curve=1, 2^16, batch_size=1, precomp_factor=20, c=23
+finished generating
+finished copying
+msm time : 200.351 ms.
+x: 0x2c34c6d7662aa43ce61f40a84737481835ef2b25c7fd3edecb697681d9211904; y: 0x17732bdd549d200e8111debba504dcef2edfe3b28e11c82eee28da43e42a94c6
+good
+success!
+Generating '/tmp/nsys-report-f3e0.qdstrm'
+[1/1] [0%                          ] msm_16_20_23.nsys-rep[1/1] [0%                          ] msm_16_20_23.nsys-rep[1/1] [7%                          ] msm_16_20_23.nsys-rep[1/1] [8%                          ] msm_16_20_23.nsys-rep[1/1] [======================92%   ] msm_16_20_23.nsys-rep[1/1] [========================100%] msm_16_20_23.nsys-rep[1/1] [========================100%] msm_16_20_23.nsys-rep
+Generated:
+    /root/autodl-tmp/yr/icicle/icicle/src/msm/./work/reports/msm_16_20_23.nsys-rep
+====================== TEST END ======================
+
+
+
+[36/168] Testing: log_size=16 precomp=20 c=25 @ Fri Feb 14 23:14:02 CST 2025
+====================== TEST START ======================
+running msm curve=1, 2^16, batch_size=1, precomp_factor=20, c=25
+finished generating
+finished copying
+msm time : 134.387 ms.
+x: 0x11c8fc530266d5f6baaee196ef21b05317c740f776fc9da3fe4ec60e8ef19a02; y: 0x1d68ff5d6a0ccbc1a492b89d6354e0a4be8c97428717780cfaee9896fd207fce
+good
+success!
+Generating '/tmp/nsys-report-aa19.qdstrm'
+[1/1] [0%                          ] msm_16_20_25.nsys-rep[1/1] [0%                          ] msm_16_20_25.nsys-rep[1/1] [5%                          ] msm_16_20_25.nsys-rep[1/1] [=======================95%  ] msm_16_20_25.nsys-rep[1/1] [========================100%] msm_16_20_25.nsys-rep[1/1] [========================100%] msm_16_20_25.nsys-rep
+Generated:
+    /root/autodl-tmp/yr/icicle/icicle/src/msm/./work/reports/msm_16_20_25.nsys-rep
+====================== TEST END ======================
+
+
+
+[37/168] Testing: log_size=16 precomp=22 c=15 @ Fri Feb 14 23:14:09 CST 2025
+====================== TEST START ======================
+running msm curve=1, 2^16, batch_size=1, precomp_factor=22, c=15
+finished generating
+finished copying
+msm time : 6.861 ms.
+x: 0x03d63d2224fe7f3eaf32883585515ad296d5fc9f8492f1ba331f197859507793; y: 0x14852e52e6813ba19b44167558ed8ae437566a395c062904e566e59d8d0393ec
+good
+success!
+Generating '/tmp/nsys-report-835f.qdstrm'
+[1/1] [0%                          ] msm_16_22_15.nsys-rep[1/1] [0%                          ] msm_16_22_15.nsys-rep[1/1] [5%                          ] msm_16_22_15.nsys-rep[1/1] [10%                         ] msm_16_22_15.nsys-rep[1/1] [======================91%   ] msm_16_22_15.nsys-rep[1/1] [========================100%] msm_16_22_15.nsys-rep[1/1] [========================100%] msm_16_22_15.nsys-rep
+Generated:
+    /root/autodl-tmp/yr/icicle/icicle/src/msm/./work/reports/msm_16_22_15.nsys-rep
+====================== TEST END ======================
+
+
+
+[38/168] Testing: log_size=16 precomp=22 c=17 @ Fri Feb 14 23:14:15 CST 2025
+====================== TEST START ======================
+running msm curve=1, 2^16, batch_size=1, precomp_factor=22, c=17
+finished generating
+finished copying
+msm time : 7.101 ms.
+x: 0x03b4bb049dbd79caa58a5e35f3f965fb88122ddfad65ce0185fdecfcf80d4e03; y: 0x23124133c1735712f92afde717d15471ac134634743ecc31f2b6e811d9b04526
+good
+success!
+Generating '/tmp/nsys-report-026b.qdstrm'
+[1/1] [0%                          ] msm_16_22_17.nsys-rep[1/1] [0%                          ] msm_16_22_17.nsys-rep[1/1] [9%                          ] msm_16_22_17.nsys-rep[1/1] [10%                         ] msm_16_22_17.nsys-rep[1/1] [======================91%   ] msm_16_22_17.nsys-rep[1/1] [========================100%] msm_16_22_17.nsys-rep[1/1] [========================100%] msm_16_22_17.nsys-rep
+Generated:
+    /root/autodl-tmp/yr/icicle/icicle/src/msm/./work/reports/msm_16_22_17.nsys-rep
+====================== TEST END ======================
+
+
+
+[39/168] Testing: log_size=16 precomp=22 c=19 @ Fri Feb 14 23:14:21 CST 2025
+====================== TEST START ======================
+running msm curve=1, 2^16, batch_size=1, precomp_factor=22, c=19
+finished generating
+finished copying
+msm time : 15.779 ms.
+x: 0x22a8bc3cd10593b54eec77916c75698fb016478279f367015ae9cd81a35692a6; y: 0x165001ceaaa5d3e12900729b846842a7545c8efa389da4f802c00dd6d98c7a6b
+good
+success!
+Generating '/tmp/nsys-report-664c.qdstrm'
+[1/1] [0%                          ] msm_16_22_19.nsys-rep[1/1] [0%                          ] msm_16_22_19.nsys-rep[1/1] [9%                          ] msm_16_22_19.nsys-rep[1/1] [10%                         ] msm_16_22_19.nsys-rep[1/1] [======================91%   ] msm_16_22_19.nsys-rep[1/1] [========================100%] msm_16_22_19.nsys-rep[1/1] [========================100%] msm_16_22_19.nsys-rep
+Generated:
+    /root/autodl-tmp/yr/icicle/icicle/src/msm/./work/reports/msm_16_22_19.nsys-rep
+====================== TEST END ======================
+
+
+
+[40/168] Testing: log_size=16 precomp=22 c=21 @ Fri Feb 14 23:14:27 CST 2025
+====================== TEST START ======================
+running msm curve=1, 2^16, batch_size=1, precomp_factor=22, c=21
+finished generating
+finished copying
+msm time : 173.195 ms.
+x: 0x1e0b867e368d6946ea951c8fb492c96219dde37502cd509cc04445d25c0ebef4; y: 0x205d1d51caeff690a30f2128daa511f23377c2f08d156bb24d3e68b59a6a6e6f
+good
+success!
+Generating '/tmp/nsys-report-b5d0.qdstrm'
+[1/1] [0%                          ] msm_16_22_21.nsys-rep[1/1] [0%                          ] msm_16_22_21.nsys-rep[1/1] [9%                          ] msm_16_22_21.nsys-rep[1/1] [======================91%   ] msm_16_22_21.nsys-rep[1/1] [========================100%] msm_16_22_21.nsys-rep[1/1] [========================100%] msm_16_22_21.nsys-rep
+Generated:
+    /root/autodl-tmp/yr/icicle/icicle/src/msm/./work/reports/msm_16_22_21.nsys-rep
+====================== TEST END ======================
+
+
+
+[41/168] Testing: log_size=16 precomp=22 c=23 @ Fri Feb 14 23:14:33 CST 2025
+====================== TEST START ======================
+running msm curve=1, 2^16, batch_size=1, precomp_factor=22, c=23
+finished generating
+finished copying
+msm time : 185.879 ms.
+x: 0x27e5005e4119e31ef2a8dfb528d367f0b536eeef4016da0767fb8b86ed669262; y: 0x0b5a15da63ef18a9f3623ddda70d4786c3b4c1bba061dd05323b832657870153
+good
+success!
+Generating '/tmp/nsys-report-7b6b.qdstrm'
+[1/1] [0%                          ] msm_16_22_23.nsys-rep[1/1] [0%                          ] msm_16_22_23.nsys-rep[1/1] [7%                          ] msm_16_22_23.nsys-rep[1/1] [8%                          ] msm_16_22_23.nsys-rep[1/1] [======================92%   ] msm_16_22_23.nsys-rep[1/1] [========================100%] msm_16_22_23.nsys-rep[1/1] [========================100%] msm_16_22_23.nsys-rep
+Generated:
+    /root/autodl-tmp/yr/icicle/icicle/src/msm/./work/reports/msm_16_22_23.nsys-rep
+====================== TEST END ======================
+
+
+
+[42/168] Testing: log_size=16 precomp=22 c=25 @ Fri Feb 14 23:14:40 CST 2025
+====================== TEST START ======================
+running msm curve=1, 2^16, batch_size=1, precomp_factor=22, c=25
+finished generating
+finished copying
+msm time : 129.527 ms.
+x: 0x0dbd27192a0cce4da284e4b34e7a953ed0bedb86423ec36c1918789d33b1b6a4; y: 0x1ede11c60c0e2928f890f3973414a97325b031263d1e9e62446f44aabdca8b72
+good
+success!
+Generating '/tmp/nsys-report-5cee.qdstrm'
+[1/1] [0%                          ] msm_16_22_25.nsys-rep[1/1] [0%                          ] msm_16_22_25.nsys-rep[1/1] [5%                          ] msm_16_22_25.nsys-rep[1/1] [=======================95%  ] msm_16_22_25.nsys-rep[1/1] [========================100%] msm_16_22_25.nsys-rep[1/1] [========================100%] msm_16_22_25.nsys-rep
+Generated:
+    /root/autodl-tmp/yr/icicle/icicle/src/msm/./work/reports/msm_16_22_25.nsys-rep
+====================== TEST END ======================
+
+
+
+[43/168] Testing: log_size=18 precomp=10 c=15 @ Fri Feb 14 23:14:46 CST 2025
+====================== TEST START ======================
+running msm curve=1, 2^18, batch_size=1, precomp_factor=10, c=15
+finished generating
+finished copying
+msm time : 11.474 ms.
+x: 0x1fc60111245f0fd67e39b74010780d14d03cb7be6e347e2561cd9afd5501aa7f; y: 0x279afb39cba8a25b5a4507db211bea1e38821eee81d6a597c5a253c382a80275
+good
+success!
+Generating '/tmp/nsys-report-70e7.qdstrm'
+[1/1] [0%                          ] msm_18_10_15.nsys-rep[1/1] [0%                          ] msm_18_10_15.nsys-rep[1/1] [9%                          ] msm_18_10_15.nsys-rep[1/1] [10%                         ] msm_18_10_15.nsys-rep[1/1] [11%                         ] msm_18_10_15.nsys-rep[1/1] [======================91%   ] msm_18_10_15.nsys-rep[1/1] [========================100%] msm_18_10_15.nsys-rep[1/1] [========================100%] msm_18_10_15.nsys-rep
+Generated:
+    /root/autodl-tmp/yr/icicle/icicle/src/msm/./work/reports/msm_18_10_15.nsys-rep
+====================== TEST END ======================
+
+
+
+[44/168] Testing: log_size=18 precomp=10 c=17 @ Fri Feb 14 23:14:55 CST 2025
+====================== TEST START ======================
+running msm curve=1, 2^18, batch_size=1, precomp_factor=10, c=17
+finished generating
+finished copying
+msm time : 12.045 ms.
+x: 0x0766a1b5555a3a28facc5280b342210783f7cd3e95ee9e7b4fd65064a13b566e; y: 0x2993061d08ae74be1219b8b7cee647236d688b1358dc8f04f95652f281f62a3d
+good
+success!
+Generating '/tmp/nsys-report-6665.qdstrm'
+[1/1] [0%                          ] msm_18_10_17.nsys-rep[1/1] [0%                          ] msm_18_10_17.nsys-rep[1/1] [9%                          ] msm_18_10_17.nsys-rep[1/1] [10%                         ] msm_18_10_17.nsys-rep[1/1] [======================91%   ] msm_18_10_17.nsys-rep[1/1] [========================100%] msm_18_10_17.nsys-rep[1/1] [========================100%] msm_18_10_17.nsys-rep
+Generated:
+    /root/autodl-tmp/yr/icicle/icicle/src/msm/./work/reports/msm_18_10_17.nsys-rep
+====================== TEST END ======================
+
+
+
+[45/168] Testing: log_size=18 precomp=10 c=19 @ Fri Feb 14 23:15:04 CST 2025
+====================== TEST START ======================
+running msm curve=1, 2^18, batch_size=1, precomp_factor=10, c=19
+finished generating
+finished copying
+msm time : 39.297 ms.
+x: 0x28e91c7efed720e4839a310c4c35df80336d3c990fafbfab6fe024ce21b25e49; y: 0x0dcd08526d295aa78a1166b524e0412c0b285a10fcc019715e84cdaa59e2e478
+good
+success!
+Generating '/tmp/nsys-report-cb43.qdstrm'
+[1/1] [0%                          ] msm_18_10_19.nsys-rep[1/1] [0%                          ] msm_18_10_19.nsys-rep[1/1] [9%                          ] msm_18_10_19.nsys-rep[1/1] [10%                         ] msm_18_10_19.nsys-rep[1/1] [======================91%   ] msm_18_10_19.nsys-rep[1/1] [========================100%] msm_18_10_19.nsys-rep[1/1] [========================100%] msm_18_10_19.nsys-rep
+Generated:
+    /root/autodl-tmp/yr/icicle/icicle/src/msm/./work/reports/msm_18_10_19.nsys-rep
+====================== TEST END ======================
+
+
+
+[46/168] Testing: log_size=18 precomp=10 c=21 @ Fri Feb 14 23:15:12 CST 2025
+====================== TEST START ======================
+running msm curve=1, 2^18, batch_size=1, precomp_factor=10, c=21
+finished generating
+finished copying
+msm time : 656.226 ms.
+x: 0x10478cfed8748c5473edb815aa07b0144394eb5ba698936fb44c489f14ee9678; y: 0x111535900dabc54d8073fa3ffed673d20a58e83e822c3df6be70a9fe71ce3f74
+good
+success!
+Generating '/tmp/nsys-report-34b8.qdstrm'
+[1/1] [0%                          ] msm_18_10_21.nsys-rep[1/1] [0%                          ] msm_18_10_21.nsys-rep[1/1] [8%                          ] msm_18_10_21.nsys-rep[1/1] [9%                          ] msm_18_10_21.nsys-rep[1/1] [10%                         ] msm_18_10_21.nsys-rep[1/1] [======================92%   ] msm_18_10_21.nsys-rep[1/1] [========================100%] msm_18_10_21.nsys-rep[1/1] [========================100%] msm_18_10_21.nsys-rep
+Generated:
+    /root/autodl-tmp/yr/icicle/icicle/src/msm/./work/reports/msm_18_10_21.nsys-rep
+====================== TEST END ======================
+
+
+
+[47/168] Testing: log_size=18 precomp=10 c=23 @ Fri Feb 14 23:15:22 CST 2025
+====================== TEST START ======================
+running msm curve=1, 2^18, batch_size=1, precomp_factor=10, c=23
+finished generating
+finished copying
+msm time : 698.178 ms.
+x: 0x078b0d6aa9e9974f67fd6e5972e298a29b9f65197ce2ddaf338e2c866ba1978a; y: 0x16fb5a1868d74736f62c82679ed9b4a023bdaa9f103018f53199683eca338a70
+good
+success!
+Generating '/tmp/nsys-report-60e2.qdstrm'
+[1/1] [0%                          ] msm_18_10_23.nsys-rep[1/1] [0%                          ] msm_18_10_23.nsys-rep[1/1] [6%                          ] msm_18_10_23.nsys-rep[1/1] [7%                          ] msm_18_10_23.nsys-rep[1/1] [=======================93%  ] msm_18_10_23.nsys-rep[1/1] [========================100%] msm_18_10_23.nsys-rep[1/1] [========================100%] msm_18_10_23.nsys-rep
+Generated:
+    /root/autodl-tmp/yr/icicle/icicle/src/msm/./work/reports/msm_18_10_23.nsys-rep
+====================== TEST END ======================
+
+
+
+[48/168] Testing: log_size=18 precomp=10 c=25 @ Fri Feb 14 23:15:32 CST 2025
+====================== TEST START ======================
+running msm curve=1, 2^18, batch_size=1, precomp_factor=10, c=25
+finished generating
+finished copying
+msm time : 347.126 ms.
+x: 0x104948799eb96e170806e88c6e62097b70db105508b96421165cde2481dd12b9; y: 0x1a73f195d913c9b136a253b34e14e46a082b7a861f2ff94d81f92ed65711897b
+good
+success!
+Generating '/tmp/nsys-report-f861.qdstrm'
+[1/1] [0%                          ] msm_18_10_25.nsys-rep[1/1] [0%                          ] msm_18_10_25.nsys-rep[1/1] [=======================96%  ] msm_18_10_25.nsys-rep[1/1] [========================100%] msm_18_10_25.nsys-rep[1/1] [========================100%] msm_18_10_25.nsys-rep
+Generated:
+    /root/autodl-tmp/yr/icicle/icicle/src/msm/./work/reports/msm_18_10_25.nsys-rep
+====================== TEST END ======================
+
+
+
+[49/168] Testing: log_size=18 precomp=12 c=15 @ Fri Feb 14 23:15:41 CST 2025
+====================== TEST START ======================
+running msm curve=1, 2^18, batch_size=1, precomp_factor=12, c=15
+finished generating
+finished copying
+msm time : 12.482 ms.
+x: 0x1c608f3c068831b4da294843331e5774761acfbd7001be92d2595353838c450f; y: 0x1d03d820f67f0eae30b42a2239d3b569dfd5b7a0796af3c5a3ba2d0f1a3dbc0f
+good
+success!
+Generating '/tmp/nsys-report-c339.qdstrm'
+[1/1] [0%                          ] msm_18_12_15.nsys-rep[1/1] [0%                          ] msm_18_12_15.nsys-rep[1/1] [9%                          ] msm_18_12_15.nsys-rep[1/1] [10%                         ] msm_18_12_15.nsys-rep[1/1] [11%                         ] msm_18_12_15.nsys-rep[1/1] [======================91%   ] msm_18_12_15.nsys-rep[1/1] [========================100%] msm_18_12_15.nsys-rep[1/1] [========================100%] msm_18_12_15.nsys-rep
+Generated:
+    /root/autodl-tmp/yr/icicle/icicle/src/msm/./work/reports/msm_18_12_15.nsys-rep
+====================== TEST END ======================
+
+
+
+[50/168] Testing: log_size=18 precomp=12 c=17 @ Fri Feb 14 23:15:50 CST 2025
+====================== TEST START ======================
+running msm curve=1, 2^18, batch_size=1, precomp_factor=12, c=17
+finished generating
+finished copying
+msm time : 12.435 ms.
+x: 0x15384f6045e414bed0f3540a4b81d81cea1ccab034b8fcb45f96a62e8726c068; y: 0x209709c3a04cb2faa1971708ac2821d1a6325bc6d26de2c02232ff056b3e4439
+good
+success!
+Generating '/tmp/nsys-report-0e8f.qdstrm'
+[1/1] [0%                          ] msm_18_12_17.nsys-rep[1/1] [0%                          ] msm_18_12_17.nsys-rep[1/1] [9%                          ] msm_18_12_17.nsys-rep[1/1] [10%                         ] msm_18_12_17.nsys-rep[1/1] [======================91%   ] msm_18_12_17.nsys-rep[1/1] [========================100%] msm_18_12_17.nsys-rep[1/1] [========================100%] msm_18_12_17.nsys-rep
+Generated:
+    /root/autodl-tmp/yr/icicle/icicle/src/msm/./work/reports/msm_18_12_17.nsys-rep
+====================== TEST END ======================
+
+
+
+[51/168] Testing: log_size=18 precomp=12 c=19 @ Fri Feb 14 23:15:58 CST 2025
+====================== TEST START ======================
+running msm curve=1, 2^18, batch_size=1, precomp_factor=12, c=19
+finished generating
+finished copying
+msm time : 39.234 ms.
+x: 0x02632b383e987bd3a9e8c865f8079982dd4935f5aaff4bae4f3098858445b432; y: 0x29ff8c6b3989c4614a64d1610a3cc09ae7bb57c89cc9b2ec9f2bc96516cd488f
+good
+success!
+Generating '/tmp/nsys-report-1ccb.qdstrm'
+[1/1] [0%                          ] msm_18_12_19.nsys-rep[1/1] [0%                          ] msm_18_12_19.nsys-rep[1/1] [9%                          ] msm_18_12_19.nsys-rep[1/1] [10%                         ] msm_18_12_19.nsys-rep[1/1] [======================91%   ] msm_18_12_19.nsys-rep[1/1] [========================100%] msm_18_12_19.nsys-rep[1/1] [========================100%] msm_18_12_19.nsys-rep
+Generated:
+    /root/autodl-tmp/yr/icicle/icicle/src/msm/./work/reports/msm_18_12_19.nsys-rep
+====================== TEST END ======================
+
+
+
+[52/168] Testing: log_size=18 precomp=12 c=21 @ Fri Feb 14 23:16:07 CST 2025
+====================== TEST START ======================
+running msm curve=1, 2^18, batch_size=1, precomp_factor=12, c=21
+finished generating
+finished copying
+msm time : 660.029 ms.
+x: 0x2b6f820ade717c19df1d527e72418e27a30572d0ceb1eab3f2eebfe4e09c2e71; y: 0x1dd0e1eedcbc19e7a53e30adaf835389e8c7b3a769ca29865f848bbf30bddeb0
+good
+success!
+Generating '/tmp/nsys-report-6ac1.qdstrm'
+[1/1] [0%                          ] msm_18_12_21.nsys-rep[1/1] [0%                          ] msm_18_12_21.nsys-rep[1/1] [8%                          ] msm_18_12_21.nsys-rep[1/1] [9%                          ] msm_18_12_21.nsys-rep[1/1] [======================92%   ] msm_18_12_21.nsys-rep[1/1] [========================100%] msm_18_12_21.nsys-rep[1/1] [========================100%] msm_18_12_21.nsys-rep
+Generated:
+    /root/autodl-tmp/yr/icicle/icicle/src/msm/./work/reports/msm_18_12_21.nsys-rep
+====================== TEST END ======================
+
+
+
+[53/168] Testing: log_size=18 precomp=12 c=23 @ Fri Feb 14 23:16:17 CST 2025
+====================== TEST START ======================
+running msm curve=1, 2^18, batch_size=1, precomp_factor=12, c=23
+finished generating
+finished copying
+msm time : 677.019 ms.
+x: 0x1b57c45f0a03a9823637db9104fec4499b7253212497e339869c2e3a88908d37; y: 0x2fa3cc53b658b08d6635ee17abf1800a63c28afa505260b8c9b4660c83bcc586
+good
+success!
+Generating '/tmp/nsys-report-a285.qdstrm'
+[1/1] [0%                          ] msm_18_12_23.nsys-rep[1/1] [0%                          ] msm_18_12_23.nsys-rep[1/1] [7%                          ] msm_18_12_23.nsys-rep[1/1] [8%                          ] msm_18_12_23.nsys-rep[1/1] [======================92%   ] msm_18_12_23.nsys-rep[1/1] [========================100%] msm_18_12_23.nsys-rep[1/1] [========================100%] msm_18_12_23.nsys-rep
+Generated:
+    /root/autodl-tmp/yr/icicle/icicle/src/msm/./work/reports/msm_18_12_23.nsys-rep
+====================== TEST END ======================
+
+
+
+[54/168] Testing: log_size=18 precomp=12 c=25 @ Fri Feb 14 23:16:27 CST 2025
+====================== TEST START ======================
+running msm curve=1, 2^18, batch_size=1, precomp_factor=12, c=25
+finished generating
+finished copying
+msm time : 291.486 ms.
+x: 0x0262350885a1b3a2a9a13c326000bee670807a650768aa10b57662e19384f974; y: 0x13cf83f8f392b1b0d0afdda8f8424f00a291fe90eb26d9bfbf4e4e6821e69343
+good
+success!
+Generating '/tmp/nsys-report-232d.qdstrm'
+[1/1] [0%                          ] msm_18_12_25.nsys-rep[1/1] [0%                          ] msm_18_12_25.nsys-rep[1/1] [5%                          ] msm_18_12_25.nsys-rep[1/1] [=======================95%  ] msm_18_12_25.nsys-rep[1/1] [========================100%] msm_18_12_25.nsys-rep[1/1] [========================100%] msm_18_12_25.nsys-rep
+Generated:
+    /root/autodl-tmp/yr/icicle/icicle/src/msm/./work/reports/msm_18_12_25.nsys-rep
+====================== TEST END ======================
+
+
+
+[55/168] Testing: log_size=18 precomp=14 c=15 @ Fri Feb 14 23:16:36 CST 2025
+====================== TEST START ======================
+running msm curve=1, 2^18, batch_size=1, precomp_factor=14, c=15
+finished generating
+finished copying
+msm time : 12.254 ms.
+x: 0x2864dc86faee4b62ab6b39b5c7c08ffca2d3a431eeebfae9b4c7d13856632acd; y: 0x2b59091285bf8558d8cfc706706651228b5f8b461bcd3a39cf8fb29378acca45
+good
+success!
+Generating '/tmp/nsys-report-2a7e.qdstrm'
+[1/1] [0%                          ] msm_18_14_15.nsys-rep[1/1] [0%                          ] msm_18_14_15.nsys-rep[1/1] [9%                          ] msm_18_14_15.nsys-rep[1/1] [10%                         ] msm_18_14_15.nsys-rep[1/1] [11%                         ] msm_18_14_15.nsys-rep[1/1] [======================91%   ] msm_18_14_15.nsys-rep[1/1] [========================100%] msm_18_14_15.nsys-rep[1/1] [========================100%] msm_18_14_15.nsys-rep
+Generated:
+    /root/autodl-tmp/yr/icicle/icicle/src/msm/./work/reports/msm_18_14_15.nsys-rep
+====================== TEST END ======================
+
+
+
+[56/168] Testing: log_size=18 precomp=14 c=17 @ Fri Feb 14 23:16:44 CST 2025
+====================== TEST START ======================
+running msm curve=1, 2^18, batch_size=1, precomp_factor=14, c=17
+finished generating
+finished copying
+msm time : 13.412 ms.
+x: 0x2e058555f66af62e549833eff199a13e1f5222feb3ccc89271d4d8500477adbb; y: 0x25c35e8b8a0c2c9160225d80c7af566d1a927981c38d10a122180b5a6a96e4d5
+good
+success!
+Generating '/tmp/nsys-report-78c2.qdstrm'
+[1/1] [0%                          ] msm_18_14_17.nsys-rep[1/1] [0%                          ] msm_18_14_17.nsys-rep[1/1] [9%                          ] msm_18_14_17.nsys-rep[1/1] [10%                         ] msm_18_14_17.nsys-rep[1/1] [======================91%   ] msm_18_14_17.nsys-rep[1/1] [========================100%] msm_18_14_17.nsys-rep[1/1] [========================100%] msm_18_14_17.nsys-rep
+Generated:
+    /root/autodl-tmp/yr/icicle/icicle/src/msm/./work/reports/msm_18_14_17.nsys-rep
+====================== TEST END ======================
+
+
+
+[57/168] Testing: log_size=18 precomp=14 c=19 @ Fri Feb 14 23:16:52 CST 2025
+====================== TEST START ======================
+running msm curve=1, 2^18, batch_size=1, precomp_factor=14, c=19
+finished generating
+finished copying
+msm time : 38.229 ms.
+x: 0x1b86aedb9deb6c310a773aa819c983b99d270c89bdbe6ca04cac74a145342bf5; y: 0x1702ed1b16a1c38f2347dde5f8c71f2528056bca82fe3524bacc83f8035211ac
+good
+success!
+Generating '/tmp/nsys-report-1d26.qdstrm'
+[1/1] [0%                          ] msm_18_14_19.nsys-rep[1/1] [0%                          ] msm_18_14_19.nsys-rep[1/1] [9%                          ] msm_18_14_19.nsys-rep[1/1] [10%                         ] msm_18_14_19.nsys-rep[1/1] [======================91%   ] msm_18_14_19.nsys-rep[1/1] [========================100%] msm_18_14_19.nsys-rep[1/1] [========================100%] msm_18_14_19.nsys-rep
+Generated:
+    /root/autodl-tmp/yr/icicle/icicle/src/msm/./work/reports/msm_18_14_19.nsys-rep
+====================== TEST END ======================
+
+
+
+[58/168] Testing: log_size=18 precomp=14 c=21 @ Fri Feb 14 23:17:00 CST 2025
+====================== TEST START ======================
+running msm curve=1, 2^18, batch_size=1, precomp_factor=14, c=21
+finished generating
+finished copying
+msm time : 652.352 ms.
+x: 0x1caebdd30ed8d9e26a5d2ba6ec4bbe81a7f4f444563fe5ca898a447b3030007f; y: 0x0bd40541f18221eb05f4095cc79b04bd84eb91653a0de36861d26d03db7e1c36
+good
+success!
+Generating '/tmp/nsys-report-15cd.qdstrm'
+[1/1] [0%                          ] msm_18_14_21.nsys-rep[1/1] [0%                          ] msm_18_14_21.nsys-rep[1/1] [9%                          ] msm_18_14_21.nsys-rep[1/1] [10%                         ] msm_18_14_21.nsys-rep[1/1] [======================91%   ] msm_18_14_21.nsys-rep[1/1] [========================100%] msm_18_14_21.nsys-rep[1/1] [========================100%] msm_18_14_21.nsys-rep
+Generated:
+    /root/autodl-tmp/yr/icicle/icicle/src/msm/./work/reports/msm_18_14_21.nsys-rep
+====================== TEST END ======================
+
+
+
+[59/168] Testing: log_size=18 precomp=14 c=23 @ Fri Feb 14 23:17:10 CST 2025
+====================== TEST START ======================
+running msm curve=1, 2^18, batch_size=1, precomp_factor=14, c=23
+finished generating
+finished copying
+msm time : 678.825 ms.
+x: 0x0c1124bfec422899d74acf158ce61c33a8691ecd3c5bd511946297feef088d72; y: 0x265a372ab1ad1705879fbfac39453817317f59463e451262358d13041272d59d
+good
+success!
+Generating '/tmp/nsys-report-6817.qdstrm'
+[1/1] [0%                          ] msm_18_14_23.nsys-rep[1/1] [0%                          ] msm_18_14_23.nsys-rep[1/1] [7%                          ] msm_18_14_23.nsys-rep[1/1] [8%                          ] msm_18_14_23.nsys-rep[1/1] [======================92%   ] msm_18_14_23.nsys-rep[1/1] [========================100%] msm_18_14_23.nsys-rep[1/1] [========================100%] msm_18_14_23.nsys-rep
+Generated:
+    /root/autodl-tmp/yr/icicle/icicle/src/msm/./work/reports/msm_18_14_23.nsys-rep
+====================== TEST END ======================
+
+
+
+[60/168] Testing: log_size=18 precomp=14 c=25 @ Fri Feb 14 23:17:19 CST 2025
+====================== TEST START ======================
+running msm curve=1, 2^18, batch_size=1, precomp_factor=14, c=25
+finished generating
+finished copying
+msm time : 276.733 ms.
+x: 0x1887458301b39b659945711833f1ae691a0e835a0bd4012c6851acc4b200981a; y: 0x0d695987aa6cf7f511b47a58541b95e37fb1fc8200db63810872290dc28a1034
+good
+success!
+Generating '/tmp/nsys-report-63e8.qdstrm'
+[1/1] [0%                          ] msm_18_14_25.nsys-rep[1/1] [0%                          ] msm_18_14_25.nsys-rep[1/1] [5%                          ] msm_18_14_25.nsys-rep[1/1] [=======================95%  ] msm_18_14_25.nsys-rep[1/1] [========================100%] msm_18_14_25.nsys-rep[1/1] [========================100%] msm_18_14_25.nsys-rep
+Generated:
+    /root/autodl-tmp/yr/icicle/icicle/src/msm/./work/reports/msm_18_14_25.nsys-rep
+====================== TEST END ======================
+
+
+
+[61/168] Testing: log_size=18 precomp=16 c=15 @ Fri Feb 14 23:17:28 CST 2025
+====================== TEST START ======================
+running msm curve=1, 2^18, batch_size=1, precomp_factor=16, c=15
+finished generating
+finished copying
+msm time : 12.197 ms.
+x: 0x2eaa38007e922c5935099b4662fe61c3acf87b9d36b349a082661d3d027dfc91; y: 0x00d717cc5c593b2917f3989bc8b5895b1c29ce21ec5686097c9b4b771d7c19d3
+good
+success!
+Generating '/tmp/nsys-report-8c8c.qdstrm'
+[1/1] [0%                          ] msm_18_16_15.nsys-rep[1/1] [0%                          ] msm_18_16_15.nsys-rep[1/1] [9%                          ] msm_18_16_15.nsys-rep[1/1] [10%                         ] msm_18_16_15.nsys-rep[1/1] [======================91%   ] msm_18_16_15.nsys-rep[1/1] [========================100%] msm_18_16_15.nsys-rep[1/1] [========================100%] msm_18_16_15.nsys-rep
+Generated:
+    /root/autodl-tmp/yr/icicle/icicle/src/msm/./work/reports/msm_18_16_15.nsys-rep
+====================== TEST END ======================
+
+
+
+[62/168] Testing: log_size=18 precomp=16 c=17 @ Fri Feb 14 23:17:37 CST 2025
+====================== TEST START ======================
+running msm curve=1, 2^18, batch_size=1, precomp_factor=16, c=17
+finished generating
+finished copying
+msm time : 10.951 ms.
+x: 0x09897292aa47e98f98ff612e875a88a84ce642f9aa22d6945785a6d0062b4514; y: 0x1b45abad9c8bba19643f6537c1939be0fa997931ee99231f83b68e4045731f24
+good
+success!
+Generating '/tmp/nsys-report-975f.qdstrm'
+[1/1] [0%                          ] msm_18_16_17.nsys-rep[1/1] [0%                          ] msm_18_16_17.nsys-rep[1/1] [5%                          ] msm_18_16_17.nsys-rep[1/1] [10%                         ] msm_18_16_17.nsys-rep[1/1] [11%                         ] msm_18_16_17.nsys-rep[1/1] [======================91%   ] msm_18_16_17.nsys-rep[1/1] [========================100%] msm_18_16_17.nsys-rep[1/1] [========================100%] msm_18_16_17.nsys-rep
+Generated:
+    /root/autodl-tmp/yr/icicle/icicle/src/msm/./work/reports/msm_18_16_17.nsys-rep
+====================== TEST END ======================
+
+
+
+[63/168] Testing: log_size=18 precomp=16 c=19 @ Fri Feb 14 23:17:45 CST 2025
+====================== TEST START ======================
+running msm curve=1, 2^18, batch_size=1, precomp_factor=16, c=19
+finished generating
+finished copying
+msm time : 38.510 ms.
+x: 0x2cef254e5c27ff4422c6c9a88ac35f071b84465191761106e6a2ea31ba7faeb7; y: 0x2a268326106e58db66f9e790ed88ae0b0524fb5b9049e0e8ccbf5337f8932792
+good
+success!
+Generating '/tmp/nsys-report-d256.qdstrm'
+[1/1] [0%                          ] msm_18_16_19.nsys-rep[1/1] [0%                          ] msm_18_16_19.nsys-rep[1/1] [9%                          ] msm_18_16_19.nsys-rep[1/1] [10%                         ] msm_18_16_19.nsys-rep[1/1] [======================91%   ] msm_18_16_19.nsys-rep[1/1] [========================100%] msm_18_16_19.nsys-rep[1/1] [========================100%] msm_18_16_19.nsys-rep
+Generated:
+    /root/autodl-tmp/yr/icicle/icicle/src/msm/./work/reports/msm_18_16_19.nsys-rep
+====================== TEST END ======================
+
+
+
+[64/168] Testing: log_size=18 precomp=16 c=21 @ Fri Feb 14 23:17:53 CST 2025
+====================== TEST START ======================
+running msm curve=1, 2^18, batch_size=1, precomp_factor=16, c=21
+finished generating
+finished copying
+msm time : 651.077 ms.
+x: 0x0a8d53cd8b518ab32330202698e083d2db333247b5658fc7b309e5aa129fdb8b; y: 0x001872990fee9e9ad5cf8dc722b994cde1eeebff9b3c3dd1308db2eebba2be63
+good
+success!
+Generating '/tmp/nsys-report-1aa1.qdstrm'
+[1/1] [0%                          ] msm_18_16_21.nsys-rep[1/1] [0%                          ] msm_18_16_21.nsys-rep[1/1] [9%                          ] msm_18_16_21.nsys-rep[1/1] [10%                         ] msm_18_16_21.nsys-rep[1/1] [======================91%   ] msm_18_16_21.nsys-rep[1/1] [========================100%] msm_18_16_21.nsys-rep[1/1] [========================100%] msm_18_16_21.nsys-rep
+Generated:
+    /root/autodl-tmp/yr/icicle/icicle/src/msm/./work/reports/msm_18_16_21.nsys-rep
+====================== TEST END ======================
+
+
+
+[65/168] Testing: log_size=18 precomp=16 c=23 @ Fri Feb 14 23:18:03 CST 2025
+====================== TEST START ======================
+running msm curve=1, 2^18, batch_size=1, precomp_factor=16, c=23
+finished generating
+finished copying
+msm time : 678.827 ms.
+x: 0x148afaab3c17e4e309961e82961381f57ec8d2e19740f93cb74e8e632c8882c2; y: 0x0f84086a1dfdc4ce3fcc530127520c3c143dc99f7d5e1983f07ff3e429c84952
+good
+success!
+Generating '/tmp/nsys-report-63c9.qdstrm'
+[1/1] [0%                          ] msm_18_16_23.nsys-rep[1/1] [0%                          ] msm_18_16_23.nsys-rep[1/1] [7%                          ] msm_18_16_23.nsys-rep[1/1] [8%                          ] msm_18_16_23.nsys-rep[1/1] [======================92%   ] msm_18_16_23.nsys-rep[1/1] [========================100%] msm_18_16_23.nsys-rep[1/1] [========================100%] msm_18_16_23.nsys-rep
+Generated:
+    /root/autodl-tmp/yr/icicle/icicle/src/msm/./work/reports/msm_18_16_23.nsys-rep
+====================== TEST END ======================
+
+
+
+[66/168] Testing: log_size=18 precomp=16 c=25 @ Fri Feb 14 23:18:12 CST 2025
+====================== TEST START ======================
+running msm curve=1, 2^18, batch_size=1, precomp_factor=16, c=25
+finished generating
+finished copying
+msm time : 276.611 ms.
+x: 0x13603114704b9a5faf57b10dfcb4cb0a6c81a200922a4737d00dee0a6bffbe2a; y: 0x00dc91013c57c7c7a2f87457aeeaa82fd1f2cc8123c054eac24fc22769c0fe5b
+good
+success!
+Generating '/tmp/nsys-report-22cc.qdstrm'
+[1/1] [0%                          ] msm_18_16_25.nsys-rep[1/1] [0%                          ] msm_18_16_25.nsys-rep[1/1] [5%                          ] msm_18_16_25.nsys-rep[1/1] [=======================95%  ] msm_18_16_25.nsys-rep[1/1] [========================100%] msm_18_16_25.nsys-rep[1/1] [========================100%] msm_18_16_25.nsys-rep
+Generated:
+    /root/autodl-tmp/yr/icicle/icicle/src/msm/./work/reports/msm_18_16_25.nsys-rep
+====================== TEST END ======================
+
+
+
+[67/168] Testing: log_size=18 precomp=18 c=15 @ Fri Feb 14 23:18:21 CST 2025
+====================== TEST START ======================
+running msm curve=1, 2^18, batch_size=1, precomp_factor=18, c=15
+finished generating
+finished copying
+msm time : 12.105 ms.
+x: 0x2fdd0e6c08e0fbd1ba6a8cc407193d6cd4bc71e0bc9d1596815b98933507b417; y: 0x1bc5e117a0d46a0ba71f0ef281a9d709e1762148ffe2963a2eb7e1e6154fb298
+good
+success!
+Generating '/tmp/nsys-report-6b89.qdstrm'
+[1/1] [0%                          ] msm_18_18_15.nsys-rep[1/1] [0%                          ] msm_18_18_15.nsys-rep[1/1] [9%                          ] msm_18_18_15.nsys-rep[1/1] [10%                         ] msm_18_18_15.nsys-rep[1/1] [======================91%   ] msm_18_18_15.nsys-rep[1/1] [========================100%] msm_18_18_15.nsys-rep[1/1] [========================100%] msm_18_18_15.nsys-rep
+Generated:
+    /root/autodl-tmp/yr/icicle/icicle/src/msm/./work/reports/msm_18_18_15.nsys-rep
+====================== TEST END ======================
+
+
+
+[68/168] Testing: log_size=18 precomp=18 c=17 @ Fri Feb 14 23:18:29 CST 2025
+====================== TEST START ======================
+running msm curve=1, 2^18, batch_size=1, precomp_factor=18, c=17
+finished generating
+finished copying
+msm time : 11.414 ms.
+x: 0x231a6a8f08bea372257bad5bcaab7529bd48156c863c9bd178763574c202edcd; y: 0x09f19873f400286bf81dd42280b601d784f6f337b2f3b2821bc89448e642425e
+good
+success!
+Generating '/tmp/nsys-report-586e.qdstrm'
+[1/1] [0%                          ] msm_18_18_17.nsys-rep[1/1] [0%                          ] msm_18_18_17.nsys-rep[1/1] [9%                          ] msm_18_18_17.nsys-rep[1/1] [10%                         ] msm_18_18_17.nsys-rep[1/1] [======================91%   ] msm_18_18_17.nsys-rep[1/1] [========================100%] msm_18_18_17.nsys-rep[1/1] [========================100%] msm_18_18_17.nsys-rep
+Generated:
+    /root/autodl-tmp/yr/icicle/icicle/src/msm/./work/reports/msm_18_18_17.nsys-rep
+====================== TEST END ======================
+
+
+
+[69/168] Testing: log_size=18 precomp=18 c=19 @ Fri Feb 14 23:18:38 CST 2025
+====================== TEST START ======================
+running msm curve=1, 2^18, batch_size=1, precomp_factor=18, c=19
+finished generating
+finished copying
+msm time : 37.671 ms.
+x: 0x2c908f866e6346a3a0315c42f4db0a7cf0fd39f341c714e23dc130411201c52f; y: 0x2ada87c89cc78a00f82a81c8a75e5ba8082b7f6c9a8a68bab8d86a2578cd86e1
+good
+success!
+Generating '/tmp/nsys-report-25aa.qdstrm'
+[1/1] [0%                          ] msm_18_18_19.nsys-rep[1/1] [0%                          ] msm_18_18_19.nsys-rep[1/1] [9%                          ] msm_18_18_19.nsys-rep[1/1] [10%                         ] msm_18_18_19.nsys-rep[1/1] [======================91%   ] msm_18_18_19.nsys-rep[1/1] [========================100%] msm_18_18_19.nsys-rep[1/1] [========================100%] msm_18_18_19.nsys-rep
+Generated:
+    /root/autodl-tmp/yr/icicle/icicle/src/msm/./work/reports/msm_18_18_19.nsys-rep
+====================== TEST END ======================
+
+
+
+[70/168] Testing: log_size=18 precomp=18 c=21 @ Fri Feb 14 23:18:46 CST 2025
+====================== TEST START ======================
+running msm curve=1, 2^18, batch_size=1, precomp_factor=18, c=21
+finished generating
+finished copying
+msm time : 653.345 ms.
+x: 0x2d7b678fdef5ce6fcb5d7680636a3d0a035e1a1816b4fa14eed750e8825bd343; y: 0x2a5be88236b5c48e8011b6bcd048baa4c880964b166ac5f3267d2042834fb08e
+good
+success!
+Generating '/tmp/nsys-report-78d7.qdstrm'
+[1/1] [0%                          ] msm_18_18_21.nsys-rep[1/1] [0%                          ] msm_18_18_21.nsys-rep[1/1] [8%                          ] msm_18_18_21.nsys-rep[1/1] [9%                          ] msm_18_18_21.nsys-rep[1/1] [10%                         ] msm_18_18_21.nsys-rep[1/1] [======================91%   ] msm_18_18_21.nsys-rep[1/1] [========================100%] msm_18_18_21.nsys-rep[1/1] [========================100%] msm_18_18_21.nsys-rep
+Generated:
+    /root/autodl-tmp/yr/icicle/icicle/src/msm/./work/reports/msm_18_18_21.nsys-rep
+====================== TEST END ======================
+
+
+
+[71/168] Testing: log_size=18 precomp=18 c=23 @ Fri Feb 14 23:18:55 CST 2025
+====================== TEST START ======================
+running msm curve=1, 2^18, batch_size=1, precomp_factor=18, c=23
+finished generating
+finished copying
+msm time : 675.896 ms.
+x: 0x044e0d20f8a037e101d68b2c30d16b28d632e3663981e0b749034338f6d4930d; y: 0x00158244caa8a1523f2c09ffe025113d6876e74d6855a295b7f3b8017419f749
+good
+success!
+Generating '/tmp/nsys-report-2889.qdstrm'
+[1/1] [0%                          ] msm_18_18_23.nsys-rep[1/1] [0%                          ] msm_18_18_23.nsys-rep[1/1] [7%                          ] msm_18_18_23.nsys-rep[1/1] [8%                          ] msm_18_18_23.nsys-rep[1/1] [9%                          ] msm_18_18_23.nsys-rep[1/1] [======================92%   ] msm_18_18_23.nsys-rep[1/1] [========================100%] msm_18_18_23.nsys-rep[1/1] [========================100%] msm_18_18_23.nsys-rep
+Generated:
+    /root/autodl-tmp/yr/icicle/icicle/src/msm/./work/reports/msm_18_18_23.nsys-rep
+====================== TEST END ======================
+
+
+
+[72/168] Testing: log_size=18 precomp=18 c=25 @ Fri Feb 14 23:19:05 CST 2025
+====================== TEST START ======================
+running msm curve=1, 2^18, batch_size=1, precomp_factor=18, c=25
+finished generating
+finished copying
+msm time : 294.922 ms.
+x: 0x2a633aaab86e8ba81565f0f2437af6b79ad2001633709ee7af1572a5c7d7c83a; y: 0x19ef5049206214369a96fe5b9f7df6b446f10a7ef9b29e2448b21d79d421eb52
+good
+success!
+Generating '/tmp/nsys-report-a8fb.qdstrm'
+[1/1] [0%                          ] msm_18_18_25.nsys-rep[1/1] [0%                          ] msm_18_18_25.nsys-rep[1/1] [5%                          ] msm_18_18_25.nsys-rep[1/1] [=======================95%  ] msm_18_18_25.nsys-rep[1/1] [========================100%] msm_18_18_25.nsys-rep[1/1] [========================100%] msm_18_18_25.nsys-rep
+Generated:
+    /root/autodl-tmp/yr/icicle/icicle/src/msm/./work/reports/msm_18_18_25.nsys-rep
+====================== TEST END ======================
+
+
+
+[73/168] Testing: log_size=18 precomp=20 c=15 @ Fri Feb 14 23:19:15 CST 2025
+====================== TEST START ======================
+running msm curve=1, 2^18, batch_size=1, precomp_factor=20, c=15
+finished generating
+finished copying
+msm time : 12.589 ms.
+x: 0x02ac5195f627962545b05915dd76ff5584684e8a99bbc4622c07793585d252e5; y: 0x0f60454cfb0c003e0dca95e3d8e1cab352fda9a12801fe7d1ee73e7076eafa46
+good
+success!
+Generating '/tmp/nsys-report-85c5.qdstrm'
+[1/1] [0%                          ] msm_18_20_15.nsys-rep[1/1] [0%                          ] msm_18_20_15.nsys-rep[1/1] [9%                          ] msm_18_20_15.nsys-rep[1/1] [10%                         ] msm_18_20_15.nsys-rep[1/1] [======================91%   ] msm_18_20_15.nsys-rep[1/1] [========================100%] msm_18_20_15.nsys-rep[1/1] [========================100%] msm_18_20_15.nsys-rep
+Generated:
+    /root/autodl-tmp/yr/icicle/icicle/src/msm/./work/reports/msm_18_20_15.nsys-rep
+====================== TEST END ======================
+
+
+
+[74/168] Testing: log_size=18 precomp=20 c=17 @ Fri Feb 14 23:19:23 CST 2025
+====================== TEST START ======================
+running msm curve=1, 2^18, batch_size=1, precomp_factor=20, c=17
+finished generating
+finished copying
+msm time : 10.897 ms.
+x: 0x1ac270f980782349d5b7798648101234751cdb76531131c872ec958b49d388e0; y: 0x287fb75159a179800e848c4a0e2112d07ad6ee17a7d0a4742e6f1ff155dddbdf
+good
+success!
+Generating '/tmp/nsys-report-43a9.qdstrm'
+[1/1] [0%                          ] msm_18_20_17.nsys-rep[1/1] [0%                          ] msm_18_20_17.nsys-rep[1/1] [9%                          ] msm_18_20_17.nsys-rep[1/1] [10%                         ] msm_18_20_17.nsys-rep[1/1] [======================91%   ] msm_18_20_17.nsys-rep[1/1] [========================100%] msm_18_20_17.nsys-rep[1/1] [========================100%] msm_18_20_17.nsys-rep
+Generated:
+    /root/autodl-tmp/yr/icicle/icicle/src/msm/./work/reports/msm_18_20_17.nsys-rep
+====================== TEST END ======================
+
+
+
+[75/168] Testing: log_size=18 precomp=20 c=19 @ Fri Feb 14 23:19:32 CST 2025
+====================== TEST START ======================
+running msm curve=1, 2^18, batch_size=1, precomp_factor=20, c=19
+finished generating
+finished copying
+msm time : 39.110 ms.
+x: 0x288f2818ecdce532972662ae722a8c7d69fb1c2d493decc0bf57116ed2c4b841; y: 0x2b7bea00b073a1b2aa81010e611870cbcf4f463ffdbeeefd51fab365657b1a49
+good
+success!
+Generating '/tmp/nsys-report-5e70.qdstrm'
+[1/1] [0%                          ] msm_18_20_19.nsys-rep[1/1] [0%                          ] msm_18_20_19.nsys-rep[1/1] [9%                          ] msm_18_20_19.nsys-rep[1/1] [10%                         ] msm_18_20_19.nsys-rep[1/1] [======================91%   ] msm_18_20_19.nsys-rep[1/1] [========================100%] msm_18_20_19.nsys-rep[1/1] [========================100%] msm_18_20_19.nsys-rep
+Generated:
+    /root/autodl-tmp/yr/icicle/icicle/src/msm/./work/reports/msm_18_20_19.nsys-rep
+====================== TEST END ======================
+
+
+
+[76/168] Testing: log_size=18 precomp=20 c=21 @ Fri Feb 14 23:19:40 CST 2025
+====================== TEST START ======================
+running msm curve=1, 2^18, batch_size=1, precomp_factor=20, c=21
+finished generating
+finished copying
+msm time : 656.150 ms.
+x: 0x0d50b0a6e4dfc909dfb53f7416ce6136abe40183b4d6f92fc9f3a2ca79670c24; y: 0x0ddb3e66872021aa59d3efbdd0fe213e4d00b2ff1a84e222e9c8a4ff753e7cb5
+good
+success!
+Generating '/tmp/nsys-report-89ea.qdstrm'
+[1/1] [0%                          ] msm_18_20_21.nsys-rep[1/1] [0%                          ] msm_18_20_21.nsys-rep[1/1] [8%                          ] msm_18_20_21.nsys-rep[1/1] [9%                          ] msm_18_20_21.nsys-rep[1/1] [10%                         ] msm_18_20_21.nsys-rep[1/1] [======================91%   ] msm_18_20_21.nsys-rep[1/1] [========================100%] msm_18_20_21.nsys-rep[1/1] [========================100%] msm_18_20_21.nsys-rep
+Generated:
+    /root/autodl-tmp/yr/icicle/icicle/src/msm/./work/reports/msm_18_20_21.nsys-rep
+====================== TEST END ======================
+
+
+
+[77/168] Testing: log_size=18 precomp=20 c=23 @ Fri Feb 14 23:19:50 CST 2025
+====================== TEST START ======================
+running msm curve=1, 2^18, batch_size=1, precomp_factor=20, c=23
+finished generating
+finished copying
+msm time : 676.097 ms.
+x: 0x0b8ba84c46f5058d91cd94fba24c9aea8bf54a761eaf6c343cc122961ae43194; y: 0x070bd05d40a3192c2caeebebd6c4ca226039945524ec98362f10098b1b34f856
+good
+success!
+Generating '/tmp/nsys-report-6eb4.qdstrm'
+[1/1] [0%                          ] msm_18_20_23.nsys-rep[1/1] [0%                          ] msm_18_20_23.nsys-rep[1/1] [7%                          ] msm_18_20_23.nsys-rep[1/1] [8%                          ] msm_18_20_23.nsys-rep[1/1] [======================92%   ] msm_18_20_23.nsys-rep[1/1] [========================100%] msm_18_20_23.nsys-rep[1/1] [========================100%] msm_18_20_23.nsys-rep
+Generated:
+    /root/autodl-tmp/yr/icicle/icicle/src/msm/./work/reports/msm_18_20_23.nsys-rep
+====================== TEST END ======================
+
+
+
+[78/168] Testing: log_size=18 precomp=20 c=25 @ Fri Feb 14 23:20:00 CST 2025
+====================== TEST START ======================
+running msm curve=1, 2^18, batch_size=1, precomp_factor=20, c=25
+finished generating
+finished copying
+msm time : 308.609 ms.
+x: 0x15969a4c84501e86b08f6d69fb337c2929fa006c5f466fd295600ed0325e9cae; y: 0x1a9f64f9c2a51322fc446411299ebdc091e3c278128f8ae04e557fb3d602fcd4
+good
+success!
+Generating '/tmp/nsys-report-4dc3.qdstrm'
+[1/1] [0%                          ] msm_18_20_25.nsys-rep[1/1] [0%                          ] msm_18_20_25.nsys-rep[1/1] [5%                          ] msm_18_20_25.nsys-rep[1/1] [=======================95%  ] msm_18_20_25.nsys-rep[1/1] [========================100%] msm_18_20_25.nsys-rep[1/1] [========================100%] msm_18_20_25.nsys-rep
+Generated:
+    /root/autodl-tmp/yr/icicle/icicle/src/msm/./work/reports/msm_18_20_25.nsys-rep
+====================== TEST END ======================
+
+
+
+[79/168] Testing: log_size=18 precomp=22 c=15 @ Fri Feb 14 23:20:09 CST 2025
+====================== TEST START ======================
+running msm curve=1, 2^18, batch_size=1, precomp_factor=22, c=15
+finished generating
+finished copying
+msm time : 12.815 ms.
+x: 0x136ffdccc8844cf2fae59b2530cbe747245e6ef6a6010f83222bd3f1335b6b05; y: 0x18b8067b9f248b95814183b3144726267b7886be7a9e2baaa1f9950878872dde
+good
+success!
+Generating '/tmp/nsys-report-432a.qdstrm'
+[1/1] [0%                          ] msm_18_22_15.nsys-rep[1/1] [0%                          ] msm_18_22_15.nsys-rep[1/1] [9%                          ] msm_18_22_15.nsys-rep[1/1] [10%                         ] msm_18_22_15.nsys-rep[1/1] [======================91%   ] msm_18_22_15.nsys-rep[1/1] [========================100%] msm_18_22_15.nsys-rep[1/1] [========================100%] msm_18_22_15.nsys-rep
+Generated:
+    /root/autodl-tmp/yr/icicle/icicle/src/msm/./work/reports/msm_18_22_15.nsys-rep
+====================== TEST END ======================
+
+
+
+[80/168] Testing: log_size=18 precomp=22 c=17 @ Fri Feb 14 23:20:17 CST 2025
+====================== TEST START ======================
+running msm curve=1, 2^18, batch_size=1, precomp_factor=22, c=17
+finished generating
+finished copying
+msm time : 11.840 ms.
+x: 0x1456b147e0f9758ebf992d6d73b61cd8dc8a506fe7af2b3f0207d9635970ad4c; y: 0x26c626870c5e737f8c1ffc143ae9c80ca8f9473c71a87e942e39b86b1b25e85c
+good
+success!
+Generating '/tmp/nsys-report-7bd9.qdstrm'
+[1/1] [0%                          ] msm_18_22_17.nsys-rep[1/1] [0%                          ] msm_18_22_17.nsys-rep[1/1] [9%                          ] msm_18_22_17.nsys-rep[1/1] [10%                         ] msm_18_22_17.nsys-rep[1/1] [======================91%   ] msm_18_22_17.nsys-rep[1/1] [========================100%] msm_18_22_17.nsys-rep[1/1] [========================100%] msm_18_22_17.nsys-rep
+Generated:
+    /root/autodl-tmp/yr/icicle/icicle/src/msm/./work/reports/msm_18_22_17.nsys-rep
+====================== TEST END ======================
+
+
+
+[81/168] Testing: log_size=18 precomp=22 c=19 @ Fri Feb 14 23:20:25 CST 2025
+====================== TEST START ======================
+running msm curve=1, 2^18, batch_size=1, precomp_factor=22, c=19
+finished generating
+finished copying
+msm time : 39.242 ms.
+x: 0x0e44cdb10f45d04d5946db1afda4b85ea0f8b6d24788370b92b9d181892f0942; y: 0x2db5cac300ba341919b24519536cefceaf6a7d8c091a5d43339282fa3ba094d1
+good
+success!
+Generating '/tmp/nsys-report-87aa.qdstrm'
+[1/1] [0%                          ] msm_18_22_19.nsys-rep[1/1] [0%                          ] msm_18_22_19.nsys-rep[1/1] [9%                          ] msm_18_22_19.nsys-rep[1/1] [10%                         ] msm_18_22_19.nsys-rep[1/1] [======================91%   ] msm_18_22_19.nsys-rep[1/1] [========================100%] msm_18_22_19.nsys-rep[1/1] [========================100%] msm_18_22_19.nsys-rep
+Generated:
+    /root/autodl-tmp/yr/icicle/icicle/src/msm/./work/reports/msm_18_22_19.nsys-rep
+====================== TEST END ======================
+
+
+
+[82/168] Testing: log_size=18 precomp=22 c=21 @ Fri Feb 14 23:20:34 CST 2025
+====================== TEST START ======================
+running msm curve=1, 2^18, batch_size=1, precomp_factor=22, c=21
+finished generating
+finished copying
+msm time : 653.453 ms.
+x: 0x1412b1e1d9b20782f6dd639cab477e6973fff32608bcbcc7d7ab44e7308e3148; y: 0x2482f632491cbeb8ce303b6c7ae3f2d30cadd2fd95d4152ff4a1b1a6e3c2c343
+good
+success!
+Generating '/tmp/nsys-report-ffa9.qdstrm'
+[1/1] [0%                          ] msm_18_22_21.nsys-rep[1/1] [0%                          ] msm_18_22_21.nsys-rep[1/1] [8%                          ] msm_18_22_21.nsys-rep[1/1] [9%                          ] msm_18_22_21.nsys-rep[1/1] [10%                         ] msm_18_22_21.nsys-rep[1/1] [======================91%   ] msm_18_22_21.nsys-rep[1/1] [========================100%] msm_18_22_21.nsys-rep[1/1] [========================100%] msm_18_22_21.nsys-rep
+Generated:
+    /root/autodl-tmp/yr/icicle/icicle/src/msm/./work/reports/msm_18_22_21.nsys-rep
+====================== TEST END ======================
+
+
+
+[83/168] Testing: log_size=18 precomp=22 c=23 @ Fri Feb 14 23:20:43 CST 2025
+====================== TEST START ======================
+running msm curve=1, 2^18, batch_size=1, precomp_factor=22, c=23
+finished generating
+finished copying
+msm time : 679.830 ms.
+x: 0x1144ee7d2d0bb5d3baa833818e73a58e690a6b34446074384498ffd605d6c289; y: 0x0a947d1dcd6f34bb761d12d006ccde11e4a4d1ed9ec9f7739a91d61dce6b5f3b
+good
+success!
+Generating '/tmp/nsys-report-29fa.qdstrm'
+[1/1] [0%                          ] msm_18_22_23.nsys-rep[1/1] [0%                          ] msm_18_22_23.nsys-rep[1/1] [7%                          ] msm_18_22_23.nsys-rep[1/1] [8%                          ] msm_18_22_23.nsys-rep[1/1] [9%                          ] msm_18_22_23.nsys-rep[1/1] [======================92%   ] msm_18_22_23.nsys-rep[1/1] [========================100%] msm_18_22_23.nsys-rep[1/1] [========================100%] msm_18_22_23.nsys-rep
+Generated:
+    /root/autodl-tmp/yr/icicle/icicle/src/msm/./work/reports/msm_18_22_23.nsys-rep
+====================== TEST END ======================
+
+
+
+[84/168] Testing: log_size=18 precomp=22 c=25 @ Fri Feb 14 23:20:53 CST 2025
+====================== TEST START ======================
+running msm curve=1, 2^18, batch_size=1, precomp_factor=22, c=25
+finished generating
+finished copying
+msm time : 277.065 ms.
+x: 0x2c1fd16ff142e650b844bb882e02454ea37329bad47cd6b650620f9fc6d12bd1; y: 0x01f58895c0a62a33e631dd6fac46e799c111b546e06f60f0ccf1bdf9636bb136
+good
+success!
+Generating '/tmp/nsys-report-a90b.qdstrm'
+[1/1] [0%                          ] msm_18_22_25.nsys-rep[1/1] [0%                          ] msm_18_22_25.nsys-rep[1/1] [5%                          ] msm_18_22_25.nsys-rep[1/1] [=======================95%  ] msm_18_22_25.nsys-rep[1/1] [========================100%] msm_18_22_25.nsys-rep[1/1] [========================100%] msm_18_22_25.nsys-rep
+Generated:
+    /root/autodl-tmp/yr/icicle/icicle/src/msm/./work/reports/msm_18_22_25.nsys-rep
+====================== TEST END ======================
+
+
+
+[85/168] Testing: log_size=20 precomp=10 c=15 @ Fri Feb 14 23:21:02 CST 2025
+====================== TEST START ======================
+running msm curve=1, 2^20, batch_size=1, precomp_factor=10, c=15
+finished generating
+finished copying
+msm time : 32.259 ms.
+x: 0x1cf3f1e3fe220edf84f26d043f2d0bcba24ba08b7c604fe1edfe6289476f7774; y: 0x09b0c54923b982e22d99d5e3ead82a29ea4f0bd3f413975049f52b537926d0f9
+good
+success!
+Generating '/tmp/nsys-report-94cb.qdstrm'
+[1/1] [0%                          ] msm_20_10_15.nsys-rep[1/1] [0%                          ] msm_20_10_15.nsys-rep[1/1] [9%                          ] msm_20_10_15.nsys-rep[1/1] [10%                         ] msm_20_10_15.nsys-rep[1/1] [11%                         ] msm_20_10_15.nsys-rep[1/1] [12%                         ] msm_20_10_15.nsys-rep[1/1] [======================92%   ] msm_20_10_15.nsys-rep[1/1] [========================100%] msm_20_10_15.nsys-rep[1/1] [========================100%] msm_20_10_15.nsys-rep
+Generated:
+    /root/autodl-tmp/yr/icicle/icicle/src/msm/./work/reports/msm_20_10_15.nsys-rep
+====================== TEST END ======================
+
+
+
+[86/168] Testing: log_size=20 precomp=10 c=17 @ Fri Feb 14 23:21:19 CST 2025
+====================== TEST START ======================
+running msm curve=1, 2^20, batch_size=1, precomp_factor=10, c=17
+finished generating
+finished copying
+msm time : 49.548 ms.
+x: 0x0591e8a6a678f866014a73b238b7bc14bed299206da423e0c7522a64b8f35b4c; y: 0x0bf6fdfd462b166d99efbd5eb0f8f2f99904cef63eca5635a803170f767e4363
+good
+success!
+Generating '/tmp/nsys-report-f6ba.qdstrm'
+[1/1] [0%                          ] msm_20_10_17.nsys-rep[1/1] [0%                          ] msm_20_10_17.nsys-rep[1/1] [9%                          ] msm_20_10_17.nsys-rep[1/1] [10%                         ] msm_20_10_17.nsys-rep[1/1] [11%                         ] msm_20_10_17.nsys-rep[1/1] [======================92%   ] msm_20_10_17.nsys-rep[1/1] [========================100%] msm_20_10_17.nsys-rep[1/1] [========================100%] msm_20_10_17.nsys-rep
+Generated:
+    /root/autodl-tmp/yr/icicle/icicle/src/msm/./work/reports/msm_20_10_17.nsys-rep
+====================== TEST END ======================
+
+
+
+[87/168] Testing: log_size=20 precomp=10 c=19 @ Fri Feb 14 23:21:36 CST 2025
+====================== TEST START ======================
+running msm curve=1, 2^20, batch_size=1, precomp_factor=10, c=19
+finished generating
+finished copying
+msm time : 34.160 ms.
+x: 0x2e8a755851fbd9a2e841ee30f0256b3ae3349a1e82b4e43ffe995def42e6a011; y: 0x1abdd0efb2336d5d27c6b0e3690b9eba1b27593974c4c6ef9ebff67b3b630959
+good
+success!
+Generating '/tmp/nsys-report-4290.qdstrm'
+[1/1] [0%                          ] msm_20_10_19.nsys-rep[1/1] [0%                          ] msm_20_10_19.nsys-rep[1/1] [8%                          ] msm_20_10_19.nsys-rep[1/1] [9%                          ] msm_20_10_19.nsys-rep[1/1] [10%                         ] msm_20_10_19.nsys-rep[1/1] [11%                         ] msm_20_10_19.nsys-rep[1/1] [======================91%   ] msm_20_10_19.nsys-rep[1/1] [========================100%] msm_20_10_19.nsys-rep[1/1] [========================100%] msm_20_10_19.nsys-rep
+Generated:
+    /root/autodl-tmp/yr/icicle/icicle/src/msm/./work/reports/msm_20_10_19.nsys-rep
+====================== TEST END ======================
+
+
+
+[88/168] Testing: log_size=20 precomp=10 c=21 @ Fri Feb 14 23:21:53 CST 2025
+====================== TEST START ======================
+running msm curve=1, 2^20, batch_size=1, precomp_factor=10, c=21
+finished generating
+finished copying
+msm time : 2585.761 ms.
+x: 0x2fc3d694dc4100853512a872689286d0e79d6264f9de02f264e8ed96445c4971; y: 0x253de04cd97542591122dc41f446722b2159e7a823a3a24d209bb4f805090f43
+good
+success!
+Generating '/tmp/nsys-report-eb51.qdstrm'
+[1/1] [0%                          ] msm_20_10_21.nsys-rep[1/1] [0%                          ] msm_20_10_21.nsys-rep[1/1] [8%                          ] msm_20_10_21.nsys-rep[1/1] [9%                          ] msm_20_10_21.nsys-rep[1/1] [10%                         ] msm_20_10_21.nsys-rep[1/1] [11%                         ] msm_20_10_21.nsys-rep[1/1] [=======================93%  ] msm_20_10_21.nsys-rep[1/1] [========================100%] msm_20_10_21.nsys-rep[1/1] [========================100%] msm_20_10_21.nsys-rep
+Generated:
+    /root/autodl-tmp/yr/icicle/icicle/src/msm/./work/reports/msm_20_10_21.nsys-rep
+====================== TEST END ======================
+
+
+
+[89/168] Testing: log_size=20 precomp=10 c=23 @ Fri Feb 14 23:22:15 CST 2025
+====================== TEST START ======================
+running msm curve=1, 2^20, batch_size=1, precomp_factor=10, c=23
+finished generating
+finished copying
+msm time : 2656.789 ms.
+x: 0x051e429f6339217172a65166581a695c6d2840adbdadde9e14955c247583e2cb; y: 0x2cb44a8af48d7a1c72a86abeabcaee32065c4bd7aa256b8c6c199f1cfe69f948
+good
+success!
+Generating '/tmp/nsys-report-0925.qdstrm'
+[1/1] [0%                          ] msm_20_10_23.nsys-rep[1/1] [0%                          ] msm_20_10_23.nsys-rep[1/1] [6%                          ] msm_20_10_23.nsys-rep[1/1] [7%                          ] msm_20_10_23.nsys-rep[1/1] [8%                          ] msm_20_10_23.nsys-rep[1/1] [=======================94%  ] msm_20_10_23.nsys-rep[1/1] [========================100%] msm_20_10_23.nsys-rep[1/1] [========================100%] msm_20_10_23.nsys-rep
+Generated:
+    /root/autodl-tmp/yr/icicle/icicle/src/msm/./work/reports/msm_20_10_23.nsys-rep
+====================== TEST END ======================
+
+
+
+[90/168] Testing: log_size=20 precomp=10 c=25 @ Fri Feb 14 23:22:38 CST 2025
+====================== TEST START ======================
+running msm curve=1, 2^20, batch_size=1, precomp_factor=10, c=25
+finished generating
+finished copying
+msm time : 947.586 ms.
+x: 0x145f189c09819aff44f3177c59d52d088d581e3202f6ebd3e2bc20cd26ca90ed; y: 0x0e32912d0f22543bf35a1fc5e78e8f278630726d8cc1f9b43388dc14ad114ffd
+good
+success!
+Generating '/tmp/nsys-report-c97f.qdstrm'
+[1/1] [0%                          ] msm_20_10_25.nsys-rep[1/1] [0%                          ] msm_20_10_25.nsys-rep[1/1] [========================97% ] msm_20_10_25.nsys-rep[1/1] [========================100%] msm_20_10_25.nsys-rep[1/1] [========================100%] msm_20_10_25.nsys-rep
+Generated:
+    /root/autodl-tmp/yr/icicle/icicle/src/msm/./work/reports/msm_20_10_25.nsys-rep
+====================== TEST END ======================
+
+
+
+[91/168] Testing: log_size=20 precomp=12 c=15 @ Fri Feb 14 23:22:57 CST 2025
+====================== TEST START ======================
+running msm curve=1, 2^20, batch_size=1, precomp_factor=12, c=15
+finished generating
+finished copying
+msm time : 40.241 ms.
+x: 0x2cae3b76349ff6c02688dc8cfdcd0cb7bc198335fd7936c578fb861fd91135a8; y: 0x19db65786127acd84f79f1f07c91581f4919b51116844971ad5840385a938fbe
+good
+success!
+Generating '/tmp/nsys-report-0dd2.qdstrm'
+[1/1] [0%                          ] msm_20_12_15.nsys-rep[1/1] [0%                          ] msm_20_12_15.nsys-rep[1/1] [9%                          ] msm_20_12_15.nsys-rep[1/1] [10%                         ] msm_20_12_15.nsys-rep[1/1] [11%                         ] msm_20_12_15.nsys-rep[1/1] [======================92%   ] msm_20_12_15.nsys-rep[1/1] [========================100%] msm_20_12_15.nsys-rep[1/1] [========================100%] msm_20_12_15.nsys-rep
+Generated:
+    /root/autodl-tmp/yr/icicle/icicle/src/msm/./work/reports/msm_20_12_15.nsys-rep
+====================== TEST END ======================
+
+
+
+[92/168] Testing: log_size=20 precomp=12 c=17 @ Fri Feb 14 23:23:14 CST 2025
+====================== TEST START ======================
+running msm curve=1, 2^20, batch_size=1, precomp_factor=12, c=17
+finished generating
+finished copying
+msm time : 32.478 ms.
+x: 0x0be1d57952fedff594ff0c5b9fc2891267946344dba190d24756e034926d58db; y: 0x12a5e708caed54f7891424765bd72c8af36b9e49cc5419e7f7b8cdd85beec047
+good
+success!
+Generating '/tmp/nsys-report-8fd1.qdstrm'
+[1/1] [0%                          ] msm_20_12_17.nsys-rep[1/1] [0%                          ] msm_20_12_17.nsys-rep[1/1] [9%                          ] msm_20_12_17.nsys-rep[1/1] [10%                         ] msm_20_12_17.nsys-rep[1/1] [11%                         ] msm_20_12_17.nsys-rep[1/1] [======================92%   ] msm_20_12_17.nsys-rep[1/1] [========================100%] msm_20_12_17.nsys-rep[1/1] [========================100%] msm_20_12_17.nsys-rep
+Generated:
+    /root/autodl-tmp/yr/icicle/icicle/src/msm/./work/reports/msm_20_12_17.nsys-rep
+====================== TEST END ======================
+
+
+
+[93/168] Testing: log_size=20 precomp=12 c=19 @ Fri Feb 14 23:23:31 CST 2025
+====================== TEST START ======================
+running msm curve=1, 2^20, batch_size=1, precomp_factor=12, c=19
+finished generating
+finished copying
+msm time : 32.709 ms.
+x: 0x21115651f58c629206187fb9b2c1a87528ac9faabaed3d06eed68c7201705774; y: 0x0cc92aba3b49c1c552df68c36422d1c7172fd65a4e53ee7f16edc7e0993db14d
+good
+success!
+Generating '/tmp/nsys-report-3950.qdstrm'
+[1/1] [0%                          ] msm_20_12_19.nsys-rep[1/1] [0%                          ] msm_20_12_19.nsys-rep[1/1] [8%                          ] msm_20_12_19.nsys-rep[1/1] [9%                          ] msm_20_12_19.nsys-rep[1/1] [10%                         ] msm_20_12_19.nsys-rep[1/1] [======================91%   ] msm_20_12_19.nsys-rep[1/1] [========================100%] msm_20_12_19.nsys-rep[1/1] [========================100%] msm_20_12_19.nsys-rep
+Generated:
+    /root/autodl-tmp/yr/icicle/icicle/src/msm/./work/reports/msm_20_12_19.nsys-rep
+====================== TEST END ======================
+
+
+
+[94/168] Testing: log_size=20 precomp=12 c=21 @ Fri Feb 14 23:23:48 CST 2025
+====================== TEST START ======================
+running msm curve=1, 2^20, batch_size=1, precomp_factor=12, c=21
+finished generating
+finished copying
+msm time : 2590.562 ms.
+x: 0x006337f5fa43616261ff13060c960b70d15ad5a6f3f67f476dabebc7ddd3a637; y: 0x2d6170445f5a13c7d269cf8d8bb469dad09ddf0b9512c056048cbea6ec643d55
+good
+success!
+Generating '/tmp/nsys-report-9ecc.qdstrm'
+[1/1] [0%                          ] msm_20_12_21.nsys-rep[1/1] [0%                          ] msm_20_12_21.nsys-rep[1/1] [8%                          ] msm_20_12_21.nsys-rep[1/1] [9%                          ] msm_20_12_21.nsys-rep[1/1] [10%                         ] msm_20_12_21.nsys-rep[1/1] [11%                         ] msm_20_12_21.nsys-rep[1/1] [=======================93%  ] msm_20_12_21.nsys-rep[1/1] [========================100%] msm_20_12_21.nsys-rep[1/1] [========================100%] msm_20_12_21.nsys-rep
+Generated:
+    /root/autodl-tmp/yr/icicle/icicle/src/msm/./work/reports/msm_20_12_21.nsys-rep
+====================== TEST END ======================
+
+
+
+[95/168] Testing: log_size=20 precomp=12 c=23 @ Fri Feb 14 23:24:11 CST 2025
+====================== TEST START ======================
+running msm curve=1, 2^20, batch_size=1, precomp_factor=12, c=23
+finished generating
+finished copying
+msm time : 2642.533 ms.
+x: 0x0ae64b86f08a3c3d1fb2686eab8fe86e95925f9f1b65cb1d51fc14c193adfc4b; y: 0x21086740352902553c761d29b5602f4b60f3add4eee30182e0246ea573d7df2b
+good
+success!
+Generating '/tmp/nsys-report-c7ed.qdstrm'
+[1/1] [0%                          ] msm_20_12_23.nsys-rep[1/1] [0%                          ] msm_20_12_23.nsys-rep[1/1] [7%                          ] msm_20_12_23.nsys-rep[1/1] [8%                          ] msm_20_12_23.nsys-rep[1/1] [9%                          ] msm_20_12_23.nsys-rep[1/1] [10%                         ] msm_20_12_23.nsys-rep[1/1] [=======================93%  ] msm_20_12_23.nsys-rep[1/1] [========================100%] msm_20_12_23.nsys-rep[1/1] [========================100%] msm_20_12_23.nsys-rep
+Generated:
+    /root/autodl-tmp/yr/icicle/icicle/src/msm/./work/reports/msm_20_12_23.nsys-rep
+====================== TEST END ======================
+
+
+
+[96/168] Testing: log_size=20 precomp=12 c=25 @ Fri Feb 14 23:24:33 CST 2025
+====================== TEST START ======================
+running msm curve=1, 2^20, batch_size=1, precomp_factor=12, c=25
+finished generating
+finished copying
+msm time : 877.017 ms.
+x: 0x0c0ff2dce3c647f48c5e366fe459ca0d5959daaf4551f14616b28115c8ac7a3f; y: 0x104bcefe3b7909f4864b2375922163da1686a22474eaf00f44c883246b3ce66b
+good
+success!
+Generating '/tmp/nsys-report-8764.qdstrm'
+[1/1] [0%                          ] msm_20_12_25.nsys-rep[1/1] [0%                          ] msm_20_12_25.nsys-rep[1/1] [5%                          ] msm_20_12_25.nsys-rep[1/1] [6%                          ] msm_20_12_25.nsys-rep[1/1] [=======================95%  ] msm_20_12_25.nsys-rep[1/1] [========================100%] msm_20_12_25.nsys-rep[1/1] [========================100%] msm_20_12_25.nsys-rep
+Generated:
+    /root/autodl-tmp/yr/icicle/icicle/src/msm/./work/reports/msm_20_12_25.nsys-rep
+====================== TEST END ======================
+
+
+
+[97/168] Testing: log_size=20 precomp=14 c=15 @ Fri Feb 14 23:24:52 CST 2025
+====================== TEST START ======================
+running msm curve=1, 2^20, batch_size=1, precomp_factor=14, c=15
+finished generating
+finished copying
+msm time : 32.357 ms.
+x: 0x1bf19a1a7da4110d0b58c6dfacdd6f3dd0a2af96b868f912b5b2e44781eb21ba; y: 0x000686939807671d35f33d27037074ddfbb13cb19ee36d9ab3024a8044e2bdf9
+good
+success!
+Generating '/tmp/nsys-report-a4ce.qdstrm'
+[1/1] [0%                          ] msm_20_14_15.nsys-rep[1/1] [0%                          ] msm_20_14_15.nsys-rep[1/1] [5%                          ] msm_20_14_15.nsys-rep[1/1] [10%                         ] msm_20_14_15.nsys-rep[1/1] [11%                         ] msm_20_14_15.nsys-rep[1/1] [12%                         ] msm_20_14_15.nsys-rep[1/1] [======================92%   ] msm_20_14_15.nsys-rep[1/1] [========================100%] msm_20_14_15.nsys-rep[1/1] [========================100%] msm_20_14_15.nsys-rep
+Generated:
+    /root/autodl-tmp/yr/icicle/icicle/src/msm/./work/reports/msm_20_14_15.nsys-rep
+====================== TEST END ======================
+
+
+
+[98/168] Testing: log_size=20 precomp=14 c=17 @ Fri Feb 14 23:25:09 CST 2025
+====================== TEST START ======================
+running msm curve=1, 2^20, batch_size=1, precomp_factor=14, c=17
+finished generating
+finished copying
+msm time : 31.499 ms.
+x: 0x1fb80fa943dd827dc0af88cb4e1e2711076ae040c6ccb125fb36a5afdccf3c5f; y: 0x0f1091812b94963392476143ee72652b861ddb821a3b8db84b2237df08a4f043
+good
+success!
+Generating '/tmp/nsys-report-35a7.qdstrm'
+[1/1] [0%                          ] msm_20_14_17.nsys-rep[1/1] [0%                          ] msm_20_14_17.nsys-rep[1/1] [9%                          ] msm_20_14_17.nsys-rep[1/1] [10%                         ] msm_20_14_17.nsys-rep[1/1] [11%                         ] msm_20_14_17.nsys-rep[1/1] [======================92%   ] msm_20_14_17.nsys-rep[1/1] [========================100%] msm_20_14_17.nsys-rep[1/1] [========================100%] msm_20_14_17.nsys-rep
+Generated:
+    /root/autodl-tmp/yr/icicle/icicle/src/msm/./work/reports/msm_20_14_17.nsys-rep
+====================== TEST END ======================
+
+
+
+[99/168] Testing: log_size=20 precomp=14 c=19 @ Fri Feb 14 23:25:26 CST 2025
+====================== TEST START ======================
+running msm curve=1, 2^20, batch_size=1, precomp_factor=14, c=19
+finished generating
+finished copying
+msm time : 29.411 ms.
+x: 0x0fc57fdfd60a6ebb3e8a2f1d8432660f506d7313de84024f403693f61a497209; y: 0x142ee9fa880ebedc9475b0f37458abff5300a1c4edf5563ffa16926869239278
+good
+success!
+Generating '/tmp/nsys-report-9ce1.qdstrm'
+[1/1] [0%                          ] msm_20_14_19.nsys-rep[1/1] [0%                          ] msm_20_14_19.nsys-rep[1/1] [8%                          ] msm_20_14_19.nsys-rep[1/1] [9%                          ] msm_20_14_19.nsys-rep[1/1] [10%                         ] msm_20_14_19.nsys-rep[1/1] [======================91%   ] msm_20_14_19.nsys-rep[1/1] [========================100%] msm_20_14_19.nsys-rep[1/1] [========================100%] msm_20_14_19.nsys-rep
+Generated:
+    /root/autodl-tmp/yr/icicle/icicle/src/msm/./work/reports/msm_20_14_19.nsys-rep
+====================== TEST END ======================
+
+
+
+[100/168] Testing: log_size=20 precomp=14 c=21 @ Fri Feb 14 23:25:43 CST 2025
+====================== TEST START ======================
+running msm curve=1, 2^20, batch_size=1, precomp_factor=14, c=21
+finished generating
+finished copying
+msm time : 2581.154 ms.
+x: 0x0fbf875b6effb78f84bfcc870868cb327e8dbb8ee9a9c96dbdc2d9b1b75d6301; y: 0x2569e10a8b877bcb01a8308b1c4f45081ea5ec1cb392538b0e5b29ebb61db6e8
+good
+success!
+Generating '/tmp/nsys-report-df19.qdstrm'
+[1/1] [0%                          ] msm_20_14_21.nsys-rep[1/1] [0%                          ] msm_20_14_21.nsys-rep[1/1] [5%                          ] msm_20_14_21.nsys-rep[1/1] [9%                          ] msm_20_14_21.nsys-rep[1/1] [10%                         ] msm_20_14_21.nsys-rep[1/1] [11%                         ] msm_20_14_21.nsys-rep[1/1] [12%                         ] msm_20_14_21.nsys-rep[1/1] [======================92%   ] msm_20_14_21.nsys-rep[1/1] [========================100%] msm_20_14_21.nsys-rep[1/1] [========================100%] msm_20_14_21.nsys-rep
+Generated:
+    /root/autodl-tmp/yr/icicle/icicle/src/msm/./work/reports/msm_20_14_21.nsys-rep
+====================== TEST END ======================
+
+
+
+[101/168] Testing: log_size=20 precomp=14 c=23 @ Fri Feb 14 23:26:05 CST 2025
+====================== TEST START ======================
+running msm curve=1, 2^20, batch_size=1, precomp_factor=14, c=23
+finished generating
+finished copying
+msm time : 2640.667 ms.
+x: 0x0ed2a5d36ffb4398f95e363ee840f20c4209fcd9bac7eef85946fcba157d20a2; y: 0x06c769f5b93f49f141614015c3538abc8cfdd49d64ce49c10e1a79034c00e99b
+good
+success!
+Generating '/tmp/nsys-report-94dc.qdstrm'
+[1/1] [0%                          ] msm_20_14_23.nsys-rep[1/1] [0%                          ] msm_20_14_23.nsys-rep[1/1] [7%                          ] msm_20_14_23.nsys-rep[1/1] [8%                          ] msm_20_14_23.nsys-rep[1/1] [9%                          ] msm_20_14_23.nsys-rep[1/1] [10%                         ] msm_20_14_23.nsys-rep[1/1] [=======================93%  ] msm_20_14_23.nsys-rep[1/1] [========================100%] msm_20_14_23.nsys-rep[1/1] [========================100%] msm_20_14_23.nsys-rep
+Generated:
+    /root/autodl-tmp/yr/icicle/icicle/src/msm/./work/reports/msm_20_14_23.nsys-rep
+====================== TEST END ======================
+
+
+
+[102/168] Testing: log_size=20 precomp=14 c=25 @ Fri Feb 14 23:26:28 CST 2025
+====================== TEST START ======================
+running msm curve=1, 2^20, batch_size=1, precomp_factor=14, c=25
+finished generating
+finished copying
+msm time : 871.755 ms.
+x: 0x11cd0b548c5cbd2895c333ca9fa3f8ca30cc6326f4e91c909c714913b319f9ef; y: 0x086b2e6bae39a2bf38f6b88695ed90fc4593ee13416791e1971494746bd58a45
+good
+success!
+Generating '/tmp/nsys-report-a4a5.qdstrm'
+[1/1] [0%                          ] msm_20_14_25.nsys-rep[1/1] [0%                          ] msm_20_14_25.nsys-rep[1/1] [5%                          ] msm_20_14_25.nsys-rep[1/1] [6%                          ] msm_20_14_25.nsys-rep[1/1] [=======================95%  ] msm_20_14_25.nsys-rep[1/1] [========================100%] msm_20_14_25.nsys-rep[1/1] [========================100%] msm_20_14_25.nsys-rep
+Generated:
+    /root/autodl-tmp/yr/icicle/icicle/src/msm/./work/reports/msm_20_14_25.nsys-rep
+====================== TEST END ======================
+
+
+
+[103/168] Testing: log_size=20 precomp=16 c=15 @ Fri Feb 14 23:26:47 CST 2025
+====================== TEST START ======================
+running msm curve=1, 2^20, batch_size=1, precomp_factor=16, c=15
+finished generating
+finished copying
+msm time : 34.969 ms.
+x: 0x0b33213c27f44f75c3e0bb5c87e97073f520589d86e92d09914b26d4e1798cce; y: 0x12a82c64451c2d792b2006c5cd4acc63d0aedc2663b0ab90c0aad4104a76980c
+good
+success!
+Generating '/tmp/nsys-report-4f91.qdstrm'
+[1/1] [0%                          ] msm_20_16_15.nsys-rep[1/1] [0%                          ] msm_20_16_15.nsys-rep[1/1] [9%                          ] msm_20_16_15.nsys-rep[1/1] [10%                         ] msm_20_16_15.nsys-rep[1/1] [11%                         ] msm_20_16_15.nsys-rep[1/1] [12%                         ] msm_20_16_15.nsys-rep[1/1] [======================92%   ] msm_20_16_15.nsys-rep[1/1] [========================100%] msm_20_16_15.nsys-rep[1/1] [========================100%] msm_20_16_15.nsys-rep
+Generated:
+    /root/autodl-tmp/yr/icicle/icicle/src/msm/./work/reports/msm_20_16_15.nsys-rep
+====================== TEST END ======================
+
+
+
+[104/168] Testing: log_size=20 precomp=16 c=17 @ Fri Feb 14 23:27:04 CST 2025
+====================== TEST START ======================
+running msm curve=1, 2^20, batch_size=1, precomp_factor=16, c=17
+finished generating
+finished copying
+msm time : 30.619 ms.
+x: 0x05dba2a1ba40f1bb63c64da54cf8c60d4efc99e53605b877250233340bb9ae93; y: 0x1dc3ba9992cf4c5d2a8d277395a9eddce9c5546e31c8a4c76319abc075cebe79
+good
+success!
+Generating '/tmp/nsys-report-5634.qdstrm'
+[1/1] [0%                          ] msm_20_16_17.nsys-rep[1/1] [0%                          ] msm_20_16_17.nsys-rep[1/1] [9%                          ] msm_20_16_17.nsys-rep[1/1] [10%                         ] msm_20_16_17.nsys-rep[1/1] [11%                         ] msm_20_16_17.nsys-rep[1/1] [======================92%   ] msm_20_16_17.nsys-rep[1/1] [========================100%] msm_20_16_17.nsys-rep[1/1] [========================100%] msm_20_16_17.nsys-rep
+Generated:
+    /root/autodl-tmp/yr/icicle/icicle/src/msm/./work/reports/msm_20_16_17.nsys-rep
+====================== TEST END ======================
+
+
+
+[105/168] Testing: log_size=20 precomp=16 c=19 @ Fri Feb 14 23:27:21 CST 2025
+====================== TEST START ======================
+running msm curve=1, 2^20, batch_size=1, precomp_factor=16, c=19
+finished generating
+finished copying
+msm time : 29.887 ms.
+x: 0x1c1601fe89a11f5df47e63103df2460eec728072f3af8a56ab13f54229365b13; y: 0x1dc63ae7593c9a25eb3747e8d46bae6bd6e785fe6514ef9470bdb87e0bfe9e5b
+good
+success!
+Generating '/tmp/nsys-report-b6c2.qdstrm'
+[1/1] [0%                          ] msm_20_16_19.nsys-rep[1/1] [0%                          ] msm_20_16_19.nsys-rep[1/1] [8%                          ] msm_20_16_19.nsys-rep[1/1] [9%                          ] msm_20_16_19.nsys-rep[1/1] [10%                         ] msm_20_16_19.nsys-rep[1/1] [======================91%   ] msm_20_16_19.nsys-rep[1/1] [========================100%] msm_20_16_19.nsys-rep[1/1] [========================100%] msm_20_16_19.nsys-rep
+Generated:
+    /root/autodl-tmp/yr/icicle/icicle/src/msm/./work/reports/msm_20_16_19.nsys-rep
+====================== TEST END ======================
+
+
+
+[106/168] Testing: log_size=20 precomp=16 c=21 @ Fri Feb 14 23:27:38 CST 2025
+====================== TEST START ======================
+running msm curve=1, 2^20, batch_size=1, precomp_factor=16, c=21
+finished generating
+finished copying
+msm time : 2581.177 ms.
+x: 0x125da485cd179d64cc8429c22f7197850de3b296453899500dc760ae959f2c5e; y: 0x1f75398f26f530b62b8ad4282448065d47d2d4ff1089aac7c58ee92aecf8702a
+good
+success!
+Generating '/tmp/nsys-report-7c19.qdstrm'
+[1/1] [0%                          ] msm_20_16_21.nsys-rep[1/1] [0%                          ] msm_20_16_21.nsys-rep[1/1] [8%                          ] msm_20_16_21.nsys-rep[1/1] [9%                          ] msm_20_16_21.nsys-rep[1/1] [10%                         ] msm_20_16_21.nsys-rep[1/1] [11%                         ] msm_20_16_21.nsys-rep[1/1] [12%                         ] msm_20_16_21.nsys-rep[1/1] [======================92%   ] msm_20_16_21.nsys-rep[1/1] [========================100%] msm_20_16_21.nsys-rep[1/1] [========================100%] msm_20_16_21.nsys-rep
+Generated:
+    /root/autodl-tmp/yr/icicle/icicle/src/msm/./work/reports/msm_20_16_21.nsys-rep
+====================== TEST END ======================
+
+
+
+[107/168] Testing: log_size=20 precomp=16 c=23 @ Fri Feb 14 23:28:01 CST 2025
+====================== TEST START ======================
+running msm curve=1, 2^20, batch_size=1, precomp_factor=16, c=23
+finished generating
+finished copying
+msm time : 2637.228 ms.
+x: 0x0b415adf61e4ef833f54db1b59abb8d9a9ffe38ac52bd43878bfdd50a686cf3a; y: 0x036c9e890928dc8ac8c4a05cdfe6fa2817cac8696b95897924e95b368e54c22a
+good
+success!
+Generating '/tmp/nsys-report-f10e.qdstrm'
+[1/1] [0%                          ] msm_20_16_23.nsys-rep[1/1] [0%                          ] msm_20_16_23.nsys-rep[1/1] [7%                          ] msm_20_16_23.nsys-rep[1/1] [8%                          ] msm_20_16_23.nsys-rep[1/1] [9%                          ] msm_20_16_23.nsys-rep[1/1] [10%                         ] msm_20_16_23.nsys-rep[1/1] [=======================93%  ] msm_20_16_23.nsys-rep[1/1] [========================100%] msm_20_16_23.nsys-rep[1/1] [========================100%] msm_20_16_23.nsys-rep
+Generated:
+    /root/autodl-tmp/yr/icicle/icicle/src/msm/./work/reports/msm_20_16_23.nsys-rep
+====================== TEST END ======================
+
+
+
+[108/168] Testing: log_size=20 precomp=16 c=25 @ Fri Feb 14 23:28:23 CST 2025
+====================== TEST START ======================
+running msm curve=1, 2^20, batch_size=1, precomp_factor=16, c=25
+finished generating
+finished copying
+msm time : 872.500 ms.
+x: 0x2a3c3c458851a3d022d9b000cd37c5435178b3d8acbd59948578c071362ef252; y: 0x2137d532e862f5fdc9ec4988ea97b32aad62633eb0b2006196698586c033ea80
+good
+success!
+Generating '/tmp/nsys-report-3089.qdstrm'
+[1/1] [0%                          ] msm_20_16_25.nsys-rep[1/1] [0%                          ] msm_20_16_25.nsys-rep[1/1] [5%                          ] msm_20_16_25.nsys-rep[1/1] [6%                          ] msm_20_16_25.nsys-rep[1/1] [=======================95%  ] msm_20_16_25.nsys-rep[1/1] [========================100%] msm_20_16_25.nsys-rep[1/1] [========================100%] msm_20_16_25.nsys-rep
+Generated:
+    /root/autodl-tmp/yr/icicle/icicle/src/msm/./work/reports/msm_20_16_25.nsys-rep
+====================== TEST END ======================
+
+
+
+[109/168] Testing: log_size=20 precomp=18 c=15 @ Fri Feb 14 23:28:42 CST 2025
+====================== TEST START ======================
+running msm curve=1, 2^20, batch_size=1, precomp_factor=18, c=15
+finished generating
+finished copying
+msm time : 35.076 ms.
+x: 0x08d65ac2a65a5e00aa01ce20476c19ccad6b82fca48421d42435c8f84f2ea873; y: 0x02f7cb58afbbd0d61c0adb625ee77d106ee9456e241325643337c54e474fbeb5
+good
+success!
+Generating '/tmp/nsys-report-7076.qdstrm'
+[1/1] [0%                          ] msm_20_18_15.nsys-rep[1/1] [0%                          ] msm_20_18_15.nsys-rep[1/1] [9%                          ] msm_20_18_15.nsys-rep[1/1] [10%                         ] msm_20_18_15.nsys-rep[1/1] [11%                         ] msm_20_18_15.nsys-rep[1/1] [12%                         ] msm_20_18_15.nsys-rep[1/1] [======================92%   ] msm_20_18_15.nsys-rep[1/1] [========================100%] msm_20_18_15.nsys-rep[1/1] [========================100%] msm_20_18_15.nsys-rep
+Generated:
+    /root/autodl-tmp/yr/icicle/icicle/src/msm/./work/reports/msm_20_18_15.nsys-rep
+====================== TEST END ======================
+
+
+
+[110/168] Testing: log_size=20 precomp=18 c=17 @ Fri Feb 14 23:28:59 CST 2025
+====================== TEST START ======================
+running msm curve=1, 2^20, batch_size=1, precomp_factor=18, c=17
+finished generating
+finished copying
+msm time : 30.085 ms.
+x: 0x00933af7984b128b74dc55953ae3952134bab84b8f27fae7092cb8a222c68a0f; y: 0x178ac056b93cc623cf5539bfc282271e2c1c72fa279374ac18d0c63a27264711
+good
+success!
+Generating '/tmp/nsys-report-2a24.qdstrm'
+[1/1] [0%                          ] msm_20_18_17.nsys-rep[1/1] [0%                          ] msm_20_18_17.nsys-rep[1/1] [9%                          ] msm_20_18_17.nsys-rep[1/1] [10%                         ] msm_20_18_17.nsys-rep[1/1] [11%                         ] msm_20_18_17.nsys-rep[1/1] [======================92%   ] msm_20_18_17.nsys-rep[1/1] [========================100%] msm_20_18_17.nsys-rep[1/1] [========================100%] msm_20_18_17.nsys-rep
+Generated:
+    /root/autodl-tmp/yr/icicle/icicle/src/msm/./work/reports/msm_20_18_17.nsys-rep
+====================== TEST END ======================
+
+
+
+[111/168] Testing: log_size=20 precomp=18 c=19 @ Fri Feb 14 23:29:16 CST 2025
+====================== TEST START ======================
+running msm curve=1, 2^20, batch_size=1, precomp_factor=18, c=19
+finished generating
+finished copying
+msm time : 30.356 ms.
+x: 0x13e2d25da8935db743980896b09b0c36e29cf0e690eadfc114fee989368f7107; y: 0x169e19e2a8d0884aaf0999b7c49c80fa378f7cd92475707e38bbb2d0066a2886
+good
+success!
+Generating '/tmp/nsys-report-9b50.qdstrm'
+[1/1] [0%                          ] msm_20_18_19.nsys-rep[1/1] [0%                          ] msm_20_18_19.nsys-rep[1/1] [8%                          ] msm_20_18_19.nsys-rep[1/1] [9%                          ] msm_20_18_19.nsys-rep[1/1] [10%                         ] msm_20_18_19.nsys-rep[1/1] [======================91%   ] msm_20_18_19.nsys-rep[1/1] [========================100%] msm_20_18_19.nsys-rep[1/1] [========================100%] msm_20_18_19.nsys-rep
+Generated:
+    /root/autodl-tmp/yr/icicle/icicle/src/msm/./work/reports/msm_20_18_19.nsys-rep
+====================== TEST END ======================
+
+
+
+[112/168] Testing: log_size=20 precomp=18 c=21 @ Fri Feb 14 23:29:34 CST 2025
+====================== TEST START ======================
+running msm curve=1, 2^20, batch_size=1, precomp_factor=18, c=21
+finished generating
+finished copying
+msm time : 2578.012 ms.
+x: 0x25d9f8ae652f34f8ce401cca8061b3f6064836252c33c9498cd1fa1bbacbe507; y: 0x0796881c66d8dd72552a82dd4db676233b6fd5e03ce723a03981a254bef83007
+good
+success!
+Generating '/tmp/nsys-report-348c.qdstrm'
+[1/1] [0%                          ] msm_20_18_21.nsys-rep[1/1] [0%                          ] msm_20_18_21.nsys-rep[1/1] [8%                          ] msm_20_18_21.nsys-rep[1/1] [9%                          ] msm_20_18_21.nsys-rep[1/1] [10%                         ] msm_20_18_21.nsys-rep[1/1] [11%                         ] msm_20_18_21.nsys-rep[1/1] [12%                         ] msm_20_18_21.nsys-rep[1/1] [======================92%   ] msm_20_18_21.nsys-rep[1/1] [========================100%] msm_20_18_21.nsys-rep[1/1] [========================100%] msm_20_18_21.nsys-rep
+Generated:
+    /root/autodl-tmp/yr/icicle/icicle/src/msm/./work/reports/msm_20_18_21.nsys-rep
+====================== TEST END ======================
+
+
+
+[113/168] Testing: log_size=20 precomp=18 c=23 @ Fri Feb 14 23:29:56 CST 2025
+====================== TEST START ======================
+running msm curve=1, 2^20, batch_size=1, precomp_factor=18, c=23
+finished generating
+finished copying
+msm time : 2639.865 ms.
+x: 0x27ad04ea4ec6f050edaedbabd3fb6d8739988af917cf7024c211d49f3f7fdddb; y: 0x030dac3d22041d8a358390224f40646a7fd36c4e1f0a331efbc5d7422376b069
+good
+success!
+Generating '/tmp/nsys-report-a7d6.qdstrm'
+[1/1] [0%                          ] msm_20_18_23.nsys-rep[1/1] [0%                          ] msm_20_18_23.nsys-rep[1/1] [7%                          ] msm_20_18_23.nsys-rep[1/1] [8%                          ] msm_20_18_23.nsys-rep[1/1] [9%                          ] msm_20_18_23.nsys-rep[1/1] [10%                         ] msm_20_18_23.nsys-rep[1/1] [=======================93%  ] msm_20_18_23.nsys-rep[1/1] [========================100%] msm_20_18_23.nsys-rep[1/1] [========================100%] msm_20_18_23.nsys-rep
+Generated:
+    /root/autodl-tmp/yr/icicle/icicle/src/msm/./work/reports/msm_20_18_23.nsys-rep
+====================== TEST END ======================
+
+
+
+[114/168] Testing: log_size=20 precomp=18 c=25 @ Fri Feb 14 23:30:19 CST 2025
+====================== TEST START ======================
+running msm curve=1, 2^20, batch_size=1, precomp_factor=18, c=25
+finished generating
+finished copying
+msm time : 871.687 ms.
+x: 0x12a20a9e9352d9a8da4e9658eb480b18578ddca638ce399f9f01ef2708f70894; y: 0x15cc22f04b59e2b2c269f9ffc5aa597002408fc1d16da269f19f846f1727a9db
+good
+success!
+Generating '/tmp/nsys-report-e7c8.qdstrm'
+[1/1] [0%                          ] msm_20_18_25.nsys-rep[1/1] [0%                          ] msm_20_18_25.nsys-rep[1/1] [5%                          ] msm_20_18_25.nsys-rep[1/1] [6%                          ] msm_20_18_25.nsys-rep[1/1] [=======================95%  ] msm_20_18_25.nsys-rep[1/1] [========================100%] msm_20_18_25.nsys-rep[1/1] [========================100%] msm_20_18_25.nsys-rep
+Generated:
+    /root/autodl-tmp/yr/icicle/icicle/src/msm/./work/reports/msm_20_18_25.nsys-rep
+====================== TEST END ======================
+
+
+
+[115/168] Testing: log_size=20 precomp=20 c=15 @ Fri Feb 14 23:30:37 CST 2025
+====================== TEST START ======================
+running msm curve=1, 2^20, batch_size=1, precomp_factor=20, c=15
+finished generating
+finished copying
+msm time : 33.221 ms.
+x: 0x2ec3ba77e804c92e339be65b7f74dbd54ce431d8e89915a18703a07bb5512bcc; y: 0x09b67ab543c71f3b04d457fdb324225c948176048017d857ad22d03a59ea6059
+good
+success!
+Generating '/tmp/nsys-report-3c8b.qdstrm'
+[1/1] [0%                          ] msm_20_20_15.nsys-rep[1/1] [0%                          ] msm_20_20_15.nsys-rep[1/1] [9%                          ] msm_20_20_15.nsys-rep[1/1] [10%                         ] msm_20_20_15.nsys-rep[1/1] [11%                         ] msm_20_20_15.nsys-rep[1/1] [======================92%   ] msm_20_20_15.nsys-rep[1/1] [========================100%] msm_20_20_15.nsys-rep[1/1] [========================100%] msm_20_20_15.nsys-rep
+Generated:
+    /root/autodl-tmp/yr/icicle/icicle/src/msm/./work/reports/msm_20_20_15.nsys-rep
+====================== TEST END ======================
+
+
+
+[116/168] Testing: log_size=20 precomp=20 c=17 @ Fri Feb 14 23:30:54 CST 2025
+====================== TEST START ======================
+running msm curve=1, 2^20, batch_size=1, precomp_factor=20, c=17
+finished generating
+finished copying
+msm time : 46.261 ms.
+x: 0x09e345f2e0ce7a67ca21516be3540dd740a77ea888c063992db502b7ed13216e; y: 0x07ff6a027fce09fb68553703b6698005e89269a2e25db53c51826bb5c953fc71
+good
+success!
+Generating '/tmp/nsys-report-f615.qdstrm'
+[1/1] [0%                          ] msm_20_20_17.nsys-rep[1/1] [0%                          ] msm_20_20_17.nsys-rep[1/1] [9%                          ] msm_20_20_17.nsys-rep[1/1] [10%                         ] msm_20_20_17.nsys-rep[1/1] [11%                         ] msm_20_20_17.nsys-rep[1/1] [======================92%   ] msm_20_20_17.nsys-rep[1/1] [========================100%] msm_20_20_17.nsys-rep[1/1] [========================100%] msm_20_20_17.nsys-rep
+Generated:
+    /root/autodl-tmp/yr/icicle/icicle/src/msm/./work/reports/msm_20_20_17.nsys-rep
+====================== TEST END ======================
+
+
+
+[117/168] Testing: log_size=20 precomp=20 c=19 @ Fri Feb 14 23:31:12 CST 2025
+====================== TEST START ======================
+running msm curve=1, 2^20, batch_size=1, precomp_factor=20, c=19
+finished generating
+finished copying
+msm time : 29.364 ms.
+x: 0x13d1aae9248f7ab50e7988d882dfe7b71154cc288d54bce76237241aa6aba310; y: 0x15d8431d727e631c4d04375743eb609ab3c44f5cac76d2877b034e1a9e9ab73b
+good
+success!
+Generating '/tmp/nsys-report-2bf7.qdstrm'
+[1/1] [0%                          ] msm_20_20_19.nsys-rep[1/1] [0%                          ] msm_20_20_19.nsys-rep[1/1] [8%                          ] msm_20_20_19.nsys-rep[1/1] [9%                          ] msm_20_20_19.nsys-rep[1/1] [10%                         ] msm_20_20_19.nsys-rep[1/1] [======================91%   ] msm_20_20_19.nsys-rep[1/1] [========================100%] msm_20_20_19.nsys-rep[1/1] [========================100%] msm_20_20_19.nsys-rep
+Generated:
+    /root/autodl-tmp/yr/icicle/icicle/src/msm/./work/reports/msm_20_20_19.nsys-rep
+====================== TEST END ======================
+
+
+
+[118/168] Testing: log_size=20 precomp=20 c=21 @ Fri Feb 14 23:31:29 CST 2025
+====================== TEST START ======================
+running msm curve=1, 2^20, batch_size=1, precomp_factor=20, c=21
+finished generating
+finished copying
+msm time : 2590.391 ms.
+x: 0x01697e35a1e18a71d899f6cb6755f4873b62803413aa9fe49903cdef7f6c173e; y: 0x2a862a15c01351bdb6ec4c4c17d3fb4e1b8317047f057b94c47322d04023ae58
+good
+success!
+Generating '/tmp/nsys-report-a8c7.qdstrm'
+[1/1] [0%                          ] msm_20_20_21.nsys-rep[1/1] [0%                          ] msm_20_20_21.nsys-rep[1/1] [8%                          ] msm_20_20_21.nsys-rep[1/1] [9%                          ] msm_20_20_21.nsys-rep[1/1] [10%                         ] msm_20_20_21.nsys-rep[1/1] [11%                         ] msm_20_20_21.nsys-rep[1/1] [12%                         ] msm_20_20_21.nsys-rep[1/1] [======================92%   ] msm_20_20_21.nsys-rep[1/1] [========================100%] msm_20_20_21.nsys-rep[1/1] [========================100%] msm_20_20_21.nsys-rep
+Generated:
+    /root/autodl-tmp/yr/icicle/icicle/src/msm/./work/reports/msm_20_20_21.nsys-rep
+====================== TEST END ======================
+
+
+
+[119/168] Testing: log_size=20 precomp=20 c=23 @ Fri Feb 14 23:31:51 CST 2025
+====================== TEST START ======================
+running msm curve=1, 2^20, batch_size=1, precomp_factor=20, c=23
+finished generating
+finished copying
+msm time : 2642.537 ms.
+x: 0x08b35f671652f025fc609fdb187627e2050c347a159c2ed35b2d9200603e6705; y: 0x09bfb5246f25c88a4c3e7778ea3f14c27d5d60feb06f53dad52acc1109fb6b62
+good
+success!
+Generating '/tmp/nsys-report-ba9f.qdstrm'
+[1/1] [0%                          ] msm_20_20_23.nsys-rep[1/1] [0%                          ] msm_20_20_23.nsys-rep[1/1] [7%                          ] msm_20_20_23.nsys-rep[1/1] [8%                          ] msm_20_20_23.nsys-rep[1/1] [9%                          ] msm_20_20_23.nsys-rep[1/1] [10%                         ] msm_20_20_23.nsys-rep[1/1] [=======================93%  ] msm_20_20_23.nsys-rep[1/1] [========================100%] msm_20_20_23.nsys-rep[1/1] [========================100%] msm_20_20_23.nsys-rep
+Generated:
+    /root/autodl-tmp/yr/icicle/icicle/src/msm/./work/reports/msm_20_20_23.nsys-rep
+====================== TEST END ======================
+
+
+
+[120/168] Testing: log_size=20 precomp=20 c=25 @ Fri Feb 14 23:32:14 CST 2025
+====================== TEST START ======================
+running msm curve=1, 2^20, batch_size=1, precomp_factor=20, c=25
+finished generating
+finished copying
+msm time : 870.034 ms.
+x: 0x2b4fd278fc31ab6c53ce2c85527018ee80fb5b39b6ac02788fe7813154c60e9e; y: 0x1d6f9a18ae2450ebd220e373f3694e4b10d19e7c2e64cfa4e312f2b719eb49a6
+good
+success!
+Generating '/tmp/nsys-report-5c56.qdstrm'
+[1/1] [0%                          ] msm_20_20_25.nsys-rep[1/1] [0%                          ] msm_20_20_25.nsys-rep[1/1] [5%                          ] msm_20_20_25.nsys-rep[1/1] [6%                          ] msm_20_20_25.nsys-rep[1/1] [=======================95%  ] msm_20_20_25.nsys-rep[1/1] [========================100%] msm_20_20_25.nsys-rep[1/1] [========================100%] msm_20_20_25.nsys-rep
+Generated:
+    /root/autodl-tmp/yr/icicle/icicle/src/msm/./work/reports/msm_20_20_25.nsys-rep
+====================== TEST END ======================
+
+
+
+[121/168] Testing: log_size=20 precomp=22 c=15 @ Fri Feb 14 23:32:33 CST 2025
+====================== TEST START ======================
+running msm curve=1, 2^20, batch_size=1, precomp_factor=22, c=15
+finished generating
+finished copying
+msm time : 29.958 ms.
+x: 0x0f53ff13f05dede12907901d2e4804d38a43426e7bfbd2eb8ddbd4a88134c2c3; y: 0x1973881edbfb8eda0d00cff6f5dce11d9bab197bbe420888cf6737f84df2883a
+good
+success!
+Generating '/tmp/nsys-report-6bb3.qdstrm'
+[1/1] [0%                          ] msm_20_22_15.nsys-rep[1/1] [0%                          ] msm_20_22_15.nsys-rep[1/1] [9%                          ] msm_20_22_15.nsys-rep[1/1] [10%                         ] msm_20_22_15.nsys-rep[1/1] [11%                         ] msm_20_22_15.nsys-rep[1/1] [12%                         ] msm_20_22_15.nsys-rep[1/1] [======================92%   ] msm_20_22_15.nsys-rep[1/1] [========================100%] msm_20_22_15.nsys-rep[1/1] [========================100%] msm_20_22_15.nsys-rep
+Generated:
+    /root/autodl-tmp/yr/icicle/icicle/src/msm/./work/reports/msm_20_22_15.nsys-rep
+====================== TEST END ======================
+
+
+
+[122/168] Testing: log_size=20 precomp=22 c=17 @ Fri Feb 14 23:32:50 CST 2025
+====================== TEST START ======================
+running msm curve=1, 2^20, batch_size=1, precomp_factor=22, c=17
+finished generating
+finished copying
+msm time : 33.081 ms.
+x: 0x1358e8718d9de14e05fa37b85dfe4ddcfb01c630c72ccce4d8234b2662b8acd4; y: 0x0d94820298ebbdd386c3928dd5b1271e60453262830e292f9dadc4024a35c123
+good
+success!
+Generating '/tmp/nsys-report-cbda.qdstrm'
+[1/1] [0%                          ] msm_20_22_17.nsys-rep[1/1] [0%                          ] msm_20_22_17.nsys-rep[1/1] [9%                          ] msm_20_22_17.nsys-rep[1/1] [10%                         ] msm_20_22_17.nsys-rep[1/1] [11%                         ] msm_20_22_17.nsys-rep[1/1] [======================92%   ] msm_20_22_17.nsys-rep[1/1] [========================100%] msm_20_22_17.nsys-rep[1/1] [========================100%] msm_20_22_17.nsys-rep
+Generated:
+    /root/autodl-tmp/yr/icicle/icicle/src/msm/./work/reports/msm_20_22_17.nsys-rep
+====================== TEST END ======================
+
+
+
+[123/168] Testing: log_size=20 precomp=22 c=19 @ Fri Feb 14 23:33:07 CST 2025
+====================== TEST START ======================
+running msm curve=1, 2^20, batch_size=1, precomp_factor=22, c=19
+finished generating
+finished copying
+msm time : 29.957 ms.
+x: 0x02994f72d67bc853054a45577a0c229680dc6d7d371edaaaa1f6768ff24a1cc1; y: 0x252460fa0cc497fa94fa62b03d2087551a7d3961ac53a32f07298872acbf96a5
+good
+success!
+Generating '/tmp/nsys-report-d937.qdstrm'
+[1/1] [0%                          ] msm_20_22_19.nsys-rep[1/1] [0%                          ] msm_20_22_19.nsys-rep[1/1] [8%                          ] msm_20_22_19.nsys-rep[1/1] [9%                          ] msm_20_22_19.nsys-rep[1/1] [10%                         ] msm_20_22_19.nsys-rep[1/1] [======================91%   ] msm_20_22_19.nsys-rep[1/1] [========================100%] msm_20_22_19.nsys-rep[1/1] [========================100%] msm_20_22_19.nsys-rep
+Generated:
+    /root/autodl-tmp/yr/icicle/icicle/src/msm/./work/reports/msm_20_22_19.nsys-rep
+====================== TEST END ======================
+
+
+
+[124/168] Testing: log_size=20 precomp=22 c=21 @ Fri Feb 14 23:33:24 CST 2025
+====================== TEST START ======================
+running msm curve=1, 2^20, batch_size=1, precomp_factor=22, c=21
+finished generating
+finished copying
+msm time : 2590.911 ms.
+x: 0x0a1987576564258860d22e69fe02ecc9233491a7fa68518c5e37ddc6f1184c57; y: 0x24cf63e39f70262fc5f8fd8cd7050b1f8d68fc8c53b2eb3ca4ffa04b6acc531e
+good
+success!
+Generating '/tmp/nsys-report-922f.qdstrm'
+[1/1] [0%                          ] msm_20_22_21.nsys-rep[1/1] [0%                          ] msm_20_22_21.nsys-rep[1/1] [8%                          ] msm_20_22_21.nsys-rep[1/1] [9%                          ] msm_20_22_21.nsys-rep[1/1] [10%                         ] msm_20_22_21.nsys-rep[1/1] [11%                         ] msm_20_22_21.nsys-rep[1/1] [12%                         ] msm_20_22_21.nsys-rep[1/1] [======================92%   ] msm_20_22_21.nsys-rep[1/1] [========================100%] msm_20_22_21.nsys-rep[1/1] [========================100%] msm_20_22_21.nsys-rep
+Generated:
+    /root/autodl-tmp/yr/icicle/icicle/src/msm/./work/reports/msm_20_22_21.nsys-rep
+====================== TEST END ======================
+
+
+
+[125/168] Testing: log_size=20 precomp=22 c=23 @ Fri Feb 14 23:33:47 CST 2025
+====================== TEST START ======================
+running msm curve=1, 2^20, batch_size=1, precomp_factor=22, c=23
+finished generating
+finished copying
+msm time : 2642.688 ms.
+x: 0x09713935ffae7242c86cc6434b5ff2b872132958aca04a3c0a9937e714c88280; y: 0x1c55f7ad45ad411c3a0399bb39161b520c73630193c2873914214d8787501c35
+good
+success!
+Generating '/tmp/nsys-report-06c2.qdstrm'
+[1/1] [0%                          ] msm_20_22_23.nsys-rep[1/1] [0%                          ] msm_20_22_23.nsys-rep[1/1] [7%                          ] msm_20_22_23.nsys-rep[1/1] [8%                          ] msm_20_22_23.nsys-rep[1/1] [9%                          ] msm_20_22_23.nsys-rep[1/1] [10%                         ] msm_20_22_23.nsys-rep[1/1] [=======================93%  ] msm_20_22_23.nsys-rep[1/1] [========================100%] msm_20_22_23.nsys-rep[1/1] [========================100%] msm_20_22_23.nsys-rep
+Generated:
+    /root/autodl-tmp/yr/icicle/icicle/src/msm/./work/reports/msm_20_22_23.nsys-rep
+====================== TEST END ======================
+
+
+
+[126/168] Testing: log_size=20 precomp=22 c=25 @ Fri Feb 14 23:34:09 CST 2025
+====================== TEST START ======================
+running msm curve=1, 2^20, batch_size=1, precomp_factor=22, c=25
+finished generating
+finished copying
+msm time : 873.894 ms.
+x: 0x1ee5b6f333ff1301fa73b738a8e9b97b5304abd4a2cfcdb7b662ca02f1c00eff; y: 0x1ed8e00d447533e99255a7067dfb7904fefe6e547cb6315bf8bf480b2423b36e
+good
+success!
+Generating '/tmp/nsys-report-755f.qdstrm'
+[1/1] [0%                          ] msm_20_22_25.nsys-rep[1/1] [0%                          ] msm_20_22_25.nsys-rep[1/1] [5%                          ] msm_20_22_25.nsys-rep[1/1] [6%                          ] msm_20_22_25.nsys-rep[1/1] [=======================95%  ] msm_20_22_25.nsys-rep[1/1] [========================100%] msm_20_22_25.nsys-rep[1/1] [========================100%] msm_20_22_25.nsys-rep
+Generated:
+    /root/autodl-tmp/yr/icicle/icicle/src/msm/./work/reports/msm_20_22_25.nsys-rep
+====================== TEST END ======================
+
+
+
+[127/168] Testing: log_size=22 precomp=10 c=15 @ Fri Feb 14 23:34:28 CST 2025
+====================== TEST START ======================
+running msm curve=1, 2^22, batch_size=1, precomp_factor=10, c=15
+finished generating
+finished copying
+msm time : 122.158 ms.
+x: 0x0489890e296b09386d9530cb04317499c70c3880969cef0b73beff12ce190d40; y: 0x28239163acd4f76c21fc9e014da31ef373fa8f581d16dfdbf2961ad37a6c424c
+good
+success!
+Generating '/tmp/nsys-report-e126.qdstrm'
+[1/1] [0%                          ] msm_22_10_15.nsys-rep[1/1] [0%                          ] msm_22_10_15.nsys-rep[1/1] [7%                          ] msm_22_10_15.nsys-rep[1/1] [8%                          ] msm_22_10_15.nsys-rep[1/1] [9%                          ] msm_22_10_15.nsys-rep[1/1] [10%                         ] msm_22_10_15.nsys-rep[1/1] [11%                         ] msm_22_10_15.nsys-rep[1/1] [12%                         ] msm_22_10_15.nsys-rep[1/1] [13%                         ] msm_22_10_15.nsys-rep[1/1] [14%                         ] msm_22_10_15.nsys-rep[1/1] [=======================93%  ] msm_22_10_15.nsys-rep[1/1] [=======================94%  ] msm_22_10_15.nsys-rep[1/1] [========================100%] msm_22_10_15.nsys-rep[1/1] [========================100%] msm_22_10_15.nsys-rep
+Generated:
+    /root/autodl-tmp/yr/icicle/icicle/src/msm/./work/reports/msm_22_10_15.nsys-rep
+====================== TEST END ======================
+
+
+
+[128/168] Testing: log_size=22 precomp=10 c=17 @ Fri Feb 14 23:35:20 CST 2025
+====================== TEST START ======================
+running msm curve=1, 2^22, batch_size=1, precomp_factor=10, c=17
+finished generating
+finished copying
+msm time : 111.365 ms.
+x: 0x0bbb3057af8925062afa9ec0177414f7c15e51de2b5c1e78af1afabe2c219f4c; y: 0x0004458a13f6dfb3b1f824873a1c97381b952f1a3f9ba84d796a839921be8adb
+good
+success!
+Generating '/tmp/nsys-report-c614.qdstrm'
+[1/1] [0%                          ] msm_22_10_17.nsys-rep[1/1] [0%                          ] msm_22_10_17.nsys-rep[1/1] [7%                          ] msm_22_10_17.nsys-rep[1/1] [8%                          ] msm_22_10_17.nsys-rep[1/1] [9%                          ] msm_22_10_17.nsys-rep[1/1] [10%                         ] msm_22_10_17.nsys-rep[1/1] [11%                         ] msm_22_10_17.nsys-rep[1/1] [12%                         ] msm_22_10_17.nsys-rep[1/1] [13%                         ] msm_22_10_17.nsys-rep[1/1] [=======================93%  ] msm_22_10_17.nsys-rep[1/1] [========================100%] msm_22_10_17.nsys-rep[1/1] [========================100%] msm_22_10_17.nsys-rep
+Generated:
+    /root/autodl-tmp/yr/icicle/icicle/src/msm/./work/reports/msm_22_10_17.nsys-rep
+====================== TEST END ======================
+
+
+
+[129/168] Testing: log_size=22 precomp=10 c=19 @ Fri Feb 14 23:36:11 CST 2025
+====================== TEST START ======================
+running msm curve=1, 2^22, batch_size=1, precomp_factor=10, c=19
+finished generating
+finished copying
+msm time : 97.922 ms.
+x: 0x0559bb7bd56474f832c863d625857c769951c2a0c1752d85023baa67ffb6d495; y: 0x2eb01dc4af0c91a8565fa353480930cb1276e7984ff87be2455b623729897568
+good
+success!
+Generating '/tmp/nsys-report-6907.qdstrm'
+[1/1] [0%                          ] msm_22_10_19.nsys-rep[1/1] [0%                          ] msm_22_10_19.nsys-rep[1/1] [7%                          ] msm_22_10_19.nsys-rep[1/1] [8%                          ] msm_22_10_19.nsys-rep[1/1] [9%                          ] msm_22_10_19.nsys-rep[1/1] [10%                         ] msm_22_10_19.nsys-rep[1/1] [11%                         ] msm_22_10_19.nsys-rep[1/1] [12%                         ] msm_22_10_19.nsys-rep[1/1] [======================92%   ] msm_22_10_19.nsys-rep[1/1] [========================100%] msm_22_10_19.nsys-rep[1/1] [========================100%] msm_22_10_19.nsys-rep
+Generated:
+    /root/autodl-tmp/yr/icicle/icicle/src/msm/./work/reports/msm_22_10_19.nsys-rep
+====================== TEST END ======================
+
+
+
+[130/168] Testing: log_size=22 precomp=10 c=21 @ Fri Feb 14 23:37:02 CST 2025
+====================== TEST START ======================
+running msm curve=1, 2^22, batch_size=1, precomp_factor=10, c=21
+finished generating
+finished copying
+msm time : 103.112 ms.
+x: 0x27b991249ca9d6bd1c67934fb76fdf0d28d5ada339a12e02e023872ad42305b7; y: 0x0023db12cc807e7fa662e58caed2fd1219cb826ea92ea1a69958c4394513ea9c
+good
+success!
+Generating '/tmp/nsys-report-bd24.qdstrm'
+[1/1] [0%                          ] msm_22_10_21.nsys-rep[1/1] [0%                          ] msm_22_10_21.nsys-rep[1/1] [7%                          ] msm_22_10_21.nsys-rep[1/1] [8%                          ] msm_22_10_21.nsys-rep[1/1] [9%                          ] msm_22_10_21.nsys-rep[1/1] [10%                         ] msm_22_10_21.nsys-rep[1/1] [11%                         ] msm_22_10_21.nsys-rep[1/1] [12%                         ] msm_22_10_21.nsys-rep[1/1] [13%                         ] msm_22_10_21.nsys-rep[1/1] [======================92%   ] msm_22_10_21.nsys-rep[1/1] [========================100%] msm_22_10_21.nsys-rep[1/1] [========================100%] msm_22_10_21.nsys-rep
+Generated:
+    /root/autodl-tmp/yr/icicle/icicle/src/msm/./work/reports/msm_22_10_21.nsys-rep
+====================== TEST END ======================
+
+
+
+[131/168] Testing: log_size=22 precomp=10 c=23 @ Fri Feb 14 23:37:54 CST 2025
+====================== TEST START ======================
+running msm curve=1, 2^22, batch_size=1, precomp_factor=10, c=23
+finished generating
+finished copying
+msm time : 10526.028 ms.
+x: 0x08ee226af84a1b9aa049eecfc849a31e197805459f38b95f0821d386f89626e4; y: 0x303ea39101e6e39807157dfcae518b96556125138e88df09e33c8ff0165efc57
+good
+success!
+Generating '/tmp/nsys-report-b7e3.qdstrm'
+[1/1] [0%                          ] msm_22_10_23.nsys-rep[1/1] [0%                          ] msm_22_10_23.nsys-rep[1/1] [5%                          ] msm_22_10_23.nsys-rep[1/1] [6%                          ] msm_22_10_23.nsys-rep[1/1] [7%                          ] msm_22_10_23.nsys-rep[1/1] [8%                          ] msm_22_10_23.nsys-rep[1/1] [9%                          ] msm_22_10_23.nsys-rep[1/1] [10%                         ] msm_22_10_23.nsys-rep[1/1] [11%                         ] msm_22_10_23.nsys-rep[1/1] [12%                         ] msm_22_10_23.nsys-rep[1/1] [13%                         ] msm_22_10_23.nsys-rep[1/1] [=======================95%  ] msm_22_10_23.nsys-rep[1/1] [========================100%] msm_22_10_23.nsys-rep[1/1] [========================100%] msm_22_10_23.nsys-rep
+Generated:
+    /root/autodl-tmp/yr/icicle/icicle/src/msm/./work/reports/msm_22_10_23.nsys-rep
+====================== TEST END ======================
+
+
+
+[132/168] Testing: log_size=22 precomp=10 c=25 @ Fri Feb 14 23:39:06 CST 2025
+====================== TEST START ======================
+running msm curve=1, 2^22, batch_size=1, precomp_factor=10, c=25
+finished generating
+finished copying
+msm time : 3355.906 ms.
+x: 0x2a86f6576d646291f5534594eee5fac3f6495ce53914aee46c3a23e88230657e; y: 0x13ad515e1d9d59747a1684235129da89108d7ae94878a1e2962f2dc875a44188
+good
+success!
+Generating '/tmp/nsys-report-2078.qdstrm'
+[1/1] [0%                          ] msm_22_10_25.nsys-rep[1/1] [0%                          ] msm_22_10_25.nsys-rep[1/1] [5%                          ] msm_22_10_25.nsys-rep[1/1] [6%                          ] msm_22_10_25.nsys-rep[1/1] [========================97% ] msm_22_10_25.nsys-rep[1/1] [========================100%] msm_22_10_25.nsys-rep[1/1] [========================100%] msm_22_10_25.nsys-rep
+Generated:
+    /root/autodl-tmp/yr/icicle/icicle/src/msm/./work/reports/msm_22_10_25.nsys-rep
+====================== TEST END ======================
+
+
+
+[133/168] Testing: log_size=22 precomp=12 c=15 @ Fri Feb 14 23:40:05 CST 2025
+====================== TEST START ======================
+running msm curve=1, 2^22, batch_size=1, precomp_factor=12, c=15
+finished generating
+finished copying
+msm time : 119.211 ms.
+x: 0x2533f1fdb9f6ad388861ad248e1b2878d99d54965bb17a68e5c79ab7c896af43; y: 0x27eb6e8f8a22e6d6eae48606075e16c96040a0e71e8026c21f7262cecf361a42
+good
+success!
+Generating '/tmp/nsys-report-aac2.qdstrm'
+[1/1] [0%                          ] msm_22_12_15.nsys-rep[1/1] [0%                          ] msm_22_12_15.nsys-rep[1/1] [7%                          ] msm_22_12_15.nsys-rep[1/1] [8%                          ] msm_22_12_15.nsys-rep[1/1] [9%                          ] msm_22_12_15.nsys-rep[1/1] [10%                         ] msm_22_12_15.nsys-rep[1/1] [11%                         ] msm_22_12_15.nsys-rep[1/1] [12%                         ] msm_22_12_15.nsys-rep[1/1] [13%                         ] msm_22_12_15.nsys-rep[1/1] [=======================93%  ] msm_22_12_15.nsys-rep[1/1] [========================100%] msm_22_12_15.nsys-rep[1/1] [========================100%] msm_22_12_15.nsys-rep
+Generated:
+    /root/autodl-tmp/yr/icicle/icicle/src/msm/./work/reports/msm_22_12_15.nsys-rep
+====================== TEST END ======================
+
+
+
+[134/168] Testing: log_size=22 precomp=12 c=17 @ Fri Feb 14 23:40:56 CST 2025
+====================== TEST START ======================
+running msm curve=1, 2^22, batch_size=1, precomp_factor=12, c=17
+finished generating
+finished copying
+msm time : 114.434 ms.
+x: 0x26595c25484a2da9e7161c5919a9959020ef0a74082ab4b75f9a6ccdf81348a4; y: 0x2a0a7c592ba3d13fb02a3a4ef05ef3fbd8f7a9d32472265e1e6cd763e9f75f89
+good
+success!
+Generating '/tmp/nsys-report-0f01.qdstrm'
+[1/1] [0%                          ] msm_22_12_17.nsys-rep[1/1] [0%                          ] msm_22_12_17.nsys-rep[1/1] [7%                          ] msm_22_12_17.nsys-rep[1/1] [8%                          ] msm_22_12_17.nsys-rep[1/1] [9%                          ] msm_22_12_17.nsys-rep[1/1] [10%                         ] msm_22_12_17.nsys-rep[1/1] [11%                         ] msm_22_12_17.nsys-rep[1/1] [12%                         ] msm_22_12_17.nsys-rep[1/1] [13%                         ] msm_22_12_17.nsys-rep[1/1] [14%                         ] msm_22_12_17.nsys-rep[1/1] [=======================93%  ] msm_22_12_17.nsys-rep[1/1] [========================100%] msm_22_12_17.nsys-rep[1/1] [========================100%] msm_22_12_17.nsys-rep
+Generated:
+    /root/autodl-tmp/yr/icicle/icicle/src/msm/./work/reports/msm_22_12_17.nsys-rep
+====================== TEST END ======================
+
+
+
+[135/168] Testing: log_size=22 precomp=12 c=19 @ Fri Feb 14 23:41:48 CST 2025
+====================== TEST START ======================
+running msm curve=1, 2^22, batch_size=1, precomp_factor=12, c=19
+finished generating
+finished copying
+msm time : 106.513 ms.
+x: 0x2eb263d60bcd692ce54e32de5f2213c306ee8fdf8a0aabad0834995cfcfbcced; y: 0x077cb9d87251b54a26487be0b966be8b0bf39ad0a44b5ba43dca3b689ace23bc
+good
+success!
+Generating '/tmp/nsys-report-480a.qdstrm'
+[1/1] [0%                          ] msm_22_12_19.nsys-rep[1/1] [0%                          ] msm_22_12_19.nsys-rep[1/1] [7%                          ] msm_22_12_19.nsys-rep[1/1] [8%                          ] msm_22_12_19.nsys-rep[1/1] [9%                          ] msm_22_12_19.nsys-rep[1/1] [10%                         ] msm_22_12_19.nsys-rep[1/1] [11%                         ] msm_22_12_19.nsys-rep[1/1] [12%                         ] msm_22_12_19.nsys-rep[1/1] [13%                         ] msm_22_12_19.nsys-rep[1/1] [======================92%   ] msm_22_12_19.nsys-rep[1/1] [========================100%] msm_22_12_19.nsys-rep[1/1] [========================100%] msm_22_12_19.nsys-rep
+Generated:
+    /root/autodl-tmp/yr/icicle/icicle/src/msm/./work/reports/msm_22_12_19.nsys-rep
+====================== TEST END ======================
+
+
+
+[136/168] Testing: log_size=22 precomp=12 c=21 @ Fri Feb 14 23:42:40 CST 2025
+====================== TEST START ======================
+running msm curve=1, 2^22, batch_size=1, precomp_factor=12, c=21
+finished generating
+finished copying
+msm time : 105.473 ms.
+x: 0x0b0c73c5c195bc5ce045d0ceae5d85857b89dac1d153d8736a5139be62233417; y: 0x1449b13f0f2caf58d568e8f17875255ac7bfd436bde52706aa6fcd96a11e4ecf
+good
+success!
+Generating '/tmp/nsys-report-2ca2.qdstrm'
+[1/1] [0%                          ] msm_22_12_21.nsys-rep[1/1] [0%                          ] msm_22_12_21.nsys-rep[1/1] [7%                          ] msm_22_12_21.nsys-rep[1/1] [8%                          ] msm_22_12_21.nsys-rep[1/1] [9%                          ] msm_22_12_21.nsys-rep[1/1] [10%                         ] msm_22_12_21.nsys-rep[1/1] [11%                         ] msm_22_12_21.nsys-rep[1/1] [12%                         ] msm_22_12_21.nsys-rep[1/1] [======================92%   ] msm_22_12_21.nsys-rep[1/1] [========================100%] msm_22_12_21.nsys-rep[1/1] [========================100%] msm_22_12_21.nsys-rep
+Generated:
+    /root/autodl-tmp/yr/icicle/icicle/src/msm/./work/reports/msm_22_12_21.nsys-rep
+====================== TEST END ======================
+
+
+
+[137/168] Testing: log_size=22 precomp=12 c=23 @ Fri Feb 14 23:43:32 CST 2025
+====================== TEST START ======================
+running msm curve=1, 2^22, batch_size=1, precomp_factor=12, c=23
+finished generating
+finished copying
+msm time : 10477.394 ms.
+x: 0x1ebe1392c9f7adb02ed0af040d289756a5c7be499ef7c1edc63a878fd2eb0da6; y: 0x2a8c34ba5a11e6e5d9c6e8b7f227363e0c248aa93e8c65820da4f9a10109590e
+good
+success!
+Generating '/tmp/nsys-report-8209.qdstrm'
+[1/1] [0%                          ] msm_22_12_23.nsys-rep[1/1] [0%                          ] msm_22_12_23.nsys-rep[1/1] [6%                          ] msm_22_12_23.nsys-rep[1/1] [7%                          ] msm_22_12_23.nsys-rep[1/1] [8%                          ] msm_22_12_23.nsys-rep[1/1] [9%                          ] msm_22_12_23.nsys-rep[1/1] [10%                         ] msm_22_12_23.nsys-rep[1/1] [11%                         ] msm_22_12_23.nsys-rep[1/1] [12%                         ] msm_22_12_23.nsys-rep[1/1] [13%                         ] msm_22_12_23.nsys-rep[1/1] [14%                         ] msm_22_12_23.nsys-rep[1/1] [=======================94%  ] msm_22_12_23.nsys-rep[1/1] [========================100%] msm_22_12_23.nsys-rep[1/1] [========================100%] msm_22_12_23.nsys-rep
+Generated:
+    /root/autodl-tmp/yr/icicle/icicle/src/msm/./work/reports/msm_22_12_23.nsys-rep
+====================== TEST END ======================
+
+
+
+[138/168] Testing: log_size=22 precomp=12 c=25 @ Fri Feb 14 23:44:44 CST 2025
+====================== TEST START ======================
+running msm curve=1, 2^22, batch_size=1, precomp_factor=12, c=25
+finished generating
+finished copying
+msm time : 3278.679 ms.
+x: 0x03014039b69bdf3ccf798df82a0cfc1ebeb01b83d044a4043fefea94c40a8cfe; y: 0x2c040b60d52f5b43db380d132aebc9d8646b59dc3d8c53353a3943a76ab9907c
+good
+success!
+Generating '/tmp/nsys-report-2ac3.qdstrm'
+[1/1] [0%                          ] msm_22_12_25.nsys-rep[1/1] [0%                          ] msm_22_12_25.nsys-rep[1/1] [5%                          ] msm_22_12_25.nsys-rep[1/1] [6%                          ] msm_22_12_25.nsys-rep[1/1] [7%                          ] msm_22_12_25.nsys-rep[1/1] [8%                          ] msm_22_12_25.nsys-rep[1/1] [9%                          ] msm_22_12_25.nsys-rep[1/1] [=======================96%  ] msm_22_12_25.nsys-rep[1/1] [========================100%] msm_22_12_25.nsys-rep[1/1] [========================100%] msm_22_12_25.nsys-rep
+Generated:
+    /root/autodl-tmp/yr/icicle/icicle/src/msm/./work/reports/msm_22_12_25.nsys-rep
+====================== TEST END ======================
+
+
+
+[139/168] Testing: log_size=22 precomp=14 c=15 @ Fri Feb 14 23:45:42 CST 2025
+====================== TEST START ======================
+running msm curve=1, 2^22, batch_size=1, precomp_factor=14, c=15
+finished generating
+finished copying
+msm time : 119.212 ms.
+x: 0x08d3a892f07932bc52711724fee0d83efc5e568890be81b157e92aa1256aacef; y: 0x02b414b1cbd3c60d9f92d3b49ac3d68ab00b6aa4b2eee57833b809dab107f72e
+good
+success!
+Generating '/tmp/nsys-report-c7e3.qdstrm'
+[1/1] [0%                          ] msm_22_14_15.nsys-rep[1/1] [0%                          ] msm_22_14_15.nsys-rep[1/1] [7%                          ] msm_22_14_15.nsys-rep[1/1] [8%                          ] msm_22_14_15.nsys-rep[1/1] [9%                          ] msm_22_14_15.nsys-rep[1/1] [10%                         ] msm_22_14_15.nsys-rep[1/1] [11%                         ] msm_22_14_15.nsys-rep[1/1] [12%                         ] msm_22_14_15.nsys-rep[1/1] [13%                         ] msm_22_14_15.nsys-rep[1/1] [=======================94%  ] msm_22_14_15.nsys-rep[1/1] [========================100%] msm_22_14_15.nsys-rep[1/1] [========================100%] msm_22_14_15.nsys-rep
+Generated:
+    /root/autodl-tmp/yr/icicle/icicle/src/msm/./work/reports/msm_22_14_15.nsys-rep
+====================== TEST END ======================
+
+
+
+[140/168] Testing: log_size=22 precomp=14 c=17 @ Fri Feb 14 23:46:33 CST 2025
+====================== TEST START ======================
+running msm curve=1, 2^22, batch_size=1, precomp_factor=14, c=17
+finished generating
+finished copying
+msm time : 107.583 ms.
+x: 0x18961be5f649f1bd59f498ca16bd544a065f2aa8b33d893212789354559eb07d; y: 0x1378809ff585c32d4c13856159963521ec4a848b965a1c7a71cb71354b721ee5
+good
+success!
+Generating '/tmp/nsys-report-2fa7.qdstrm'
+[1/1] [0%                          ] msm_22_14_17.nsys-rep[1/1] [0%                          ] msm_22_14_17.nsys-rep[1/1] [7%                          ] msm_22_14_17.nsys-rep[1/1] [8%                          ] msm_22_14_17.nsys-rep[1/1] [9%                          ] msm_22_14_17.nsys-rep[1/1] [10%                         ] msm_22_14_17.nsys-rep[1/1] [11%                         ] msm_22_14_17.nsys-rep[1/1] [12%                         ] msm_22_14_17.nsys-rep[1/1] [13%                         ] msm_22_14_17.nsys-rep[1/1] [14%                         ] msm_22_14_17.nsys-rep[1/1] [=======================93%  ] msm_22_14_17.nsys-rep[1/1] [========================100%] msm_22_14_17.nsys-rep[1/1] [========================100%] msm_22_14_17.nsys-rep
+Generated:
+    /root/autodl-tmp/yr/icicle/icicle/src/msm/./work/reports/msm_22_14_17.nsys-rep
+====================== TEST END ======================
+
+
+
+[141/168] Testing: log_size=22 precomp=14 c=19 @ Fri Feb 14 23:47:25 CST 2025
+====================== TEST START ======================
+running msm curve=1, 2^22, batch_size=1, precomp_factor=14, c=19
+finished generating
+finished copying
+msm time : 109.733 ms.
+x: 0x168fb00489146cd91d1f20be5a15f55e47a0a53696d49d71efab1dbb52e41d9a; y: 0x07313326556f94341ae4199b88b74659713b169458e81bb9a77d1c8d05b79aa4
+good
+success!
+Generating '/tmp/nsys-report-d499.qdstrm'
+[1/1] [0%                          ] msm_22_14_19.nsys-rep[1/1] [0%                          ] msm_22_14_19.nsys-rep[1/1] [7%                          ] msm_22_14_19.nsys-rep[1/1] [8%                          ] msm_22_14_19.nsys-rep[1/1] [9%                          ] msm_22_14_19.nsys-rep[1/1] [10%                         ] msm_22_14_19.nsys-rep[1/1] [11%                         ] msm_22_14_19.nsys-rep[1/1] [12%                         ] msm_22_14_19.nsys-rep[1/1] [13%                         ] msm_22_14_19.nsys-rep[1/1] [======================92%   ] msm_22_14_19.nsys-rep[1/1] [========================100%] msm_22_14_19.nsys-rep[1/1] [========================100%] msm_22_14_19.nsys-rep
+Generated:
+    /root/autodl-tmp/yr/icicle/icicle/src/msm/./work/reports/msm_22_14_19.nsys-rep
+====================== TEST END ======================
+
+
+
+[142/168] Testing: log_size=22 precomp=14 c=21 @ Fri Feb 14 23:48:17 CST 2025
+====================== TEST START ======================
+running msm curve=1, 2^22, batch_size=1, precomp_factor=14, c=21
+finished generating
+finished copying
+msm time : 106.341 ms.
+x: 0x222fe323bf087ea68ab1fd7aafea45b27627eb42e8cba296d8b5f4d9a23ccb01; y: 0x2e87cdcb2b5ce4196ca9b23ad823a3477a160312fef6fc27bfcc70c65b7dc794
+good
+success!
+Generating '/tmp/nsys-report-844c.qdstrm'
+[1/1] [0%                          ] msm_22_14_21.nsys-rep[1/1] [0%                          ] msm_22_14_21.nsys-rep[1/1] [7%                          ] msm_22_14_21.nsys-rep[1/1] [8%                          ] msm_22_14_21.nsys-rep[1/1] [9%                          ] msm_22_14_21.nsys-rep[1/1] [10%                         ] msm_22_14_21.nsys-rep[1/1] [11%                         ] msm_22_14_21.nsys-rep[1/1] [12%                         ] msm_22_14_21.nsys-rep[1/1] [======================92%   ] msm_22_14_21.nsys-rep[1/1] [========================100%] msm_22_14_21.nsys-rep[1/1] [========================100%] msm_22_14_21.nsys-rep
+Generated:
+    /root/autodl-tmp/yr/icicle/icicle/src/msm/./work/reports/msm_22_14_21.nsys-rep
+====================== TEST END ======================
+
+
+
+[143/168] Testing: log_size=22 precomp=14 c=23 @ Fri Feb 14 23:49:09 CST 2025
+====================== TEST START ======================
+running msm curve=1, 2^22, batch_size=1, precomp_factor=14, c=23
+finished generating
+finished copying
+msm time : 10492.646 ms.
+x: 0x1dc3f9632473948ba2b482e80216eb6447783f5f41f8da89aeca2d35adb7654b; y: 0x0a726d4b83c874aea3ea8686bcdd99b43cc91863df4c418253526bc878b7ee1e
+good
+success!
+Generating '/tmp/nsys-report-57f4.qdstrm'
+[1/1] [0%                          ] msm_22_14_23.nsys-rep[1/1] [0%                          ] msm_22_14_23.nsys-rep[1/1] [6%                          ] msm_22_14_23.nsys-rep[1/1] [7%                          ] msm_22_14_23.nsys-rep[1/1] [8%                          ] msm_22_14_23.nsys-rep[1/1] [9%                          ] msm_22_14_23.nsys-rep[1/1] [10%                         ] msm_22_14_23.nsys-rep[1/1] [11%                         ] msm_22_14_23.nsys-rep[1/1] [12%                         ] msm_22_14_23.nsys-rep[1/1] [13%                         ] msm_22_14_23.nsys-rep[1/1] [14%                         ] msm_22_14_23.nsys-rep[1/1] [=15%                        ] msm_22_14_23.nsys-rep[1/1] [=======================94%  ] msm_22_14_23.nsys-rep[1/1] [========================100%] msm_22_14_23.nsys-rep[1/1] [========================100%] msm_22_14_23.nsys-rep
+Generated:
+    /root/autodl-tmp/yr/icicle/icicle/src/msm/./work/reports/msm_22_14_23.nsys-rep
+====================== TEST END ======================
+
+
+
+[144/168] Testing: log_size=22 precomp=14 c=25 @ Fri Feb 14 23:50:21 CST 2025
+====================== TEST START ======================
+running msm curve=1, 2^22, batch_size=1, precomp_factor=14, c=25
+finished generating
+finished copying
+msm time : 3259.411 ms.
+x: 0x1565c9b0e8211ff79de4466356c3fde36b5e8034bb4edf8110145d39e337bdcf; y: 0x07c8ce1b97530ca21130d2dfbf54bc99727c9eaf0a52608d8ec3eb4877562008
+good
+success!
+Generating '/tmp/nsys-report-6402.qdstrm'
+[1/1] [0%                          ] msm_22_14_25.nsys-rep[1/1] [0%                          ] msm_22_14_25.nsys-rep[1/1] [5%                          ] msm_22_14_25.nsys-rep[1/1] [6%                          ] msm_22_14_25.nsys-rep[1/1] [7%                          ] msm_22_14_25.nsys-rep[1/1] [8%                          ] msm_22_14_25.nsys-rep[1/1] [=======================96%  ] msm_22_14_25.nsys-rep[1/1] [========================100%] msm_22_14_25.nsys-rep[1/1] [========================100%] msm_22_14_25.nsys-rep
+Generated:
+    /root/autodl-tmp/yr/icicle/icicle/src/msm/./work/reports/msm_22_14_25.nsys-rep
+====================== TEST END ======================
+
+
+
+[145/168] Testing: log_size=22 precomp=16 c=15 @ Fri Feb 14 23:51:19 CST 2025
+====================== TEST START ======================
+running msm curve=1, 2^22, batch_size=1, precomp_factor=16, c=15
+finished generating
+finished copying
+msm time : 123.225 ms.
+x: 0x2702d0e882d6360796a707c478545a853df24fbf7fda03608ad40484cecb47da; y: 0x1982765600fcad90c09ce49169cf9374e35e6bc357a9f94f1535f4a6bf758b0c
+good
+success!
+Generating '/tmp/nsys-report-2eeb.qdstrm'
+[1/1] [0%                          ] msm_22_16_15.nsys-rep[1/1] [0%                          ] msm_22_16_15.nsys-rep[1/1] [7%                          ] msm_22_16_15.nsys-rep[1/1] [8%                          ] msm_22_16_15.nsys-rep[1/1] [9%                          ] msm_22_16_15.nsys-rep[1/1] [10%                         ] msm_22_16_15.nsys-rep[1/1] [11%                         ] msm_22_16_15.nsys-rep[1/1] [12%                         ] msm_22_16_15.nsys-rep[1/1] [13%                         ] msm_22_16_15.nsys-rep[1/1] [=======================93%  ] msm_22_16_15.nsys-rep[1/1] [========================100%] msm_22_16_15.nsys-rep[1/1] [========================100%] msm_22_16_15.nsys-rep
+Generated:
+    /root/autodl-tmp/yr/icicle/icicle/src/msm/./work/reports/msm_22_16_15.nsys-rep
+====================== TEST END ======================
+
+
+
+[146/168] Testing: log_size=22 precomp=16 c=17 @ Fri Feb 14 23:52:11 CST 2025
+====================== TEST START ======================
+running msm curve=1, 2^22, batch_size=1, precomp_factor=16, c=17
+finished generating
+finished copying
+msm time : 107.317 ms.
+x: 0x09ae226b8b1c3def998919a994ba9e71c82130659bba571b015f2d3aa241521c; y: 0x30359b713faf6c64cc0a5b93e62f153586695fa038e3bada272ab148397489a0
+good
+success!
+Generating '/tmp/nsys-report-846e.qdstrm'
+[1/1] [0%                          ] msm_22_16_17.nsys-rep[1/1] [0%                          ] msm_22_16_17.nsys-rep[1/1] [7%                          ] msm_22_16_17.nsys-rep[1/1] [8%                          ] msm_22_16_17.nsys-rep[1/1] [9%                          ] msm_22_16_17.nsys-rep[1/1] [10%                         ] msm_22_16_17.nsys-rep[1/1] [11%                         ] msm_22_16_17.nsys-rep[1/1] [12%                         ] msm_22_16_17.nsys-rep[1/1] [13%                         ] msm_22_16_17.nsys-rep[1/1] [=======================93%  ] msm_22_16_17.nsys-rep[1/1] [========================100%] msm_22_16_17.nsys-rep[1/1] [========================100%] msm_22_16_17.nsys-rep
+Generated:
+    /root/autodl-tmp/yr/icicle/icicle/src/msm/./work/reports/msm_22_16_17.nsys-rep
+====================== TEST END ======================
+
+
+
+[147/168] Testing: log_size=22 precomp=16 c=19 @ Fri Feb 14 23:53:03 CST 2025
+====================== TEST START ======================
+running msm curve=1, 2^22, batch_size=1, precomp_factor=16, c=19
+finished generating
+finished copying
+msm time : 119.918 ms.
+x: 0x300b6049a2c15ae3f5581423de09ddb18122868c13f7980a711babcd00acf641; y: 0x1b493bfc994b904781c9d3c473681ecd25a6710364002cf56e56a0d86a544f9f
+good
+success!
+Generating '/tmp/nsys-report-76c3.qdstrm'
+[1/1] [0%                          ] msm_22_16_19.nsys-rep[1/1] [0%                          ] msm_22_16_19.nsys-rep[1/1] [7%                          ] msm_22_16_19.nsys-rep[1/1] [8%                          ] msm_22_16_19.nsys-rep[1/1] [9%                          ] msm_22_16_19.nsys-rep[1/1] [10%                         ] msm_22_16_19.nsys-rep[1/1] [11%                         ] msm_22_16_19.nsys-rep[1/1] [12%                         ] msm_22_16_19.nsys-rep[1/1] [13%                         ] msm_22_16_19.nsys-rep[1/1] [======================92%   ] msm_22_16_19.nsys-rep[1/1] [========================100%] msm_22_16_19.nsys-rep[1/1] [========================100%] msm_22_16_19.nsys-rep
+Generated:
+    /root/autodl-tmp/yr/icicle/icicle/src/msm/./work/reports/msm_22_16_19.nsys-rep
+====================== TEST END ======================
+
+
+
+[148/168] Testing: log_size=22 precomp=16 c=21 @ Fri Feb 14 23:53:55 CST 2025
+====================== TEST START ======================
+running msm curve=1, 2^22, batch_size=1, precomp_factor=16, c=21
+finished generating
+finished copying
+msm time : 108.563 ms.
+x: 0x012b31b403c6ea91b0417990da116e4e4e0d7bb2243277830fb3d9a972f59cce; y: 0x0e620d0f77622d751235a90875f5d67ab5856f8a289c2e3fd083bd755a9c1d13
+good
+success!
+Generating '/tmp/nsys-report-c0c8.qdstrm'
+[1/1] [0%                          ] msm_22_16_21.nsys-rep[1/1] [0%                          ] msm_22_16_21.nsys-rep[1/1] [7%                          ] msm_22_16_21.nsys-rep[1/1] [8%                          ] msm_22_16_21.nsys-rep[1/1] [9%                          ] msm_22_16_21.nsys-rep[1/1] [10%                         ] msm_22_16_21.nsys-rep[1/1] [11%                         ] msm_22_16_21.nsys-rep[1/1] [12%                         ] msm_22_16_21.nsys-rep[1/1] [13%                         ] msm_22_16_21.nsys-rep[1/1] [======================92%   ] msm_22_16_21.nsys-rep[1/1] [========================100%] msm_22_16_21.nsys-rep[1/1] [========================100%] msm_22_16_21.nsys-rep
+Generated:
+    /root/autodl-tmp/yr/icicle/icicle/src/msm/./work/reports/msm_22_16_21.nsys-rep
+====================== TEST END ======================
+
+
+
+[149/168] Testing: log_size=22 precomp=16 c=23 @ Fri Feb 14 23:54:47 CST 2025
+====================== TEST START ======================
+running msm curve=1, 2^22, batch_size=1, precomp_factor=16, c=23
+finished generating
+finished copying
+msm time : 10486.105 ms.
+x: 0x0f13aa6f6c98bad0f41d25152feea7ab1c171f80ccd2784d0161764ac9b50f0f; y: 0x261b36c952f2e0098b9d2fed0144dbdf09b95e2c9e833e7e173228549164489b
+good
+success!
+Generating '/tmp/nsys-report-0321.qdstrm'
+[1/1] [0%                          ] msm_22_16_23.nsys-rep[1/1] [0%                          ] msm_22_16_23.nsys-rep[1/1] [6%                          ] msm_22_16_23.nsys-rep[1/1] [7%                          ] msm_22_16_23.nsys-rep[1/1] [8%                          ] msm_22_16_23.nsys-rep[1/1] [9%                          ] msm_22_16_23.nsys-rep[1/1] [10%                         ] msm_22_16_23.nsys-rep[1/1] [11%                         ] msm_22_16_23.nsys-rep[1/1] [12%                         ] msm_22_16_23.nsys-rep[1/1] [13%                         ] msm_22_16_23.nsys-rep[1/1] [14%                         ] msm_22_16_23.nsys-rep[1/1] [=======================94%  ] msm_22_16_23.nsys-rep[1/1] [========================100%] msm_22_16_23.nsys-rep[1/1] [========================100%] msm_22_16_23.nsys-rep
+Generated:
+    /root/autodl-tmp/yr/icicle/icicle/src/msm/./work/reports/msm_22_16_23.nsys-rep
+====================== TEST END ======================
+
+
+
+[150/168] Testing: log_size=22 precomp=16 c=25 @ Fri Feb 14 23:55:59 CST 2025
+====================== TEST START ======================
+running msm curve=1, 2^22, batch_size=1, precomp_factor=16, c=25
+finished generating
+finished copying
+msm time : 3279.763 ms.
+x: 0x01ba60c6803f04f61a69e546f263ad9d166c87f5265bceae3887f4249c6a35a9; y: 0x03652357a164d451004cee9fd9922e11fa974db0ec2cdbd82b75b0224d913aa1
+good
+success!
+Generating '/tmp/nsys-report-1fde.qdstrm'
+[1/1] [0%                          ] msm_22_16_25.nsys-rep[1/1] [0%                          ] msm_22_16_25.nsys-rep[1/1] [5%                          ] msm_22_16_25.nsys-rep[1/1] [6%                          ] msm_22_16_25.nsys-rep[1/1] [7%                          ] msm_22_16_25.nsys-rep[1/1] [8%                          ] msm_22_16_25.nsys-rep[1/1] [9%                          ] msm_22_16_25.nsys-rep[1/1] [=======================96%  ] msm_22_16_25.nsys-rep[1/1] [========================100%] msm_22_16_25.nsys-rep[1/1] [========================100%] msm_22_16_25.nsys-rep
+Generated:
+    /root/autodl-tmp/yr/icicle/icicle/src/msm/./work/reports/msm_22_16_25.nsys-rep
+====================== TEST END ======================
+
+
+
+[151/168] Testing: log_size=22 precomp=18 c=15 @ Fri Feb 14 23:56:58 CST 2025
+====================== TEST START ======================
+running msm curve=1, 2^22, batch_size=1, precomp_factor=18, c=15
+finished generating
+finished copying
+msm time : 104.157 ms.
+x: 0x0aee75a8d8a5726d8a54d3c4d1db1e9fba7f49808ac008dbb858610192297ad8; y: 0x2d2e42903f27b4210ed3d6a1cfd1ed2a609094bde3ee4a59f234dc8c0dc09440
+good
+success!
+Generating '/tmp/nsys-report-c76b.qdstrm'
+[1/1] [0%                          ] msm_22_18_15.nsys-rep[1/1] [0%                          ] msm_22_18_15.nsys-rep[1/1] [7%                          ] msm_22_18_15.nsys-rep[1/1] [8%                          ] msm_22_18_15.nsys-rep[1/1] [9%                          ] msm_22_18_15.nsys-rep[1/1] [10%                         ] msm_22_18_15.nsys-rep[1/1] [11%                         ] msm_22_18_15.nsys-rep[1/1] [12%                         ] msm_22_18_15.nsys-rep[1/1] [13%                         ] msm_22_18_15.nsys-rep[1/1] [=======================93%  ] msm_22_18_15.nsys-rep[1/1] [========================100%] msm_22_18_15.nsys-rep[1/1] [========================100%] msm_22_18_15.nsys-rep
+Generated:
+    /root/autodl-tmp/yr/icicle/icicle/src/msm/./work/reports/msm_22_18_15.nsys-rep
+====================== TEST END ======================
+
+
+
+[152/168] Testing: log_size=22 precomp=18 c=17 @ Fri Feb 14 23:57:50 CST 2025
+====================== TEST START ======================
+running msm curve=1, 2^22, batch_size=1, precomp_factor=18, c=17
+finished generating
+finished copying
+msm time : 113.415 ms.
+x: 0x1e24c4f3eb8f348a5dcf7dd188c95e3f8339fff64c45be986b1323b4e95bf739; y: 0x0df6fb17607dbc9bda4b4ed7c11253a6b8a073898af1998de09c1f5a15d81adf
+good
+success!
+Generating '/tmp/nsys-report-326e.qdstrm'
+[1/1] [0%                          ] msm_22_18_17.nsys-rep[1/1] [0%                          ] msm_22_18_17.nsys-rep[1/1] [7%                          ] msm_22_18_17.nsys-rep[1/1] [8%                          ] msm_22_18_17.nsys-rep[1/1] [9%                          ] msm_22_18_17.nsys-rep[1/1] [10%                         ] msm_22_18_17.nsys-rep[1/1] [11%                         ] msm_22_18_17.nsys-rep[1/1] [12%                         ] msm_22_18_17.nsys-rep[1/1] [13%                         ] msm_22_18_17.nsys-rep[1/1] [=======================93%  ] msm_22_18_17.nsys-rep[1/1] [========================100%] msm_22_18_17.nsys-rep[1/1] [========================100%] msm_22_18_17.nsys-rep
+Generated:
+    /root/autodl-tmp/yr/icicle/icicle/src/msm/./work/reports/msm_22_18_17.nsys-rep
+====================== TEST END ======================
+
+
+
+[153/168] Testing: log_size=22 precomp=18 c=19 @ Fri Feb 14 23:58:42 CST 2025
+====================== TEST START ======================
+running msm curve=1, 2^22, batch_size=1, precomp_factor=18, c=19
+finished generating
+finished copying
+msm time : 106.502 ms.
+x: 0x29f20fa145e69908bf7e961517793497ab7792f7b2c6e3ecf612ef3b7a100617; y: 0x06cd05bef95a2c94dcd6dc0f0912fd1ef684085403763f505eeed9377b3b6469
+good
+success!
+Generating '/tmp/nsys-report-35f7.qdstrm'
+[1/1] [0%                          ] msm_22_18_19.nsys-rep[1/1] [0%                          ] msm_22_18_19.nsys-rep[1/1] [7%                          ] msm_22_18_19.nsys-rep[1/1] [8%                          ] msm_22_18_19.nsys-rep[1/1] [9%                          ] msm_22_18_19.nsys-rep[1/1] [10%                         ] msm_22_18_19.nsys-rep[1/1] [11%                         ] msm_22_18_19.nsys-rep[1/1] [12%                         ] msm_22_18_19.nsys-rep[1/1] [======================92%   ] msm_22_18_19.nsys-rep[1/1] [========================100%] msm_22_18_19.nsys-rep[1/1] [========================100%] msm_22_18_19.nsys-rep
+Generated:
+    /root/autodl-tmp/yr/icicle/icicle/src/msm/./work/reports/msm_22_18_19.nsys-rep
+====================== TEST END ======================
+
+
+
+[154/168] Testing: log_size=22 precomp=18 c=21 @ Fri Feb 14 23:59:33 CST 2025
+====================== TEST START ======================
+running msm curve=1, 2^22, batch_size=1, precomp_factor=18, c=21
+finished generating
+finished copying
+msm time : 102.070 ms.
+x: 0x125fa5143c7d705cfc379f7a3f32e65149419bc569126b474cfaf22e10be4ceb; y: 0x26c83057039f92ca80cb6be3ff20baaf202515fbd57429bb6d9be0b977262d63
+good
+success!
+Generating '/tmp/nsys-report-ef6e.qdstrm'
+[1/1] [0%                          ] msm_22_18_21.nsys-rep[1/1] [0%                          ] msm_22_18_21.nsys-rep[1/1] [7%                          ] msm_22_18_21.nsys-rep[1/1] [8%                          ] msm_22_18_21.nsys-rep[1/1] [9%                          ] msm_22_18_21.nsys-rep[1/1] [10%                         ] msm_22_18_21.nsys-rep[1/1] [11%                         ] msm_22_18_21.nsys-rep[1/1] [12%                         ] msm_22_18_21.nsys-rep[1/1] [13%                         ] msm_22_18_21.nsys-rep[1/1] [======================92%   ] msm_22_18_21.nsys-rep[1/1] [========================100%] msm_22_18_21.nsys-rep[1/1] [========================100%] msm_22_18_21.nsys-rep
+Generated:
+    /root/autodl-tmp/yr/icicle/icicle/src/msm/./work/reports/msm_22_18_21.nsys-rep
+====================== TEST END ======================
+
+
+
+[155/168] Testing: log_size=22 precomp=18 c=23 @ Sat Feb 15 00:00:26 CST 2025
+====================== TEST START ======================
+running msm curve=1, 2^22, batch_size=1, precomp_factor=18, c=23
+finished generating
+finished copying
+msm time : 10478.800 ms.
+x: 0x1ba0812949d52e9fbe2a48d758e6c2518da0d6ee995576f567dae67c7f9cb794; y: 0x063b63c739419e9acdba4b67204bb7e04c665a4458ebe50471fa0daa8b445a1d
+good
+success!
+Generating '/tmp/nsys-report-5b33.qdstrm'
+[1/1] [0%                          ] msm_22_18_23.nsys-rep[1/1] [0%                          ] msm_22_18_23.nsys-rep[1/1] [6%                          ] msm_22_18_23.nsys-rep[1/1] [7%                          ] msm_22_18_23.nsys-rep[1/1] [8%                          ] msm_22_18_23.nsys-rep[1/1] [9%                          ] msm_22_18_23.nsys-rep[1/1] [10%                         ] msm_22_18_23.nsys-rep[1/1] [11%                         ] msm_22_18_23.nsys-rep[1/1] [12%                         ] msm_22_18_23.nsys-rep[1/1] [13%                         ] msm_22_18_23.nsys-rep[1/1] [14%                         ] msm_22_18_23.nsys-rep[1/1] [=15%                        ] msm_22_18_23.nsys-rep[1/1] [=======================94%  ] msm_22_18_23.nsys-rep[1/1] [========================100%] msm_22_18_23.nsys-rep[1/1] [========================100%] msm_22_18_23.nsys-rep
+Generated:
+    /root/autodl-tmp/yr/icicle/icicle/src/msm/./work/reports/msm_22_18_23.nsys-rep
+====================== TEST END ======================
+
+
+
+[156/168] Testing: log_size=22 precomp=18 c=25 @ Sat Feb 15 00:01:39 CST 2025
+====================== TEST START ======================
+running msm curve=1, 2^22, batch_size=1, precomp_factor=18, c=25
+finished generating
+finished copying
+msm time : 3255.398 ms.
+x: 0x0438ec49c27171e9e0b1776fb29d9dad9375397b22cd47300e4eda985ac7f43e; y: 0x1bd6c239a9fed1ea389b9226a1ba3787e1fee6e09303bc343993a8022e99edb9
+good
+success!
+Generating '/tmp/nsys-report-450d.qdstrm'
+[1/1] [0%                          ] msm_22_18_25.nsys-rep[1/1] [0%                          ] msm_22_18_25.nsys-rep[1/1] [5%                          ] msm_22_18_25.nsys-rep[1/1] [6%                          ] msm_22_18_25.nsys-rep[1/1] [7%                          ] msm_22_18_25.nsys-rep[1/1] [8%                          ] msm_22_18_25.nsys-rep[1/1] [9%                          ] msm_22_18_25.nsys-rep[1/1] [=======================95%  ] msm_22_18_25.nsys-rep[1/1] [=======================96%  ] msm_22_18_25.nsys-rep[1/1] [========================100%] msm_22_18_25.nsys-rep[1/1] [========================100%] msm_22_18_25.nsys-rep
+Generated:
+    /root/autodl-tmp/yr/icicle/icicle/src/msm/./work/reports/msm_22_18_25.nsys-rep
+====================== TEST END ======================
+
+
+
+[157/168] Testing: log_size=22 precomp=20 c=15 @ Sat Feb 15 00:02:38 CST 2025
+====================== TEST START ======================
+running msm curve=1, 2^22, batch_size=1, precomp_factor=20, c=15
+finished generating
+finished copying
+msm time : 127.450 ms.
+x: 0x04bc2aa72281666dc849717ab5c975fca1b54e0f4c7fbe711e6b224c8398a3dc; y: 0x05847319b018f1a30f2fa87c9c76b6d4770f35fccf970a00ac7eda36d967dc4b
+good
+success!
+Generating '/tmp/nsys-report-aea3.qdstrm'
+[1/1] [0%                          ] msm_22_20_15.nsys-rep[1/1] [0%                          ] msm_22_20_15.nsys-rep[1/1] [7%                          ] msm_22_20_15.nsys-rep[1/1] [8%                          ] msm_22_20_15.nsys-rep[1/1] [9%                          ] msm_22_20_15.nsys-rep[1/1] [10%                         ] msm_22_20_15.nsys-rep[1/1] [11%                         ] msm_22_20_15.nsys-rep[1/1] [12%                         ] msm_22_20_15.nsys-rep[1/1] [13%                         ] msm_22_20_15.nsys-rep[1/1] [14%                         ] msm_22_20_15.nsys-rep[1/1] [=======================93%  ] msm_22_20_15.nsys-rep[1/1] [========================100%] msm_22_20_15.nsys-rep[1/1] [========================100%] msm_22_20_15.nsys-rep
+Generated:
+    /root/autodl-tmp/yr/icicle/icicle/src/msm/./work/reports/msm_22_20_15.nsys-rep
+====================== TEST END ======================
+
+
+
+[158/168] Testing: log_size=22 precomp=20 c=17 @ Sat Feb 15 00:03:29 CST 2025
+====================== TEST START ======================
+running msm curve=1, 2^22, batch_size=1, precomp_factor=20, c=17
+finished generating
+finished copying
+msm time : 109.917 ms.
+x: 0x26739bd9e6df25af8ccaa7d6531e646a6977edde1d0a86732f0d74529fe8fafc; y: 0x2d69a596defaf58167a7c6748acd03ff2cdbf11f4147135278f168f7edba4652
+good
+success!
+Generating '/tmp/nsys-report-efc3.qdstrm'
+[1/1] [0%                          ] msm_22_20_17.nsys-rep[1/1] [0%                          ] msm_22_20_17.nsys-rep[1/1] [8%                          ] msm_22_20_17.nsys-rep[1/1] [9%                          ] msm_22_20_17.nsys-rep[1/1] [10%                         ] msm_22_20_17.nsys-rep[1/1] [11%                         ] msm_22_20_17.nsys-rep[1/1] [12%                         ] msm_22_20_17.nsys-rep[1/1] [13%                         ] msm_22_20_17.nsys-rep[1/1] [14%                         ] msm_22_20_17.nsys-rep[1/1] [=======================93%  ] msm_22_20_17.nsys-rep[1/1] [========================100%] msm_22_20_17.nsys-rep[1/1] [========================100%] msm_22_20_17.nsys-rep
+Generated:
+    /root/autodl-tmp/yr/icicle/icicle/src/msm/./work/reports/msm_22_20_17.nsys-rep
+====================== TEST END ======================
+
+
+
+[159/168] Testing: log_size=22 precomp=20 c=19 @ Sat Feb 15 00:04:22 CST 2025
+====================== TEST START ======================
+running msm curve=1, 2^22, batch_size=1, precomp_factor=20, c=19
+finished generating
+finished copying
+msm time : 107.058 ms.
+x: 0x22a4a7fba2da073c04b007efe9159a73abad9b52328b19774661040c42f27ba7; y: 0x009d7de3574d35f06bb71c5dcafe758a36a9f25566a71a2f0e28807a52e5725a
+good
+success!
+Generating '/tmp/nsys-report-717d.qdstrm'
+[1/1] [0%                          ] msm_22_20_19.nsys-rep[1/1] [0%                          ] msm_22_20_19.nsys-rep[1/1] [7%                          ] msm_22_20_19.nsys-rep[1/1] [8%                          ] msm_22_20_19.nsys-rep[1/1] [9%                          ] msm_22_20_19.nsys-rep[1/1] [10%                         ] msm_22_20_19.nsys-rep[1/1] [11%                         ] msm_22_20_19.nsys-rep[1/1] [12%                         ] msm_22_20_19.nsys-rep[1/1] [13%                         ] msm_22_20_19.nsys-rep[1/1] [======================92%   ] msm_22_20_19.nsys-rep[1/1] [========================100%] msm_22_20_19.nsys-rep[1/1] [========================100%] msm_22_20_19.nsys-rep
+Generated:
+    /root/autodl-tmp/yr/icicle/icicle/src/msm/./work/reports/msm_22_20_19.nsys-rep
+====================== TEST END ======================
+
+
+
+[160/168] Testing: log_size=22 precomp=20 c=21 @ Sat Feb 15 00:05:14 CST 2025
+====================== TEST START ======================
+running msm curve=1, 2^22, batch_size=1, precomp_factor=20, c=21
+finished generating
+finished copying
+msm time : 103.542 ms.
+x: 0x23541d21ecbc714fbdb6b88426c18b4f8ba4508f64b934cc4247b69fd32d2d6a; y: 0x0675604b524845657e48c199fcdf5bc1acdb29532e11aa7c138e5a2155568c0e
+good
+success!
+Generating '/tmp/nsys-report-ebd6.qdstrm'
+[1/1] [0%                          ] msm_22_20_21.nsys-rep[1/1] [0%                          ] msm_22_20_21.nsys-rep[1/1] [7%                          ] msm_22_20_21.nsys-rep[1/1] [8%                          ] msm_22_20_21.nsys-rep[1/1] [9%                          ] msm_22_20_21.nsys-rep[1/1] [10%                         ] msm_22_20_21.nsys-rep[1/1] [11%                         ] msm_22_20_21.nsys-rep[1/1] [12%                         ] msm_22_20_21.nsys-rep[1/1] [======================92%   ] msm_22_20_21.nsys-rep[1/1] [========================100%] msm_22_20_21.nsys-rep[1/1] [========================100%] msm_22_20_21.nsys-rep
+Generated:
+    /root/autodl-tmp/yr/icicle/icicle/src/msm/./work/reports/msm_22_20_21.nsys-rep
+====================== TEST END ======================
+
+
+
+[161/168] Testing: log_size=22 precomp=20 c=23 @ Sat Feb 15 00:06:06 CST 2025
+====================== TEST START ======================
+running msm curve=1, 2^22, batch_size=1, precomp_factor=20, c=23
+finished generating
+finished copying
+msm time : 10477.271 ms.
+x: 0x0d81255252c07934a173549a884280cd8e7732879e1b222afbac787de63e7d4b; y: 0x16817cad6803ef99d036dc6a005536add55b96f3a0b836712c48902395f09265
+good
+success!
+Generating '/tmp/nsys-report-d383.qdstrm'
+[1/1] [0%                          ] msm_22_20_23.nsys-rep[1/1] [0%                          ] msm_22_20_23.nsys-rep[1/1] [6%                          ] msm_22_20_23.nsys-rep[1/1] [7%                          ] msm_22_20_23.nsys-rep[1/1] [8%                          ] msm_22_20_23.nsys-rep[1/1] [9%                          ] msm_22_20_23.nsys-rep[1/1] [10%                         ] msm_22_20_23.nsys-rep[1/1] [11%                         ] msm_22_20_23.nsys-rep[1/1] [12%                         ] msm_22_20_23.nsys-rep[1/1] [13%                         ] msm_22_20_23.nsys-rep[1/1] [14%                         ] msm_22_20_23.nsys-rep[1/1] [=15%                        ] msm_22_20_23.nsys-rep[1/1] [=======================94%  ] msm_22_20_23.nsys-rep[1/1] [========================100%] msm_22_20_23.nsys-rep[1/1] [========================100%] msm_22_20_23.nsys-rep
+Generated:
+    /root/autodl-tmp/yr/icicle/icicle/src/msm/./work/reports/msm_22_20_23.nsys-rep
+====================== TEST END ======================
+
+
+
+[162/168] Testing: log_size=22 precomp=20 c=25 @ Sat Feb 15 00:07:19 CST 2025
+====================== TEST START ======================
+running msm curve=1, 2^22, batch_size=1, precomp_factor=20, c=25
+finished generating
+finished copying
+msm time : 3258.005 ms.
+x: 0x0852d8871e14d156c9ee00d9a9659c5bdeca09a3f9677611050cb8523b0b96da; y: 0x1228c8aaaf2ff23b0e733586eb7f89e529773966694529db3aeef2a1712dde3e
+good
+success!
+Generating '/tmp/nsys-report-087e.qdstrm'
+[1/1] [0%                          ] msm_22_20_25.nsys-rep[1/1] [0%                          ] msm_22_20_25.nsys-rep[1/1] [5%                          ] msm_22_20_25.nsys-rep[1/1] [6%                          ] msm_22_20_25.nsys-rep[1/1] [7%                          ] msm_22_20_25.nsys-rep[1/1] [8%                          ] msm_22_20_25.nsys-rep[1/1] [=======================95%  ] msm_22_20_25.nsys-rep[1/1] [========================100%] msm_22_20_25.nsys-rep[1/1] [========================100%] msm_22_20_25.nsys-rep
+Generated:
+    /root/autodl-tmp/yr/icicle/icicle/src/msm/./work/reports/msm_22_20_25.nsys-rep
+====================== TEST END ======================
+
+
+
+[163/168] Testing: log_size=22 precomp=22 c=15 @ Sat Feb 15 00:08:18 CST 2025
+====================== TEST START ======================
+running msm curve=1, 2^22, batch_size=1, precomp_factor=22, c=15
+finished generating
+finished copying
+msm time : 149.341 ms.
+x: 0x1539f7e6974f1cd6a53f3d568b3e9932e45c28d705379fd68b1cb796ffc32652; y: 0x05af6ea526b3ad57baeee5fce29e5f3888fba74db3cfef0b80b994bd9ce172e0
+good
+success!
+Generating '/tmp/nsys-report-c3b4.qdstrm'
+[1/1] [0%                          ] msm_22_22_15.nsys-rep[1/1] [0%                          ] msm_22_22_15.nsys-rep[1/1] [7%                          ] msm_22_22_15.nsys-rep[1/1] [8%                          ] msm_22_22_15.nsys-rep[1/1] [9%                          ] msm_22_22_15.nsys-rep[1/1] [10%                         ] msm_22_22_15.nsys-rep[1/1] [11%                         ] msm_22_22_15.nsys-rep[1/1] [12%                         ] msm_22_22_15.nsys-rep[1/1] [13%                         ] msm_22_22_15.nsys-rep[1/1] [=======================93%  ] msm_22_22_15.nsys-rep[1/1] [========================100%] msm_22_22_15.nsys-rep[1/1] [========================100%] msm_22_22_15.nsys-rep
+Generated:
+    /root/autodl-tmp/yr/icicle/icicle/src/msm/./work/reports/msm_22_22_15.nsys-rep
+====================== TEST END ======================
+
+
+
+[164/168] Testing: log_size=22 precomp=22 c=17 @ Sat Feb 15 00:09:11 CST 2025
+====================== TEST START ======================
+running msm curve=1, 2^22, batch_size=1, precomp_factor=22, c=17
+finished generating
+finished copying
+msm time : 114.903 ms.
+x: 0x2480780f7d79508de6af74b28b145c58c9d2816450a00560a5cb62df0fd7d9fd; y: 0x279f83a148ea8d46bfb7111fee87454eb899c0b0dc175951514d39eb1d835d2d
+good
+success!
+Generating '/tmp/nsys-report-f6d0.qdstrm'
+[1/1] [0%                          ] msm_22_22_17.nsys-rep[1/1] [0%                          ] msm_22_22_17.nsys-rep[1/1] [7%                          ] msm_22_22_17.nsys-rep[1/1] [8%                          ] msm_22_22_17.nsys-rep[1/1] [9%                          ] msm_22_22_17.nsys-rep[1/1] [10%                         ] msm_22_22_17.nsys-rep[1/1] [11%                         ] msm_22_22_17.nsys-rep[1/1] [12%                         ] msm_22_22_17.nsys-rep[1/1] [13%                         ] msm_22_22_17.nsys-rep[1/1] [=======================93%  ] msm_22_22_17.nsys-rep[1/1] [========================100%] msm_22_22_17.nsys-rep[1/1] [========================100%] msm_22_22_17.nsys-rep
+Generated:
+    /root/autodl-tmp/yr/icicle/icicle/src/msm/./work/reports/msm_22_22_17.nsys-rep
+====================== TEST END ======================
+
+
+
+[165/168] Testing: log_size=22 precomp=22 c=19 @ Sat Feb 15 00:10:03 CST 2025
+====================== TEST START ======================
+running msm curve=1, 2^22, batch_size=1, precomp_factor=22, c=19
+finished generating
+finished copying
+msm time : 105.648 ms.
+x: 0x2bbeed66a2a95c203d1833fddac6ca43435b8db9b14876b6f13ed022bd36d9df; y: 0x2e2f56f242a607879a0e70fa088c5e9e54c57079d4e3b67143cf1d0f7e05aa1f
+good
+success!
+Generating '/tmp/nsys-report-68d8.qdstrm'
+[1/1] [0%                          ] msm_22_22_19.nsys-rep[1/1] [0%                          ] msm_22_22_19.nsys-rep[1/1] [7%                          ] msm_22_22_19.nsys-rep[1/1] [8%                          ] msm_22_22_19.nsys-rep[1/1] [9%                          ] msm_22_22_19.nsys-rep[1/1] [10%                         ] msm_22_22_19.nsys-rep[1/1] [11%                         ] msm_22_22_19.nsys-rep[1/1] [12%                         ] msm_22_22_19.nsys-rep[1/1] [13%                         ] msm_22_22_19.nsys-rep[1/1] [======================92%   ] msm_22_22_19.nsys-rep[1/1] [========================100%] msm_22_22_19.nsys-rep[1/1] [========================100%] msm_22_22_19.nsys-rep
+Generated:
+    /root/autodl-tmp/yr/icicle/icicle/src/msm/./work/reports/msm_22_22_19.nsys-rep
+====================== TEST END ======================
+
+
+
+[166/168] Testing: log_size=22 precomp=22 c=21 @ Sat Feb 15 00:10:55 CST 2025
+====================== TEST START ======================
+running msm curve=1, 2^22, batch_size=1, precomp_factor=22, c=21
+finished generating
+finished copying
+msm time : 104.721 ms.
+x: 0x047e03cafe4f24d904009336afb9eda29a952cbc15b298abe37ca0e27f39fd91; y: 0x0b88601eac29c194003d1840b67f0d9c964a84880fd040bd54b9d94cf476bbc1
+good
+success!
+Generating '/tmp/nsys-report-7ed7.qdstrm'
+[1/1] [0%                          ] msm_22_22_21.nsys-rep[1/1] [0%                          ] msm_22_22_21.nsys-rep[1/1] [7%                          ] msm_22_22_21.nsys-rep[1/1] [8%                          ] msm_22_22_21.nsys-rep[1/1] [9%                          ] msm_22_22_21.nsys-rep[1/1] [10%                         ] msm_22_22_21.nsys-rep[1/1] [11%                         ] msm_22_22_21.nsys-rep[1/1] [12%                         ] msm_22_22_21.nsys-rep[1/1] [======================92%   ] msm_22_22_21.nsys-rep[1/1] [========================100%] msm_22_22_21.nsys-rep[1/1] [========================100%] msm_22_22_21.nsys-rep
+Generated:
+    /root/autodl-tmp/yr/icicle/icicle/src/msm/./work/reports/msm_22_22_21.nsys-rep
+====================== TEST END ======================
+
+
+
+[167/168] Testing: log_size=22 precomp=22 c=23 @ Sat Feb 15 00:11:48 CST 2025
+====================== TEST START ======================
+running msm curve=1, 2^22, batch_size=1, precomp_factor=22, c=23
+finished generating
+finished copying
+msm time : 10493.099 ms.
+x: 0x143a927dedcc5b7cdce1983e63461e7ae778e3edd64e895615575ac9328ce71a; y: 0x2859b1d9d402e75418ed6c19d5ed6b33212cdb223e1ef547bc85101324708631
+good
+success!
+Generating '/tmp/nsys-report-a4c5.qdstrm'
+[1/1] [0%                          ] msm_22_22_23.nsys-rep[1/1] [0%                          ] msm_22_22_23.nsys-rep[1/1] [6%                          ] msm_22_22_23.nsys-rep[1/1] [7%                          ] msm_22_22_23.nsys-rep[1/1] [8%                          ] msm_22_22_23.nsys-rep[1/1] [9%                          ] msm_22_22_23.nsys-rep[1/1] [10%                         ] msm_22_22_23.nsys-rep[1/1] [11%                         ] msm_22_22_23.nsys-rep[1/1] [12%                         ] msm_22_22_23.nsys-rep[1/1] [13%                         ] msm_22_22_23.nsys-rep[1/1] [14%                         ] msm_22_22_23.nsys-rep[1/1] [=======================94%  ] msm_22_22_23.nsys-rep[1/1] [========================100%] msm_22_22_23.nsys-rep[1/1] [========================100%] msm_22_22_23.nsys-rep
+Generated:
+    /root/autodl-tmp/yr/icicle/icicle/src/msm/./work/reports/msm_22_22_23.nsys-rep
+====================== TEST END ======================
+
+
+
+[168/168] Testing: log_size=22 precomp=22 c=25 @ Sat Feb 15 00:13:01 CST 2025
+====================== TEST START ======================
+running msm curve=1, 2^22, batch_size=1, precomp_factor=22, c=25
+finished generating
+finished copying
+msm time : 3267.904 ms.
+x: 0x228f8093daee694d9bed3badfed500904eee8fcc7812007e8c290c143c504597; y: 0x12f57a86ef384190ac60ea406fb39b5718dbc89c4d64c235d2f297d7335ad4e0
+good
+success!
+Generating '/tmp/nsys-report-512b.qdstrm'
+[1/1] [0%                          ] msm_22_22_25.nsys-rep[1/1] [0%                          ] msm_22_22_25.nsys-rep[1/1] [5%                          ] msm_22_22_25.nsys-rep[1/1] [6%                          ] msm_22_22_25.nsys-rep[1/1] [7%                          ] msm_22_22_25.nsys-rep[1/1] [8%                          ] msm_22_22_25.nsys-rep[1/1] [=======================95%  ] msm_22_22_25.nsys-rep[1/1] [========================100%] msm_22_22_25.nsys-rep[1/1] [========================100%] msm_22_22_25.nsys-rep
+Generated:
+    /root/autodl-tmp/yr/icicle/icicle/src/msm/./work/reports/msm_22_22_25.nsys-rep
+====================== TEST END ======================
+
