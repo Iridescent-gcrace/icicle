@@ -1,6 +1,6 @@
 #include "fields/id.h"
 // #define FIELD_ID 2
-#define CURVE_ID 3
+#define CURVE_ID 1
 #include "curves/curve_config.cuh"
 // #include "fields/field_config.cuh"
 
