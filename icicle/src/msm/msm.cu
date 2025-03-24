@@ -99,23 +99,22 @@ namespace msm {
       unsigned nof_threads)
     {
       const int tid = blockIdx.x * blockDim.x + threadIdx.x;
-      if (tid >= nof_threads) return;
+      if (tid >= nof_threads) return; // 如果线程ID超出范围，则直接返回
 
-      // we need shifted tid because we don't want to be reducing into zero buckets, this allows to skip them.
-      // for write_phase==1, the read pattern is different so we don't skip over anything.
+      // 我们需要偏移的tid，因为我们不想减少到零桶，这允许跳过它们。
+      // 对于write_phase==1，读取模式不同，因此我们不会跳过任何内容。
       const int shifted_tid = write_phase ? tid : tid + (tid + step) / step;
-      const int jump = block_size / 2;
-      const int block_id = shifted_tid / jump;
-      // here the reason for shifting is the same as for shifted_tid but we skip over entire blocks which happens
-      // only for write_phase=1 because of its read pattern.
+      const int jump = block_size / 2; // 每个块的跳跃大小为块大小的一半
+      const int block_id = shifted_tid / jump; // 计算当前线程所属的块ID
+      // 这里偏移的原因与shifted_tid相同，但我们跳过整个块，这仅在write_phase=1时发生，因为其读取模式。
       const int shifted_block_id = write_phase ? block_id + (block_id + step) / step : block_id;
-      const int block_tid = shifted_tid % jump;
-      const unsigned read_ind = orig_block_size * shifted_block_id + block_tid;
-      const unsigned write_ind = jump * shifted_block_id + block_tid;
+      const int block_tid = shifted_tid % jump; // 计算线程在块内的ID
+      const unsigned read_ind = orig_block_size * shifted_block_id + block_tid; // 计算读取索引
+      const unsigned write_ind = jump * shifted_block_id + block_tid; // 计算写入索引
       const unsigned v_r_key =
         write_stride ? ((write_ind / buckets_per_bm) * 2 + write_phase) * write_stride + write_ind % buckets_per_bm
-                     : read_ind;
-      v_r[v_r_key] = v[read_ind] + v[read_ind + jump];
+                     : read_ind; // 计算结果数组的索引
+      v_r[v_r_key] = v[read_ind] + v[read_ind + jump]; // 执行归约操作，将结果写入v_r
     }
 
     // this kernel performs single scalar multiplication
@@ -321,6 +320,71 @@ namespace msm {
       }
     }
 
+  template <typename P>
+__global__ void optimized_big_triangle_sum_kernel(const P* buckets, P* final_sums, unsigned nof_bms, unsigned c)
+{
+    extern __shared__ P sdata[]; // 声明动态共享内存
+    unsigned tid = blockIdx.x * blockDim.x + threadIdx.x;
+    if (tid >= nof_bms) return;
+
+    const unsigned buckets_in_bm = (1 << c);
+    const unsigned offset = tid * buckets_in_bm;
+
+    // 将桶数据预加载到共享内存
+    for (unsigned i = threadIdx.x; i < buckets_in_bm; i += blockDim.x) {
+        sdata[i] = buckets[offset + i];
+    }
+    __syncthreads();
+
+    // 反向累加优化
+    P line_sum = sdata[buckets_in_bm - 1];
+    P final_sum = line_sum;
+
+    #pragma unroll
+    for (unsigned i = buckets_in_bm - 2; i > 0; i --) {
+        line_sum = line_sum + sdata[i];
+        final_sum = final_sum + line_sum;
+    }
+
+    final_sums[tid] = final_sum;
+}
+
+  template <typename P> 
+  __global__ void optimized_big_triangle_sum_kernel2(
+      const P* __restrict__ buckets, 
+      P* __restrict__ final_sums, 
+      unsigned nof_bms, 
+      unsigned c
+  ) {
+    extern __shared__ P shared_sums[];
+    unsigned bm_id = blockIdx.x;
+    if (bm_id >= nof_bms) return;
+
+    unsigned buckets_in_bm = 1 << c;
+    unsigned bm_offset = bm_id * buckets_in_bm;
+
+    unsigned tid = threadIdx.x;
+    unsigned num_threads = blockDim.x;
+    unsigned k_per_thread = (buckets_in_bm - 1 + num_threads - 1) / num_threads;
+    unsigned start_k = 1 + tid * k_per_thread;
+    unsigned end_k = min(start_k + k_per_thread, buckets_in_bm);
+
+    P local_sum = P::zero();
+    for (unsigned k = start_k; k < end_k; ++k) {
+      local_sum = local_sum + buckets[bm_offset + k]; // 修正：直接累加点，无需乘法
+    }
+
+    shared_sums[tid] = local_sum;
+    __syncthreads();
+
+    // 分层归约（同前）
+    for (unsigned s = blockDim.x / 2; s > 0; s >>= 1) {
+      if (tid < s) shared_sums[tid] = shared_sums[tid] + shared_sums[tid + s];
+      __syncthreads();
+    }
+
+    if (tid == 0) final_sums[bm_id] = shared_sums[0];
+  }
     // 标量乘法内核：将每个桶乘以其索引对应的标量
     // 每个线程处理一个桶
     template <typename P, typename S>
@@ -424,7 +488,7 @@ namespace msm {
       bool is_async,
       cudaStream_t stream)
     {
-      CHK_INIT_IF_RETURN();
+       CHK_INIT_IF_RETURN();
 
       const unsigned nof_scalars = batch_size * single_msm_size; // 计算标量的总数量，假设批处理之间不共享标量
       const bool is_nof_points_valid = ((single_msm_size * batch_size) % nof_points == 0); // 检查点的数量是否可以被单个 MSM 大小和批处理大小整除
@@ -724,7 +788,7 @@ namespace msm {
       CHK_IF_RETURN(cudaMemset(nof_large_buckets, 0, sizeof(unsigned)));
 
       // 设置线程数和块数以适应设备
-      unsigned TOTAL_THREADS = 129000; // TODO: device dependent
+      unsigned TOTAL_THREADS = 163840; // 针对V100优化: 80 SMs * 2048 threads per SM
       unsigned cutoff_run_length = max(2, h_nof_buckets_to_compute / TOTAL_THREADS);
       unsigned cutoff_nof_runs = (h_nof_buckets_to_compute + cutoff_run_length - 1) / cutoff_run_length;
       NUM_THREADS = 1 << 5;
@@ -893,9 +957,9 @@ namespace msm {
         // 如果使用大三角累加或位数为1，分配最终结果的内存
         CHK_IF_RETURN(cudaMallocAsync(&final_results, sizeof(P) * nof_bms_in_batch, stream));
         // 启动桶模块求和内核，每个桶模块由一个线程处理
-        NUM_THREADS = 32; // 设置线程数为32
+        NUM_THREADS = 128; // 设置线程数为32
         NUM_BLOCKS = (nof_bms_in_batch + NUM_THREADS - 1) / NUM_THREADS; // 计算块数
-        big_triangle_sum_kernel<<<NUM_BLOCKS, NUM_THREADS, 0, stream>>>(
+        optimized_big_triangle_sum_kernel<<<NUM_BLOCKS, NUM_THREADS, sizeof(P) * NUM_THREADS, stream>>>(
           buckets, // 输入的桶数组
           final_results, // 输出的最终结果数组
           nof_bms_in_batch, // 桶模块的数量
@@ -1003,7 +1067,9 @@ namespace msm {
 
             CHK_IF_RETURN(cudaMallocAsync(&final_results, sizeof(P) * total_nof_final_results, stream));
 
-            NUM_THREADS = 32;
+            // 对于V100 GPU，每个SM有64个CUDA核心，最佳线程数通常是32或128的倍数
+            // 使用128线程可以更好地隐藏延迟并提高SM占用率
+            NUM_THREADS = 128;
             NUM_BLOCKS = (total_nof_final_results + NUM_THREADS - 1) / NUM_THREADS;
             // 为最终结果分配设备内存
             // 启动最后一次归约内核，将目标桶中的值汇总到 final_results 中
@@ -1033,7 +1099,7 @@ namespace msm {
       }
 
       // ------- 这是最终阶段，桶模块/窗口的和将根据适当的权重进行加总 -------
-      NUM_THREADS = 32; // 设置线程数为32
+      NUM_THREADS = 128; // 设置线程数为32
       NUM_BLOCKS = (batch_size + NUM_THREADS - 1) / NUM_THREADS; // 计算块数
       // 启动双倍加法内核，每个批次元素由一个线程处理
       final_accumulation_kernel<P, S><<<NUM_BLOCKS, NUM_THREADS, 0, stream>>>(
