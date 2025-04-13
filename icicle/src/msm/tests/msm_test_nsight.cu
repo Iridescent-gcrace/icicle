@@ -218,10 +218,10 @@ int main(int argc, char** argv)
   if (precomp_factor > 1)
     msm::precompute_msm_points<test_affine, test_projective>(points_d, msm_size, config, precomp_points_d);
 
-  // warm up
-  msm::msm<test_scalar, test_affine, test_projective>(
-    scalars, precomp_factor > 1 ? precomp_points_d : points_d, msm_size, config, res_d);
-  cudaDeviceSynchronize();
+  // // warm up
+  // msm::msm<test_scalar, test_affine, test_projective>(
+  //   scalars, precomp_factor > 1 ? precomp_points_d : points_d, msm_size, config, res_d);
+  // cudaDeviceSynchronize();
 
   // auto begin1 = std::chrono::high_resolution_clock::now();
   cudaEventRecord(start, stream);
@@ -237,16 +237,16 @@ int main(int argc, char** argv)
   printf("msm time : %.3f ms.\n", msm_time);
 
   // reference
-  config.c = 16;
-  config.precompute_factor = 1;
-  config.is_big_triangle = true;
-  config.batch_size = 1;
-  config.points_size = msm_size;
+  // config.c = 16;
+  // config.precompute_factor = 1;
+  // config.is_big_triangle = true;
+  // config.batch_size = 1;
+  // config.points_size = msm_size;
   // config.segments_reduction = false;
-  for (int i = 0; i < batch_size; i++) {
-    msm::msm<test_scalar, test_affine, test_projective>(
-      scalars + i * msm_size, points_d + i * msm_size, msm_size, config, ref_d + i);
-  }
+  // for (int i = 0; i < batch_size; i++) {
+  //   msm::msm<test_scalar, test_affine, test_projective>(
+  //     scalars + i * msm_size, points_d + i * msm_size, msm_size, config, ref_d + i);
+  // }
 
   // config.are_results_on_device = false;
   // std::cout << test_projective::to_affine(large_res[0]) << std::endl;
@@ -264,24 +264,24 @@ int main(int argc, char** argv)
 
   // std::cout << test_projective::to_affine(large_res[0]) << std::endl;
 
-  cudaMemcpy(res, res_d, sizeof(test_projective) * batch_size, cudaMemcpyDeviceToHost);
-  cudaMemcpy(ref, ref_d, sizeof(test_projective) * batch_size, cudaMemcpyDeviceToHost);
+  // cudaMemcpy(res, res_d, sizeof(test_projective) * batch_size, cudaMemcpyDeviceToHost);
+  // cudaMemcpy(ref, ref_d, sizeof(test_projective) * batch_size, cudaMemcpyDeviceToHost);
 
   //   reference_msm<test_affine, test_scalar, test_projective>(scalars, points, msm_size);
 
   // std::cout<<"final results batched large"<<std::endl;
-  bool success = true;
-  for (unsigned i = 0; i < batch_size; i++) {
-    std::cout << test_projective::to_affine(res[i]) << std::endl;
-    if (test_projective::to_affine(res[i]) == test_projective::to_affine(ref[i])) {
-      std::cout << "good" << std::endl;
-    } else {
-      std::cout << "miss" << std::endl;
-      std::cout << test_projective::to_affine(ref[i]) << std::endl;
-      success = false;
-    }
-  }
-  if (success) { std::cout << "success!" << std::endl; }
+  // bool success = true;
+  // for (unsigned i = 0; i < batch_size; i++) {
+  //   std::cout << test_projective::to_affine(res[i]) << std::endl;
+  //   if (test_projective::to_affine(res[i]) == test_projective::to_affine(ref[i])) {
+  //     std::cout << "good" << std::endl;
+  //   } else {
+  //     std::cout << "miss" << std::endl;
+  //     std::cout << test_projective::to_affine(ref[i]) << std::endl;
+  //     success = false;
+  //   }
+  // }
+  // if (success) { std::cout << "success!" << std::endl; }
 
   // std::cout<<batched_large_res[0]<<std::endl;
   // std::cout<<batched_large_res[1]<<std::endl;

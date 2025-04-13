@@ -35,7 +35,13 @@ namespace msm {
       points_out[tid] = P::to_affine(point);
     }
 
-    unsigned get_optimal_c(int bitsize) { return (unsigned)max(ceil(std::log2(bitsize)) - 4.0, 1.0); }
+    unsigned get_optimal_c(int bitsize) { 
+      double log_val = std::log2(bitsize);
+      double offset = 4.0;
+      double adjusted_val = log_val - offset;
+      double clamped_val = adjusted_val < 1.0 ? 1.0 : adjusted_val;
+      return (unsigned)(clamped_val >= 1.0 ? clamped_val : 1.0); 
+    }
 
     template <typename E>
     __global__ void normalize_kernel(E* inout, E factor, int n)
